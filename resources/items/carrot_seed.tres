@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SeedBag" format=3]
+
+[ext_resource type="Texture2D" path="res://art/crops/carrot/sprites/sprite_carrot_seedbag.png" id="1_k2gw0"]
+[ext_resource type="Resource" path="res://resources/crops/carrot_crop.tres" id="2_37bby"]
+[ext_resource type="Script" path="res://scripts/game/items/seed_bag.gd" id="3_wv4gq"]
+[ext_resource type="AudioStream" path="res://audio/planting/planting_crop.wav" id="4_1rtui"]
+
+[resource]
+script = ExtResource("3_wv4gq")
+planted_crop = ExtResource("2_37bby")
+unique_id = "carrot_seed"
+display_name = "Seed (Carrot)"
+item_sprite = ExtResource("1_k2gw0")
+buy_price = 10
+player_animator_trigger_use = "Planting"
+use_sound = Array[AudioStream]([ExtResource("4_1rtui")])

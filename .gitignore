@@ -1,0 +1,31 @@
+# Godot 4+ specific ignores
+.godot/
+.import/
+
+# Godot-specific user-only files
+*.translation
+
+# Imported translations (automatically generated from CSV files)
+export.cfg
+
+# Export: presets are committed; credentials (signing identities) and build
+# output are not
+export_credentials.cfg
+build/
+
+# Mono / .NET (not used here, but harmless)
+.mono/
+data_*/
+mono_crash.*.json
+
+# System
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+.claude/
+
+# Logs
+*.log

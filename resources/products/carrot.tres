@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Product" format=3]
+
+[ext_resource type="Texture2D" path="res://art/crops/carrot/sprites/sprite_carrot_icon.png" id="1_qhqkk"]
+[ext_resource type="Script" path="res://scripts/game/items/product.gd" id="2_okkjx"]
+[ext_resource type="AudioStream" path="res://audio/character/chewing_an_apple-001.wav" id="3_5fuc1"]
+[ext_resource type="AudioStream" path="res://audio/character/chewing_an_apple-002.wav" id="4_qkear"]
+
+[resource]
+script = ExtResource("2_okkjx")
+sell_price = 10
+unique_id = "carrot"
+display_name = "Carrot"
+item_sprite = ExtResource("1_qhqkk")
+player_animator_trigger_use = "Eating"
+use_sound = Array[AudioStream]([ExtResource("3_5fuc1"), ExtResource("4_qkear")])

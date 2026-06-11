@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/game_hud.gd" id="1_hud"]
+[ext_resource type="Texture2D" path="res://art/ui/sprite_coin_icon.png" id="2_coin"]
+[ext_resource type="Texture2D" path="res://art/ui/sprite_clock_icon.png" id="3_clock"]
+[ext_resource type="PackedScene" path="res://scenes/ui/backpack_ui.tscn" id="4_backpack"]
+
+[node name="GameHUD" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_hud")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="SlotRow" type="HBoxContainer" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -96.0
+offset_right = 360.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="CoinsBox" type="HBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 200.0
+offset_bottom = 60.0
+theme_override_constants/separation = 8
+
+[node name="CoinIcon" type="TextureRect" parent="Root/CoinsBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(40, 40)
+texture = ExtResource("2_coin")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinsLabel" type="Label" parent="Root/CoinsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "10"
+
+[node name="ClockBox" type="HBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_top = 12.0
+offset_right = -16.0
+offset_bottom = 60.0
+grow_horizontal = 0
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="ClockIcon" type="TextureRect" parent="Root/ClockBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(40, 40)
+texture = ExtResource("3_clock")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ClockLabel" type="Label" parent="Root/ClockBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "9:00"
+
+[node name="BackpackButton" type="Button" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -64.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Backpack (B)"
+
+[node name="Backpack" parent="Root" instance=ExtResource("4_backpack")]
+unique_name_in_owner = true
+layout_mode = 1

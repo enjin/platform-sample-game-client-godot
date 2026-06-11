@@ -1,0 +1,282 @@
+{
+ "Assets/HappyHarvest/Art/Interior/Rugs/Rug01/Sprite_Rug_01.png": {
+  "godot_path": "res://art/interior/rugs/rug01/sprite_rug_01.png",
+  "size": [
+   90,
+   88
+  ]
+ },
+ "Assets/HappyHarvest/Art/Interior/Fireplace/Sprites/Logpile/Sprite_logpile.png": {
+  "godot_path": "res://art/interior/fireplace/sprites/logpile/sprite_logpile.png",
+  "size": [
+   100,
+   79
+  ]
+ },
+ "Assets/HappyHarvest/Art/Tiles/Water/Sprite_WaterIcon.png": {
+  "godot_path": "res://art/tiles/water/sprite_watericon.png",
+  "size": [
+   64,
+   64
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/WaterLilly/Sprites/Sprite_WaterLilly_flower.png": {
+  "godot_path": "res://art/environment/waterlilly/sprites/sprite_waterlilly_flower.png",
+  "size": [
+   125,
+   120
+  ]
+ },
+ "Assets/HappyHarvest/Art/Interior/Pillows/Pillow_A/Sprites/Sprite_pillowA.png": {
+  "godot_path": "res://art/interior/pillows/pillow_a/sprites/sprite_pillowa.png",
+  "size": [
+   93,
+   126
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Lamps/StreetLamp/Sprites/Sprite_Street_lamp.png": {
+  "godot_path": "res://art/environment/lamps/streetlamp/sprites/sprite_street_lamp.png",
+  "size": [
+   270,
+   650
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Flowers/Flowers_Yellow/Sprites/Sprite_Flowers_yellow.png": {
+  "godot_path": "res://art/environment/flowers/flowers_yellow/sprites/sprite_flowers_yellow.png",
+  "size": [
+   107,
+   48
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Grass/Grass_Clump_02/Sprites/Sprite_Grass_clump02.png": {
+  "godot_path": "res://art/environment/grass/grass_clump_02/sprites/sprite_grass_clump02.png",
+  "size": [
+   45,
+   30
+  ]
+ },
+ "Assets/HappyHarvest/Art/Tiles/Pinetrees/Sprites/Sprite_Tiles_Pinetree_BG.png": {
+  "godot_path": "res://art/tiles/pinetrees/sprites/sprite_tiles_pinetree_bg.png",
+  "size": [
+   512,
+   384
+  ]
+ },
+ "Assets/HappyHarvest/Art/Tiles/Walkway/Sprites/Sprite_Tiles_Stone_walkway.png": {
+  "godot_path": "res://art/tiles/walkway/sprites/sprite_tiles_stone_walkway.png",
+  "size": [
+   512,
+   384
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Log/LogHorizontal/log_horizontal.png": {
+  "godot_path": "res://art/environment/log/loghorizontal/log_horizontal.png",
+  "size": [
+   182,
+   55
+  ]
+ },
+ "Assets/HappyHarvest/Art/Interior/Chair/Sprites/Sprite_Chair.png": {
+  "godot_path": "res://art/interior/chair/sprites/sprite_chair.png",
+  "size": [
+   176,
+   264
+  ]
+ },
+ "Assets/HappyHarvest/Art/Interior/Fireplace/Sprites/Fireplace_inner/Sprite_Fireplace_inner.png": {
+  "godot_path": "res://art/interior/fireplace/sprites/fireplace_inner/sprite_fireplace_inner.png",
+  "size": [
+   190,
+   135
+  ]
+ },
+ "Assets/HappyHarvest/Art/Tiles/House/Sprite_Tiles_House.png": {
+  "godot_path": "res://art/tiles/house/sprite_tiles_house.png",
+  "size": [
+   1280,
+   760
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Bush/Sprites/Sprite_Bush.png": {
+  "godot_path": "res://art/environment/bush/sprites/sprite_bush.png",
+  "size": [
+   140,
+   113
+  ]
+ },
+ "Assets/HappyHarvest/Art/Interior/Sofa/Sprites/Sprite_Sofa.png": {
+  "godot_path": "res://art/interior/sofa/sprites/sprite_sofa.png",
+  "size": [
+   409,
+   261
+  ]
+ },
+ "Assets/HappyHarvest/Art/Tiles/Warehouse/Sprites/Sprite_Tiles_Warehouse.png": {
+  "godot_path": "res://art/tiles/warehouse/sprites/sprite_tiles_warehouse.png",
+  "size": [
+   1024,
+   1024
+  ]
+ },
+ "Assets/HappyHarvest/Art/Interior/Bed/Sprites/Sprite_Bed.png": {
+  "godot_path": "res://art/interior/bed/sprites/sprite_bed.png",
+  "size": [
+   412,
+   531
+  ]
+ },
+ "Assets/HappyHarvest/Art/Interior/Paintings/Sprites/Sprite_wall_paintings.png": {
+  "godot_path": "res://art/interior/paintings/sprites/sprite_wall_paintings.png",
+  "size": [
+   436,
+   309
+  ]
+ },
+ "Assets/HappyHarvest/Art/Interior/Fireplace/Sprites/Fireplace_base/Sprite_Fireplace.png": {
+  "godot_path": "res://art/interior/fireplace/sprites/fireplace_base/sprite_fireplace.png",
+  "size": [
+   327,
+   404
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Rocks/RocksBig/Sprites/Sprite_RocksBig.png": {
+  "godot_path": "res://art/environment/rocks/rocksbig/sprites/sprite_rocksbig.png",
+  "size": [
+   204,
+   147
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Flowers/Flowers_Red/Sprites/Sprite_Flowers_red.png": {
+  "godot_path": "res://art/environment/flowers/flowers_red/sprites/sprite_flowers_red.png",
+  "size": [
+   43,
+   50
+  ]
+ },
+ "Assets/HappyHarvest/Art/Tiles/Dirt/Sprites/Sprite_Tiles_Dirt.png": {
+  "godot_path": "res://art/tiles/dirt/sprites/sprite_tiles_dirt.png",
+  "size": [
+   512,
+   384
+  ]
+ },
+ "Assets/HappyHarvest/Art/Interior/Rugs/Rug02/Sprites/Sprite_Rug_02.png": {
+  "godot_path": "res://art/interior/rugs/rug02/sprites/sprite_rug_02.png",
+  "size": [
+   100,
+   102
+  ]
+ },
+ "Assets/HappyHarvest/Art/Crops/Corn/Sprites/Sprite_Corn_01.png": {
+  "godot_path": "res://art/crops/corn/sprites/sprite_corn_01.png",
+  "size": [
+   192,
+   144
+  ]
+ },
+ "Assets/HappyHarvest/Art/Tiles/Elevation/Sprites/Sprite_Tiles_Elevation.png": {
+  "godot_path": "res://art/tiles/elevation/sprites/sprite_tiles_elevation.png",
+  "size": [
+   384,
+   704
+  ]
+ },
+ "Assets/HappyHarvest/Art/UI/Sprite_Marker.png": {
+  "godot_path": "res://art/ui/sprite_marker.png",
+  "size": [
+   128,
+   128
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Lamps/HouseLamp/Sprites/Sprite_HouseLamp.png": {
+  "godot_path": "res://art/environment/lamps/houselamp/sprites/sprite_houselamp.png",
+  "size": [
+   52,
+   104
+  ]
+ },
+ "Assets/HappyHarvest/Art/Crops/Corn/Sprites/Sprite_Corn_02.png": {
+  "godot_path": "res://art/crops/corn/sprites/sprite_corn_02.png",
+  "size": [
+   192,
+   144
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/WaterLilly/Sprites/Sprite_WaterLilly_leaf.png": {
+  "godot_path": "res://art/environment/waterlilly/sprites/sprite_waterlilly_leaf.png",
+  "size": [
+   160,
+   140
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Pinetree/Sprites/Sprite_Pinetree.png": {
+  "godot_path": "res://art/environment/pinetree/sprites/sprite_pinetree.png",
+  "size": [
+   734,
+   1363
+  ]
+ },
+ "Assets/HappyHarvest/Art/Tiles/Grass/Sprites/Sprite_Tiles_Grass_darker_tiles.png": {
+  "godot_path": "res://art/tiles/grass/sprites/sprite_tiles_grass_darker_tiles.png",
+  "size": [
+   512,
+   384
+  ]
+ },
+ "Assets/HappyHarvest/Art/Interior/Curtain/Sprites/Sprite_Curtain.png": {
+  "godot_path": "res://art/interior/curtain/sprites/sprite_curtain.png",
+  "size": [
+   88,
+   229
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Signs/Sign Right/Sprites/Sprite_Sign_right.png": {
+  "godot_path": "res://art/environment/signs/sign_right/sprites/sprite_sign_right.png",
+  "size": [
+   126,
+   214
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Grass/Grass_Clump_01/Sprites/Sprite_Grass_clump01.png": {
+  "godot_path": "res://art/environment/grass/grass_clump_01/sprites/sprite_grass_clump01.png",
+  "size": [
+   84,
+   70
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Barrel/Sprites/Sprite_Barrel.png": {
+  "godot_path": "res://art/environment/barrel/sprites/sprite_barrel.png",
+  "size": [
+   190,
+   244
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Flowers/Flowers_White/Sprite/Sprite_Flowers_white.png": {
+  "godot_path": "res://art/environment/flowers/flowers_white/sprite/sprite_flowers_white.png",
+  "size": [
+   51,
+   49
+  ]
+ },
+ "Assets/HappyHarvest/Art/Interior/Plant/Sprites/Sprite_Plant.png": {
+  "godot_path": "res://art/interior/plant/sprites/sprite_plant.png",
+  "size": [
+   257,
+   193
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Rocks/RocksMedium/Sprites/Sprite_RockMedium.png": {
+  "godot_path": "res://art/environment/rocks/rocksmedium/sprites/sprite_rockmedium.png",
+  "size": [
+   102,
+   86
+  ]
+ },
+ "Assets/HappyHarvest/Art/Environment/Rocks/RocksSmall/Sprites/Sprites_RockSmall.png": {
+  "godot_path": "res://art/environment/rocks/rockssmall/sprites/sprites_rocksmall.png",
+  "size": [
+   73,
+   35
+  ]
+ }
+}

@@ -1,0 +1,645 @@
+[gd_scene format=4]
+
+[ext_resource type="Texture2D" path="res://art/tiles/dirt/sprites/sprite_tiles_dirt.png" id="1_f5yi6"]
+[ext_resource type="Texture2D" path="res://art/tiles/soil/sprites/sprite_tiles_soil.png" id="2_1ga1e"]
+[ext_resource type="Texture2D" path="res://art/tiles/soilwatered/sprite/sprite_tiles_soil_watered.png" id="3_bsg7c"]
+[ext_resource type="Texture2D" path="res://art/tiles/water/sprite_watericon.png" id="4_usx56"]
+[ext_resource type="Texture2D" path="res://art/tiles/pinetrees/sprites/sprite_tiles_pinetree_bg.png" id="5_8p77r"]
+[ext_resource type="Texture2D" path="res://art/tiles/elevation/sprites/sprite_tiles_elevation.png" id="6_2s8oc"]
+[ext_resource type="Texture2D" path="res://art/tiles/house/sprite_tiles_house.png" id="7_lk8xo"]
+[ext_resource type="Texture2D" path="res://art/tiles/warehouse/sprites/sprite_tiles_warehouse.png" id="8_lo4w5"]
+[ext_resource type="Texture2D" path="res://art/tiles/grass/sprites/sprite_tiles_grass_darker_tiles.png" id="9_bnraa"]
+[ext_resource type="Texture2D" path="res://art/tiles/walkway/sprites/sprite_tiles_stone_walkway.png" id="10_wfcob"]
+[ext_resource type="Texture2D" path="res://art/interior/rugs/rug02/sprites/sprite_rug_02.png" id="11_n44sy"]
+[ext_resource type="Texture2D" path="res://art/interior/rugs/rug01/sprite_rug_01.png" id="12_os2so"]
+[ext_resource type="Texture2D" path="res://art/interior/curtain/sprites/sprite_curtain.png" id="13_b3psu"]
+[ext_resource type="Texture2D" path="res://art/interior/pillows/pillow_a/sprites/sprite_pillowa.png" id="14_5bsos"]
+[ext_resource type="Texture2D" path="res://art/interior/plant/sprites/sprite_plant.png" id="15_4ocq3"]
+[ext_resource type="Texture2D" path="res://art/environment/barrel/sprites/sprite_barrel.png" id="16_ij0jl"]
+[ext_resource type="Texture2D" path="res://art/ui/sprite_marker.png" id="17_u3fao"]
+[ext_resource type="Texture2D" path="res://art/interior/chair/sprites/sprite_chair.png" id="18_m2jjy"]
+[ext_resource type="Texture2D" path="res://art/interior/sofa/sprites/sprite_sofa.png" id="19_14ekb"]
+[ext_resource type="Texture2D" path="res://art/interior/fireplace/sprites/logpile/sprite_logpile.png" id="20_wgswj"]
+[ext_resource type="Texture2D" path="res://art/interior/paintings/sprites/sprite_wall_paintings.png" id="21_ymwqk"]
+[ext_resource type="Texture2D" path="res://art/interior/fireplace/sprites/fireplace_inner/sprite_fireplace_inner.png" id="22_n7vhp"]
+[ext_resource type="Texture2D" path="res://art/interior/fireplace/sprites/fireplace_base/sprite_fireplace.png" id="23_gq0nd"]
+[ext_resource type="Texture2D" path="res://art/interior/bed/sprites/sprite_bed.png" id="24_08ft6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ubkrf"]
+resource_name = "sprite_tiles_dirt.png"
+texture = ExtResource("1_f5yi6")
+texture_region_size = Vector2i(64, 64)
+1:1/0 = 0
+1:1/0/custom_data_0 = true
+1:1/0/custom_data_1 = "tillable"
+7:2/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:4/0 = 0
+2:4/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46hm5"]
+resource_name = "sprite_tiles_soil.png"
+texture = ExtResource("2_1ga1e")
+texture_region_size = Vector2i(64, 64)
+3:3/0 = 0
+3:3/0/custom_data_1 = "tilled"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be8f5"]
+resource_name = "sprite_tiles_soil_watered.png"
+texture = ExtResource("3_bsg7c")
+texture_region_size = Vector2i(64, 64)
+3:3/0 = 0
+3:3/0/custom_data_1 = "watered"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jd7f4"]
+resource_name = "sprite_watericon.png"
+texture = ExtResource("4_usx56")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8bkr"]
+resource_name = "sprite_tiles_pinetree_bg.png"
+texture = ExtResource("5_8p77r")
+texture_region_size = Vector2i(64, 64)
+0:4/size_in_atlas = Vector2i(2, 2)
+0:4/0 = 0
+4:4/size_in_atlas = Vector2i(2, 2)
+4:4/0 = 0
+2:4/size_in_atlas = Vector2i(2, 2)
+2:4/0 = 0
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+6:4/size_in_atlas = Vector2i(2, 2)
+6:4/0 = 0
+2:2/size_in_atlas = Vector2i(2, 2)
+2:2/0 = 0
+4:2/size_in_atlas = Vector2i(2, 2)
+4:2/0 = 0
+0:2/size_in_atlas = Vector2i(2, 2)
+0:2/0 = 0
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+2:0/size_in_atlas = Vector2i(2, 2)
+2:0/0 = 0
+4:0/size_in_atlas = Vector2i(2, 2)
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rb4l0"]
+resource_name = "sprite_tiles_elevation.png"
+texture = ExtResource("6_2s8oc")
+texture_region_size = Vector2i(64, 64)
+3:4/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:4/0 = 0
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30, -32, -31, 32, 32, 32, 32, -32)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 26, 32, 28, 32, -32)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -31, -32, -32, -32, 32, 32, 32, 32, 4.7839966, -1, -1)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 11, -32, 32, 32, 32, 32, 11)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8.546722, -31.999939, 4, -11, -17, 4, -32, 3.831787, -32, 32, 32, 32, 32, -32)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 12, -32, 32, -9, 32, -15, 14)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(11, 11, 7, 32, 32, 32, 32, 9)
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(7, -32, 7, 32, 32, 32, 32, -32)
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, -4, 32, -4, -32)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.6760674, -32, -32, -32, -32, 32, 32, 32, 32, 9, 10, 6, -6, -13)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(3, -32, 7, -17, 32, -16, 32, -32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30, -32, -32, -29, -32, -18, 32, -19, 32, -29, 27, -32)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, -16, -9, -17, -6, -32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-29, -32, -29, 32, -7, 32, -7, -32)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(6, -32, 6, 32, 28, 32, 27, -32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -32, -24, 5, -26, 32, -7.2796173, 32, -7, 7, 13, -20, 32, -20.522583, 32, -32)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(29, -32, 5.7575684, -32, 6, -11, -19, 7, -32, 8, -32, 32, 28, 32)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13, -32, -32, -32, -32, -17, -9, -14, 6, 5, 6, 32, 26, 32, 25, 10, 14, -15)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -28, -7, -3, 14, 32, 26, 32, -32)
+0:8/0 = 0
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 27, 32, 28, 32, -32)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(30, -13, 32, -32, -32, -32, -32, 28, 7, 14)
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j2lej"]
+resource_name = "sprite_tiles_house.png"
+texture = ExtResource("7_lk8xo")
+texture_region_size = Vector2i(64, 64)
+5:9/0 = 0
+6:9/0 = 0
+10:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+11:9/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+10:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+11:8/0 = 0
+5:7/0 = 0
+10:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+11:7/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+10:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+11:6/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+10:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+11:5/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+0:8/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+4:8/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+1:8/0 = 0
+6:10/0 = 0
+5:10/0 = 0
+3:8/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+1:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+0:6/0 = 0
+2:8/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:7/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+1:4/0 = 0
+2:6/0 = 0
+3:4/0 = 0
+2:5/0 = 0
+2:4/0 = 0
+2:3/0 = 0
+14:10/0 = 0
+14:9/0 = 0
+14:8/0 = 0
+16:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+13:5/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+13:4/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+5:4/0 = 0
+11:2/0 = 0
+5:3/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+11:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yv6kj"]
+resource_name = "sprite_tiles_warehouse.png"
+texture = ExtResource("8_lo4w5")
+texture_region_size = Vector2i(64, 64)
+4:12/0 = 0
+7:12/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dntko"]
+resource_name = "sprite_tiles_grass_darker_tiles.png"
+texture = ExtResource("9_bnraa")
+texture_region_size = Vector2i(64, 64)
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+1:4/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:3/0 = 0
+1:5/0 = 0
+3:4/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:1/0 = 0
+0:0/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+7:2/0 = 0
+3:2/0 = 0
+3:0/0 = 0
+7:0/0 = 0
+6:5/0 = 0
+6:2/0 = 0
+2:4/0 = 0
+3:1/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+5:5/0 = 0
+4:4/0 = 0
+6:0/0 = 0
+4:0/0 = 0
+2:5/0 = 0
+5:4/0 = 0
+6:1/0 = 0
+4:2/0 = 0
+7:4/0 = 0
+4:5/0 = 0
+3:5/0 = 0
+7:1/0 = 0
+7:5/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pyske"]
+resource_name = "sprite_tiles_stone_walkway.png"
+texture = ExtResource("10_wfcob")
+texture_region_size = Vector2i(64, 64)
+0:2/0 = 0
+2:2/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+3:4/0 = 0
+2:4/0 = 0
+0:5/0 = 0
+1:4/0 = 0
+1:0/0 = 0
+5:5/0 = 0
+0:3/0 = 0
+2:0/0 = 0
+0:0/0 = 0
+1:2/0 = 0
+0:4/0 = 0
+2:3/0 = 0
+1:1/0 = 0
+1:5/0 = 0
+4:5/0 = 0
+3:5/0 = 0
+4:4/0 = 0
+2:5/0 = 0
+1:3/0 = 0
+6:0/0 = 0
+4:2/0 = 0
+7:5/0 = 0
+3:2/0 = 0
+3:3/0 = 0
+4:0/0 = 0
+6:2/0 = 0
+4:3/0 = 0
+5:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lyiec"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "tillable"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "soil"
+custom_data_layer_1/type = 4
+sources/0 = SubResource("TileSetAtlasSource_ubkrf")
+sources/1 = SubResource("TileSetAtlasSource_46hm5")
+sources/2 = SubResource("TileSetAtlasSource_be8f5")
+sources/3 = SubResource("TileSetAtlasSource_jd7f4")
+sources/4 = SubResource("TileSetAtlasSource_j8bkr")
+sources/5 = SubResource("TileSetAtlasSource_rb4l0")
+sources/6 = SubResource("TileSetAtlasSource_j2lej")
+sources/7 = SubResource("TileSetAtlasSource_yv6kj")
+sources/8 = SubResource("TileSetAtlasSource_dntko")
+sources/9 = SubResource("TileSetAtlasSource_pyske")
+
+[node name="HouseInterior" type="Node2D" unique_id=942161416]
+y_sort_enabled = true
+
+[node name="Tilemap" type="TileMapLayer" parent="." unique_id=1548742014]
+z_index = -1
+tile_map_data = PackedByteArray("AAD//wUABgAQAAUAAAAAAAUABgAQAAUAAAD3/wQABgAOAAUAAAD4/wQABgAPAAUAAAD5/wQABgAQAAUAAAD6/wQABgARAAUAAAD7/wQABgASAAUAAAD8/wQABgATAAUAAAD9/wQABgANAAUAAAD+/wQABgAOAAUAAAD//wQABgAPAAUAAAAAAAQABgAQAAUAAAABAAQABgARAAUAAAACAAQABgASAAUAAAADAAQABgATAAUAAAAEAAQABgANAAUAAAAFAAQABgAOAAUAAAAGAAQABgAPAAUAAAAHAAQABgAQAAUAAAAIAAQABgARAAUAAAD3/wMABgAOAAQAAAD4/wMABgAPAAQAAAD5/wMABgAQAAQAAAD6/wMABgARAAQAAAD7/wMABgASAAQAAAD8/wMABgATAAQAAAD9/wMABgANAAQAAAD+/wMABgAOAAQAAAD//wMABgAPAAQAAAAAAAMABgAQAAQAAAABAAMABgARAAQAAAACAAMABgASAAQAAAADAAMABgATAAQAAAAEAAMABgANAAQAAAAFAAMABgAOAAQAAAAGAAMABgAPAAQAAAAHAAMABgAQAAQAAAAIAAMABgARAAQAAAD3/wIABgAOAAUAAAD4/wIABgAPAAUAAAD5/wIABgAQAAUAAAD6/wIABgARAAUAAAD7/wIABgASAAUAAAD8/wIABgATAAUAAAD9/wIABgANAAUAAAD+/wIABgAOAAUAAAD//wIABgAPAAUAAAAAAAIABgAQAAUAAAABAAIABgARAAUAAAACAAIABgASAAUAAAADAAIABgATAAUAAAAEAAIABgANAAUAAAAFAAIABgASAAUAAAAGAAIABgAPAAUAAAAHAAIABgAQAAUAAAAIAAIABgARAAUAAAD3/wEABgAOAAQAAAD4/wEABgAPAAQAAAD5/wEABgASAAUAAAD6/wEABgAPAAUAAAD7/wEABgASAAUAAAD8/wEABgAPAAUAAAD9/wEABgAPAAQAAAD+/wEABgAPAAQAAAD//wEABgAPAAQAAAAAAAEABgAQAAQAAAABAAEABgASAAUAAAACAAEABgAPAAUAAAADAAEABgAPAAUAAAAEAAEABgAPAAUAAAAFAAEABgASAAUAAAAGAAEABgAPAAQAAAAHAAEABgAQAAQAAAAIAAEABgARAAQAAAD3/wAABgAOAAUAAAD4/wAABgAPAAUAAAD5/wAABgAQAAUAAAD6/wAABgARAAUAAAD7/wAABgASAAUAAAD8/wAABgATAAUAAAD9/wAABgANAAUAAAD+/wAABgAOAAUAAAD//wAABgAPAAUAAAAAAAAABgAQAAUAAAABAAAABgARAAUAAAACAAAABgASAAUAAAADAAAABgATAAUAAAAEAAAABgAOAAQAAAAFAAAABgAOAAUAAAAGAAAABgAPAAUAAAAHAAAABgAQAAUAAAAIAAAABgARAAUAAAD3////BgAOAAQAAAD4////BgAPAAQAAAD5////BgAQAAQAAAD6////BgARAAQAAAD7////BgASAAQAAAD8////BgATAAQAAAD9////BgANAAQAAAD+////BgAOAAQAAAD/////BgAPAAQAAAAAAP//BgAQAAQAAAABAP//BgARAAQAAAACAP//BgASAAQAAAADAP//BgATAAQAAAAEAP//BgASAAQAAAAFAP//BgAOAAQAAAAGAP//BgAPAAQAAAAHAP//BgAQAAQAAAAIAP//BgARAAQAAAD3//7/BgANAAUAAAD4//7/BgAPAAUAAAD5//7/BgAPAAUAAAD6//7/BgAQAAUAAAD7//7/BgARAAUAAAD8//7/BgASAAUAAAD9//7/BgAPAAUAAAD+//7/BgAOAAQAAAD///7/BgAPAAUAAAAAAP7/BgAPAAUAAAABAP7/BgAPAAUAAAACAP7/BgAOAAQAAAADAP7/BgAPAAUAAAAEAP7/BgAOAAQAAAAFAP7/BgAPAAUAAAAGAP7/BgAPAAUAAAAHAP7/BgAQAAUAAAAIAP7/BgARAAUAAAD3//3/BgANAAQAAAD4//3/BgAOAAQAAAD5//3/BgAPAAQAAAD6//3/BgAQAAQAAAD7//3/BgARAAQAAAD8//3/BgASAAQAAAD9//3/BgAPAAQAAAD+//3/BgAPAAQAAAD///3/BgAOAAQAAAAAAP3/BgAPAAQAAAABAP3/BgAPAAQAAAACAP3/BgAPAAQAAAADAP3/BgAPAAQAAAAEAP3/BgAPAAQAAAAFAP3/BgAPAAQAAAAGAP3/BgAPAAQAAAAHAP3/BgAQAAQAAAAIAP3/BgARAAQAAAD3//z/BgANAAMAAAD4//z/BgAOAAMAAAD5//z/BgAPAAMAAAD6//z/BgAQAAMAAAD7//z/BgARAAMAAAD8//z/BgASAAMAAAD9//z/BgAPAAMAAAD+//z/BgAPAAMAAAD///z/BgAPAAMAAAAAAPz/BgAPAAMAAAABAPz/BgAPAAMAAAACAPz/BgAPAAMAAAADAPz/BgAPAAMAAAAEAPz/BgAPAAMAAAAFAPz/BgAPAAMAAAAGAPz/BgAPAAMAAAAHAPz/BgAQAAMAAAAIAPz/BgARAAMAAAD3//v/BgANAAIAAAD4//v/BgAOAAIAAAD5//v/BgAPAAIAAAD6//v/BgAQAAIAAAD7//v/BgARAAIAAAD8//v/BgAOAAIAAAD9//v/BgAPAAIAAAD+//v/BgAPAAIAAAD///v/BgAPAAIAAAAAAPv/BgAPAAIAAAABAPv/BgAPAAIAAAACAPv/BgAPAAIAAAADAPv/BgAPAAIAAAAEAPv/BgAPAAIAAAAFAPv/BgAPAAIAAAAGAPv/BgAPAAIAAAAHAPv/BgAOAAIAAAAIAPv/BgARAAIAAAD3//r/BgANAAEAAAD4//r/BgAOAAEAAAD5//r/BgAPAAEAAAD6//r/BgAQAAEAAAD7//r/BgARAAEAAAD8//r/BgASAAEAAAD9//r/BgAPAAEAAAD+//r/BgAPAAEAAAD///r/BgAPAAEAAAAAAPr/BgAPAAEAAAABAPr/BgAPAAEAAAACAPr/BgAPAAEAAAADAPr/BgAPAAEAAAAEAPr/BgAPAAEAAAAFAPr/BgAPAAEAAAAGAPr/BgAPAAEAAAAHAPr/BgAQAAEAAAAIAPr/BgARAAEAAAA=")
+tile_set = SubResource("TileSet_lyiec")
+
+[node name="walls" type="TileMapLayer" parent="." unique_id=786370272]
+z_index = -1
+tile_map_data = PackedByteArray("AAD3/wUABgAGAAkAAAD4/wUABgAGAAkAAAD5/wUABgAGAAkAAAD6/wUABgAGAAkAAAD7/wUABgAGAAkAAAD8/wUABgAGAAkAAAD9/wUABgAGAAkAAAD+/wUABgAGAAkAAAABAAUABgAGAAkAAAACAAUABgAGAAkAAAADAAUABgAGAAkAAAAEAAUABgAGAAkAAAAFAAUABgAGAAkAAAAGAAUABgAGAAkAAAAHAAUABgAGAAkAAAAIAAUABgAGAAkAAAD3/wQABgAFAAQAAAAIAAQABgALAAIAAAD3/wMABgAFAAQAAAAIAAMABgALAAIAAAD3/wIABgAFAAMAAAAIAAIABgALAAIAAAD3/wEABgAFAAMAAAAIAAEABgALAAIAAAD3/wAABgAFAAMAAAAIAAAABgALAAIAAAD3////BgAFAAMAAAAIAP//BgALAAIAAAD3//7/BgAFAAMAAAAIAP7/BgALAAIAAAD3//3/BgAFAAMAAAAIAP3/BgALAAIAAAD3//z/BgAFAAMAAAAIAPz/BgALAAIAAAD3//v/BgAFAAMAAAAIAPv/BgALAAIAAAD3//r/BgAFAAEAAAD4//r/BgAGAAEAAAD5//r/BgAGAAEAAAD6//r/BgAGAAEAAAD7//r/BgAGAAEAAAD8//r/BgAGAAEAAAD9//r/BgAGAAEAAAD+//r/BgAGAAEAAAD///r/BgAGAAEAAAAAAPr/BgAGAAEAAAABAPr/BgAGAAEAAAACAPr/BgAGAAEAAAADAPr/BgAGAAEAAAAEAPr/BgAGAAEAAAAFAPr/BgAGAAEAAAAGAPr/BgAGAAEAAAAHAPr/BgAGAAEAAAAIAPr/BgALAAEAAAA=")
+tile_set = SubResource("TileSet_lyiec")
+
+[node name="Props" type="Node2D" parent="." unique_id=1343703647]
+y_sort_enabled = true
+
+[node name="rug_02 (2)" type="Sprite2D" parent="Props" unique_id=2017290663]
+position = Vector2(32, -42.88)
+scale = Vector2(1.5625, 1.5625)
+texture = ExtResource("11_n44sy")
+
+[node name="rug_01" type="Sprite2D" parent="Props" unique_id=314055396]
+position = Vector2(-485.12, 88.96)
+texture = ExtResource("12_os2so")
+
+[node name="rug_02 (1)" type="Sprite2D" parent="Props" unique_id=1717623981]
+position = Vector2(443.08, 166.17)
+scale = Vector2(1.5625, 1.5625)
+texture = ExtResource("11_n44sy")
+
+[node name="rug_01_2" type="Sprite2D" parent="Props" unique_id=2126677473]
+position = Vector2(7.68, 191.36)
+texture = ExtResource("12_os2so")
+
+[node name="curtain (2)" type="Sprite2D" parent="Props" unique_id=2089871965]
+position = Vector2(-158.72, -212.61)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("13_b3psu")
+
+[node name="pillowA (1)" type="Sprite2D" parent="Props" unique_id=209335301]
+position = Vector2(56.51, 21.82)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_5bsos")
+
+[node name="curtain (3)" type="Sprite2D" parent="Props" unique_id=1918206676]
+position = Vector2(428.54, -212.61)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("13_b3psu")
+
+[node name="plant (1)" type="Sprite2D" parent="Props" unique_id=365073495]
+position = Vector2(494.72, 120.32)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("15_4ocq3")
+
+[node name="curtain (4)" type="Sprite2D" parent="Props" unique_id=1906973945]
+position = Vector2(534.21, -212.61)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("13_b3psu")
+
+[node name="barrel (3)" type="Sprite2D" parent="Props" unique_id=1464047337]
+position = Vector2(520.96, 291.2)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("16_ij0jl")
+
+[node name="barrel" type="Sprite2D" parent="Props" unique_id=1944274564]
+position = Vector2(519.68, 220.8)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("16_ij0jl")
+
+[node name="barrel (4)" type="Sprite2D" parent="Props" unique_id=451454189]
+position = Vector2(501.12, 327.68)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("16_ij0jl")
+
+[node name="Character" type="Sprite2D" parent="Props" unique_id=915446213]
+position = Vector2(28.03, -18.38)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("17_u3fao")
+
+[node name="Chair" type="Sprite2D" parent="Props" unique_id=1421796854]
+position = Vector2(158.08, -56.96)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_m2jjy")
+
+[node name="barrel (5)" type="Sprite2D" parent="Props" unique_id=613445038]
+position = Vector2(-350.08, 354.56)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("16_ij0jl")
+
+[node name="barrel (1)" type="Sprite2D" parent="Props" unique_id=1264187924]
+position = Vector2(-519.04, -164.48)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("16_ij0jl")
+
+[node name="Sofa" type="Sprite2D" parent="Props" unique_id=401742753]
+position = Vector2(-352.64, -195.65)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_14ekb")
+
+[node name="Character_2" type="Sprite2D" parent="Props" unique_id=912571571]
+position = Vector2(28.03, -18.38)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("17_u3fao")
+
+[node name="plant (2)" type="Sprite2D" parent="Props" unique_id=1510850715]
+position = Vector2(-159.23, -168.06)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("15_4ocq3")
+
+[node name="rug_02" type="Sprite2D" parent="Props" unique_id=1395488233]
+position = Vector2(32.68, -42.68)
+texture = ExtResource("11_n44sy")
+
+[node name="Chair_2" type="Sprite2D" parent="Props" unique_id=1083926904]
+position = Vector2(-95.36, -56.96)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_m2jjy")
+
+[node name="barrel (2)" type="Sprite2D" parent="Props" unique_id=1152463717]
+position = Vector2(471.68, 245.12)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("16_ij0jl")
+
+[node name="Sofa_2" type="Sprite2D" parent="Props" unique_id=194665169]
+position = Vector2(250.24, -180.48)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_14ekb")
+
+[node name="VFX_Fire" type="Sprite2D" parent="Props" unique_id=1072805689]
+position = Vector2(35.07, -147.01)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("20_wgswj")
+
+[node name="paintings_1" type="Sprite2D" parent="Props" unique_id=1031857691]
+position = Vector2(284.16, -300.16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("21_ymwqk")
+offset = Vector2(120.5, -65)
+region_enabled = true
+region_rect = Rect2(179, 159, 241, 130)
+
+[node name="Fireplace" type="Sprite2D" parent="Props" unique_id=490337710]
+position = Vector2(35.84, -190.72)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("22_n7vhp")
+
+[node name="Fireplace_2" type="Sprite2D" parent="Props" unique_id=276704828]
+position = Vector2(35.84, -121.6)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("23_gq0nd")
+
+[node name="rug_02_2" type="Sprite2D" parent="Props" unique_id=1439961963]
+position = Vector2(-337.28, -82.56)
+texture = ExtResource("11_n44sy")
+
+[node name="paintings_4" type="Sprite2D" parent="Props" unique_id=1655406268]
+position = Vector2(-318.72, -315.52)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("21_ymwqk")
+offset = Vector2(46.5, -42.5)
+region_enabled = true
+region_rect = Rect2(179, 39, 93, 85)
+
+[node name="plant" type="Sprite2D" parent="Props" unique_id=1563380861]
+position = Vector2(-478.72, 279.68)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("15_4ocq3")
+
+[node name="paintings_2" type="Sprite2D" parent="Props" unique_id=1002374601]
+position = Vector2(-386.56, -307.84)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("21_ymwqk")
+offset = Vector2(70.5, -65)
+region_enabled = true
+region_rect = Rect2(278, 16, 141, 130)
+
+[node name="curtain" type="Sprite2D" parent="Props" unique_id=1698950265]
+position = Vector2(-531.84, -212.61)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("13_b3psu")
+
+[node name="paintings_3" type="Sprite2D" parent="Props" unique_id=765427767]
+position = Vector2(-113.92, -279.68)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("21_ymwqk")
+offset = Vector2(70, -102.5)
+region_enabled = true
+region_rect = Rect2(31, 82, 140, 205)
+
+[node name="Bed" type="Sprite2D" parent="Props" unique_id=1771268711]
+position = Vector2(458.62, 0.13)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("24_08ft6")

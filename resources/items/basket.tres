@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Basket" format=3]
+
+[ext_resource type="Texture2D" path="res://art/tools/basket/prefabs/sprite_basket.png" id="1_nmerh"]
+[ext_resource type="Script" path="res://scripts/game/items/basket.gd" id="2_q0dh2"]
+[ext_resource type="AudioStream" path="res://audio/planting/picking_up_crop.wav" id="3_3l3km"]
+
+[resource]
+script = ExtResource("2_q0dh2")
+unique_id = "basket"
+display_name = "Harvest Basket"
+item_sprite = ExtResource("1_nmerh")
+max_stack_size = 1
+consumable = false
+player_animator_trigger_use = "Picking"
+use_sound = Array[AudioStream]([ExtResource("3_3l3km")])

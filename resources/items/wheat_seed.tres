@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SeedBag" format=3]
+
+[ext_resource type="Texture2D" path="res://art/crops/wheat/sprites/sprite_wheat_seedbag.png" id="1_e78rh"]
+[ext_resource type="Resource" path="res://resources/crops/wheat_crop.tres" id="2_jg2g0"]
+[ext_resource type="Script" path="res://scripts/game/items/seed_bag.gd" id="3_xwfw7"]
+[ext_resource type="AudioStream" path="res://audio/planting/planting_crop.wav" id="4_n6b3n"]
+
+[resource]
+script = ExtResource("3_xwfw7")
+planted_crop = ExtResource("2_jg2g0")
+unique_id = "wheat_seed"
+display_name = "Seed (Wheat)"
+item_sprite = ExtResource("1_e78rh")
+buy_price = 1
+player_animator_trigger_use = "Planting"
+use_sound = Array[AudioStream]([ExtResource("4_n6b3n")])

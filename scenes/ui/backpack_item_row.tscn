@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/enjin/ui/backpack_item_row.gd" id="1_row"]
+
+[node name="BackpackItemRow" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 72)
+script = ExtResource("1_row")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Icon" type="TextureRect" parent="HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(56, 56)
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Token"
+
+[node name="BalanceLabel" type="Label" parent="HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "x 0"
+
+[node name="AmountSpin" type="SpinBox" parent="HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 1.0
+value = 1.0
+
+[node name="MeltButton" type="Button" parent="HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Melt"
+
+[node name="TransferButton" type="Button" parent="HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Transfer"

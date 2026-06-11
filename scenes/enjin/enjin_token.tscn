@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/enjin/gameplay/enjin_token.gd" id="1_token"]
+
+[sub_resource type="CircleShape2D" id="shape_pickup"]
+radius = 26.0
+
+[node name="EnjinToken" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_token")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("shape_pickup")

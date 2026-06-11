@@ -1,0 +1,189 @@
+[
+ {
+  "name": "DayCycleHandler",
+  "prefab_guid": "ae2488684f645a54e8793357ece28d8f",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   -954.88,
+   -870.91
+  ]
+ },
+ {
+  "name": "piggy (1)",
+  "prefab_guid": "96e3d9dd1d3738946967b0ff98884679",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   -43.26,
+   73.66
+  ]
+ },
+ {
+  "name": "Light 2D_Warehouse",
+  "prefab_guid": "ca7a44a91a0e4904fbe3db41a629db88",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   -545.09,
+   -293.63
+  ]
+ },
+ {
+  "name": "_EnjinManager",
+  "prefab_guid": "4ee66353957dd7d4c922b739b527e1f2",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   0.0,
+   -0.0
+  ]
+ },
+ {
+  "name": "Prefab_Scarecow",
+  "prefab_guid": "e6ef5c008c2857b43b862e8b338b86de",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   309.76,
+   930.56
+  ]
+ },
+ {
+  "name": "Prefab_Chicken (1)",
+  "prefab_guid": "daa10e79c95261f49b6b3411494cbfaf",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   -931.2,
+   285.44
+  ]
+ },
+ {
+  "name": "Prefab_Market",
+  "prefab_guid": "e58da2862f8acc34e932faddd7da8f28",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   2064.57,
+   592.33
+  ]
+ },
+ {
+  "name": "Prefab_Scarecow2",
+  "prefab_guid": "e6ef5c008c2857b43b862e8b338b86de",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   2864.57,
+   445.77
+  ]
+ },
+ {
+  "name": "Light 2D_Warehouse",
+  "prefab_guid": "ca7a44a91a0e4904fbe3db41a629db88",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   640.0,
+   320.0
+  ]
+ },
+ {
+  "name": "VFX_Cliffs",
+  "prefab_guid": "bd0f22bfd906df541ac32752737f9570",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   3543.68,
+   1222.4
+  ]
+ },
+ {
+  "name": "Prefab_Chicken (2)",
+  "prefab_guid": "daa10e79c95261f49b6b3411494cbfaf",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   -782.72,
+   384.0
+  ]
+ },
+ {
+  "name": "SoundManager",
+  "prefab_guid": "a7d6799acefeff1448bb67520e687542",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   110.45,
+   162.2
+  ]
+ },
+ {
+  "name": "piggy",
+  "prefab_guid": "96e3d9dd1d3738946967b0ff98884679",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   -343.04,
+   -24.96
+  ]
+ },
+ {
+  "name": "Smoke",
+  "prefab_guid": "befd51526a6ad234aa90ff7ce18117be",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   805.76,
+   -352.64
+  ]
+ },
+ {
+  "name": "Prefab_Chicken",
+  "prefab_guid": "daa10e79c95261f49b6b3411494cbfaf",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   -1013.76,
+   398.72
+  ]
+ },
+ {
+  "name": "log_horizontal",
+  "prefab_guid": "0f387bbce2e73b241984a11df8b6a03a",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   -1402.05,
+   440.83
+  ]
+ },
+ {
+  "name": "log_vertical",
+  "prefab_guid": "0f387bbce2e73b241984a11df8b6a03a",
+  "prefab_name": "",
+  "animated": false,
+  "scripted": false,
+  "position": [
+   -1189.76,
+   236.16
+  ]
+ }
+]

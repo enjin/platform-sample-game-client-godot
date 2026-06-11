@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/weather_thunder.gd" id="1_thunder"]
+[ext_resource type="AudioStream" path="res://audio/ambience/thunder.wav" id="2_thunderwav"]
+
+[node name="WeatherThunder" type="Node2D"]
+script = ExtResource("1_thunder")
+weather_mask = 4
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_thunderwav")
+bus = &"Ambience"
+
+[node name="FlashLayer" type="CanvasLayer" parent="."]
+layer = 90
+
+[node name="Flash" type="ColorRect" parent="FlashLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(1, 1, 1, 1)
+modulate = Color(1, 1, 1, 0)
+mouse_filter = 2

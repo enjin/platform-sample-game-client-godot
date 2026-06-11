@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="GameServerSmokeConfig" format=3]
+
+[ext_resource type="Script" path="res://smoke/game_server/game_server_smoke_config.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+server_host = "http://localhost:3000"
+email = ""
+password = ""
+mint_token_id = "1"
+transfer_token_id = "1"
+mint_amount = 5
+melt_amount = 2
+transfer_amount = 1
+transfer_recipient = "cxNE5bEPcdpfbsMfdLka11Jj1QH7gihFcc9uKqXKtepcQhkPS"
+run_on_start = true
+pause_between_steps_seconds = 1.0

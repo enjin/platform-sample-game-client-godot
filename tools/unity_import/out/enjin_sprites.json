@@ -1,0 +1,32 @@
+{
+ "gem_green": {
+  "texture": "res://art/enjin/free_game_items/96dpi/gem_3.png",
+  "rect": [
+   0,
+   0,
+   105,
+   79
+  ],
+  "rarity": 0.9
+ },
+ "gold_coin": {
+  "texture": "res://art/enjin/gems_and_gold/coins/png_256/coins_2.png",
+  "rect": [
+   19,
+   21,
+   93,
+   92
+  ],
+  "rarity": 0.25
+ },
+ "gold_coin_blue": {
+  "texture": "res://art/enjin/gems_and_gold/coins/png_256/coins_2.png",
+  "rect": [
+   145,
+   20,
+   92,
+   93
+  ],
+  "rarity": 0.5
+ }
+}

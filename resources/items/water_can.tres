@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WaterCan" format=3]
+
+[ext_resource type="Texture2D" path="res://art/tools/watercan/sprites/sprite_watercan_icon.png" id="1_yjatc"]
+[ext_resource type="Script" path="res://scripts/game/items/water_can.gd" id="2_0ygjy"]
+[ext_resource type="AudioStream" path="res://audio/planting/watering_crop-001.wav" id="3_ehhfu"]
+[ext_resource type="AudioStream" path="res://audio/planting/watering_crop-002.wav" id="4_r11bn"]
+
+[resource]
+script = ExtResource("2_0ygjy")
+unique_id = "water_can"
+display_name = "Watering Can"
+item_sprite = ExtResource("1_yjatc")
+max_stack_size = 1
+consumable = false
+player_animator_trigger_use = "Watering"
+use_sound = Array[AudioStream]([ExtResource("3_ehhfu"), ExtResource("4_r11bn")])

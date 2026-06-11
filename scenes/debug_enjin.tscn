@@ -1,0 +1,104 @@
+[gd_scene load_steps=2 format=3 uid="uid://debugenjin01"]
+
+[ext_resource type="Script" path="res://scripts/enjin/ui/debug_enjin.gd" id="1"]
+
+[node name="DebugEnjin" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="Root" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+
+[node name="Title" type="Label" parent="Root"]
+text = "Enjin API Debug Harness"
+
+[node name="HostRow" type="HBoxContainer" parent="Root"]
+
+[node name="HostLabel" type="Label" parent="Root/HostRow"]
+text = "Host:"
+
+[node name="Host" type="LineEdit" parent="Root/HostRow"]
+custom_minimum_size = Vector2(420, 0)
+text = "http://localhost:3000"
+
+[node name="ApplyHost" type="Button" parent="Root/HostRow"]
+text = "Apply"
+
+[node name="Auth" type="HBoxContainer" parent="Root"]
+
+[node name="EmailLabel" type="Label" parent="Root/Auth"]
+text = "Email:"
+
+[node name="Email" type="LineEdit" parent="Root/Auth"]
+custom_minimum_size = Vector2(260, 0)
+placeholder_text = "player@example.com"
+
+[node name="PasswordLabel" type="Label" parent="Root/Auth"]
+text = "Password:"
+
+[node name="Password" type="LineEdit" parent="Root/Auth"]
+custom_minimum_size = Vector2(220, 0)
+secret = true
+
+[node name="TokenRow" type="HBoxContainer" parent="Root"]
+
+[node name="TokenIdLabel" type="Label" parent="Root/TokenRow"]
+text = "tokenId:"
+
+[node name="TokenId" type="LineEdit" parent="Root/TokenRow"]
+custom_minimum_size = Vector2(160, 0)
+text = "1"
+
+[node name="AmountLabel" type="Label" parent="Root/TokenRow"]
+text = "amount:"
+
+[node name="Amount" type="SpinBox" parent="Root/TokenRow"]
+min_value = 1.0
+max_value = 1000.0
+value = 1.0
+
+[node name="TransferRow" type="HBoxContainer" parent="Root"]
+
+[node name="RecipientLabel" type="Label" parent="Root/TransferRow"]
+text = "recipient:"
+
+[node name="Recipient" type="LineEdit" parent="Root/TransferRow"]
+custom_minimum_size = Vector2(540, 0)
+placeholder_text = "wallet address"
+
+[node name="ButtonGrid" type="GridContainer" parent="Root"]
+columns = 4
+
+[node name="HealthCheck" type="Button" parent="Root/ButtonGrid"]
+text = "Health Check"
+
+[node name="Login" type="Button" parent="Root/ButtonGrid"]
+text = "Register/Login"
+
+[node name="Logout" type="Button" parent="Root/ButtonGrid"]
+text = "Logout"
+
+[node name="Wallet" type="Button" parent="Root/ButtonGrid"]
+text = "Get Wallet"
+
+[node name="Mint" type="Button" parent="Root/ButtonGrid"]
+text = "Mint"
+
+[node name="Melt" type="Button" parent="Root/ButtonGrid"]
+text = "Melt"
+
+[node name="Transfer" type="Button" parent="Root/ButtonGrid"]
+text = "Transfer"
+
+[node name="LogLabel" type="Label" parent="Root"]
+text = "Log:"
+
+[node name="Log" type="TextEdit" parent="Root"]
+custom_minimum_size = Vector2(0, 360)
+editable = false

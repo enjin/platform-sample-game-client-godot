@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/player_controller.gd" id="1_player"]
+[ext_resource type="SpriteFrames" path="res://resources/player_frames.tres" id="2_frames"]
+[ext_resource type="Texture2D" path="res://art/ui/sprite_target.png" id="3_target"]
+[ext_resource type="Script" path="res://scripts/game/audio/step_sound_handler.gd" id="4_steps"]
+
+[sub_resource type="CapsuleShape2D" id="shape_feet"]
+radius = 14.0
+height = 30.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_player")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 0)
+offset = Vector2(0, -64)
+sprite_frames = ExtResource("2_frames")
+animation = &"idle_front"
+autoplay = "idle_front"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("shape_feet")
+
+[node name="ItemAttachBone" type="Node2D" parent="."]
+position = Vector2(0, -64)
+
+[node name="TargetMarker" type="Sprite2D" parent="."]
+top_level = true
+texture = ExtResource("3_target")
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="StepSounds" type="Node" parent="."]
+script = ExtResource("4_steps")

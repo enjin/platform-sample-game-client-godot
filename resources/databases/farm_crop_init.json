@@ -1,0 +1,706 @@
+[
+ {
+  "cell": [
+   0,
+   11
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   1,
+   11
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   2,
+   11
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   3,
+   11
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   0,
+   12
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   1,
+   12
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   2,
+   12
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   3,
+   12
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   7,
+   11
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   8,
+   11
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   9,
+   11
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   10,
+   11
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   7,
+   12
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   8,
+   12
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   9,
+   12
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   10,
+   12
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   7,
+   13
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   8,
+   13
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   9,
+   13
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   7,
+   16
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   8,
+   16
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   9,
+   16
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   10,
+   16
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   7,
+   17
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   8,
+   17
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   9,
+   17
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   10,
+   17
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   6,
+   15
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   7,
+   15
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   8,
+   15
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   9,
+   15
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   6,
+   16
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   5,
+   18
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   4,
+   18
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   3,
+   18
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   1,
+   17
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   2,
+   17
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   3,
+   17
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   4,
+   17
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   4,
+   16
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   3,
+   16
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   2,
+   16
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   1,
+   16
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   2,
+   18
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 3
+ },
+ {
+  "cell": [
+   -3,
+   -2
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 0
+ },
+ {
+  "cell": [
+   -2,
+   -2
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 0
+ },
+ {
+  "cell": [
+   -2,
+   -1
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 0
+ },
+ {
+  "cell": [
+   -7,
+   -1
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 0
+ },
+ {
+  "cell": [
+   -7,
+   0
+  ],
+  "crop_id": "carrot_crop",
+  "starting_stage": 0
+ },
+ {
+  "cell": [
+   39,
+   6
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   40,
+   6
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   41,
+   6
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   42,
+   6
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   39,
+   7
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   40,
+   7
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   41,
+   7
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   42,
+   7
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   40,
+   8
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   41,
+   8
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   42,
+   8
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   40,
+   9
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   41,
+   9
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   42,
+   9
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   40,
+   10
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   41,
+   10
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   42,
+   10
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   40,
+   11
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   41,
+   11
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   42,
+   11
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   43,
+   11
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   44,
+   11
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   41,
+   12
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   42,
+   12
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   43,
+   12
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   44,
+   12
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   41,
+   13
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   42,
+   13
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   43,
+   13
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   44,
+   13
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   45,
+   13
+  ],
+  "crop_id": "wheat_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   48,
+   10
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   49,
+   10
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   50,
+   10
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   50,
+   9
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   49,
+   9
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   48,
+   9
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   50,
+   8
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 2
+ },
+ {
+  "cell": [
+   49,
+   8
+  ],
+  "crop_id": "corn_crop",
+  "starting_stage": 2
+ }
+]

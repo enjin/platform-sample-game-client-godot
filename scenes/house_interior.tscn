@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/game_scene.gd" id="1_scene"]
+[ext_resource type="PackedScene" path="res://scenes/maps/house_interior_tilemaps.tscn" id="2_maps"]
+[ext_resource type="Script" path="res://scripts/game/spawn_point.gd" id="3_spawn"]
+[ext_resource type="Script" path="res://scripts/game/scene_transition_area.gd" id="4_trans"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="5_player"]
+[ext_resource type="PackedScene" path="res://ui/game_hud.tscn" id="6_hud"]
+[ext_resource type="Script" path="res://scripts/game/day_cycle_controller.gd" id="7_daycycle"]
+[ext_resource type="Gradient" path="res://resources/day_night/day_tint_gradient_interior.tres" id="8_gradient"]
+
+[sub_resource type="RectangleShape2D" id="shape_exit"]
+size = Vector2(96, 40)
+
+[node name="HouseInterior" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_scene")
+unique_scene_name = "House"
+camera_limits = Rect2i(-640, -448, 1280, 896)
+
+[node name="Maps" parent="." instance=ExtResource("2_maps")]
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="DefaultSpawn" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(31, -43)
+script = ExtResource("3_spawn")
+spawn_index = 0
+
+[node name="EntranceSpawn" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-3, 298)
+script = ExtResource("3_spawn")
+spawn_index = 1
+
+[node name="Transitions" type="Node2D" parent="."]
+
+[node name="ExitTrigger" type="Area2D" parent="Transitions"]
+position = Vector2(1, 351)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_trans")
+target_scene = "res://scenes/farm_outdoor.tscn"
+target_spawn = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Transitions/ExitTrigger"]
+shape = SubResource("shape_exit")
+
+[node name="Player" parent="." instance=ExtResource("5_player")]
+position = Vector2(31, -43)
+
+[node name="HUD" parent="." instance=ExtResource("6_hud")]
+
+[node name="DayNight" type="CanvasModulate" parent="."]
+script = ExtResource("7_daycycle")
+tint_gradient = ExtResource("8_gradient")

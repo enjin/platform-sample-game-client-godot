@@ -1,0 +1,946 @@
+[
+ {
+  "name": "rug_02 (2)",
+  "position": [
+   32.0,
+   -42.88
+  ],
+  "scale": [
+   1.5625,
+   1.5625
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Rugs/Rug02/Sprites/Sprite_Rug_02.png",
+  "rect": [
+   0,
+   0,
+   100,
+   102
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 4,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "rug_01",
+  "position": [
+   -485.12,
+   88.96
+  ],
+  "scale": [
+   1.0,
+   1.0
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Rugs/Rug01/Sprite_Rug_01.png",
+  "rect": [
+   0,
+   0,
+   90,
+   88
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 1,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "rug_02 (1)",
+  "position": [
+   443.08,
+   166.17
+  ],
+  "scale": [
+   1.5625,
+   1.5625
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Rugs/Rug02/Sprites/Sprite_Rug_02.png",
+  "rect": [
+   0,
+   0,
+   100,
+   102
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "rug_01",
+  "position": [
+   7.68,
+   191.36
+  ],
+  "scale": [
+   1.0,
+   1.0
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Rugs/Rug01/Sprite_Rug_01.png",
+  "rect": [
+   0,
+   0,
+   90,
+   88
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 1,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "curtain (2)",
+  "prefab_name": "Prefab_Curtain",
+  "scripted": false,
+  "position": [
+   -158.72,
+   -212.61
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Curtain/Sprites/Sprite_Curtain.png",
+  "rect": [
+   0,
+   0,
+   88,
+   229
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "pillowA (1)",
+  "prefab_name": "Prefab_pillowA",
+  "scripted": false,
+  "position": [
+   56.51,
+   21.82
+  ],
+  "scale": [
+   0.5,
+   0.5
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Pillows/Pillow_A/Sprites/Sprite_pillowA.png",
+  "rect": [
+   0,
+   0,
+   93,
+   126
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "curtain (3)",
+  "prefab_name": "Prefab_Curtain",
+  "scripted": false,
+  "position": [
+   428.54,
+   -212.61
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Curtain/Sprites/Sprite_Curtain.png",
+  "rect": [
+   0,
+   0,
+   88,
+   229
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "plant (1)",
+  "prefab_name": "Prefab_Plant",
+  "scripted": true,
+  "position": [
+   494.72,
+   120.32
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Plant/Sprites/Sprite_Plant.png",
+  "rect": [
+   0,
+   0,
+   257,
+   193
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "curtain (4)",
+  "prefab_name": "Prefab_Curtain",
+  "scripted": false,
+  "position": [
+   534.21,
+   -212.61
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Curtain/Sprites/Sprite_Curtain.png",
+  "rect": [
+   0,
+   0,
+   88,
+   229
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "barrel (3)",
+  "prefab_name": "Prefab_Barrel",
+  "scripted": true,
+  "position": [
+   520.96,
+   291.2
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Environment/Barrel/Sprites/Sprite_Barrel.png",
+  "rect": [
+   0,
+   0,
+   190,
+   244
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "barrel",
+  "prefab_name": "Prefab_Barrel",
+  "scripted": true,
+  "position": [
+   519.68,
+   220.8
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Environment/Barrel/Sprites/Sprite_Barrel.png",
+  "rect": [
+   0,
+   0,
+   190,
+   244
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "barrel (4)",
+  "prefab_name": "Prefab_Barrel",
+  "scripted": true,
+  "position": [
+   501.12,
+   327.68
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Environment/Barrel/Sprites/Sprite_Barrel.png",
+  "rect": [
+   0,
+   0,
+   190,
+   244
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "Character",
+  "prefab_name": "Character",
+  "scripted": true,
+  "position": [
+   28.03,
+   -18.38
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/UI/Sprite_Marker.png",
+  "rect": [
+   0,
+   0,
+   128,
+   128
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 50,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "Chair",
+  "prefab_name": "Prefab_Chair",
+  "scripted": true,
+  "position": [
+   158.08,
+   -56.96
+  ],
+  "scale": [
+   0.5,
+   0.5
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Chair/Sprites/Sprite_Chair.png",
+  "rect": [
+   0,
+   0,
+   176,
+   264
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "barrel (5)",
+  "prefab_name": "Prefab_Barrel",
+  "scripted": true,
+  "position": [
+   -350.08,
+   354.56
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Environment/Barrel/Sprites/Sprite_Barrel.png",
+  "rect": [
+   0,
+   0,
+   190,
+   244
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "barrel (1)",
+  "prefab_name": "Prefab_Barrel",
+  "scripted": true,
+  "position": [
+   -519.04,
+   -164.48
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Environment/Barrel/Sprites/Sprite_Barrel.png",
+  "rect": [
+   0,
+   0,
+   190,
+   244
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "Sofa",
+  "prefab_name": "Prefab_Sofa",
+  "scripted": true,
+  "position": [
+   -352.64,
+   -195.65
+  ],
+  "scale": [
+   0.5,
+   0.5
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Sofa/Sprites/Sprite_Sofa.png",
+  "rect": [
+   0,
+   0,
+   409,
+   261
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "Character",
+  "prefab_name": "Character",
+  "scripted": true,
+  "position": [
+   28.03,
+   -18.38
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/UI/Sprite_Marker.png",
+  "rect": [
+   0,
+   0,
+   128,
+   128
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 50,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "plant (2)",
+  "prefab_name": "Prefab_Plant",
+  "scripted": true,
+  "position": [
+   -159.23,
+   -168.06
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Plant/Sprites/Sprite_Plant.png",
+  "rect": [
+   0,
+   0,
+   257,
+   193
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "rug_02",
+  "prefab_name": "rug_02",
+  "scripted": false,
+  "position": [
+   32.68,
+   -42.68
+  ],
+  "scale": [
+   1.0,
+   1.0
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Rugs/Rug02/Sprites/Sprite_Rug_02.png",
+  "rect": [
+   0,
+   0,
+   100,
+   102
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 4,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "Chair",
+  "prefab_name": "Prefab_Chair",
+  "scripted": true,
+  "position": [
+   -95.36,
+   -56.96
+  ],
+  "scale": [
+   0.5,
+   0.5
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Chair/Sprites/Sprite_Chair.png",
+  "rect": [
+   0,
+   0,
+   176,
+   264
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "barrel (2)",
+  "prefab_name": "Prefab_Barrel",
+  "scripted": true,
+  "position": [
+   471.68,
+   245.12
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Environment/Barrel/Sprites/Sprite_Barrel.png",
+  "rect": [
+   0,
+   0,
+   190,
+   244
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "Sofa",
+  "prefab_name": "Prefab_Sofa",
+  "scripted": true,
+  "position": [
+   250.24,
+   -180.48
+  ],
+  "scale": [
+   0.5,
+   0.5
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Sofa/Sprites/Sprite_Sofa.png",
+  "rect": [
+   0,
+   0,
+   409,
+   261
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "VFX_Fire",
+  "prefab_name": "VFX_Fire",
+  "scripted": true,
+  "position": [
+   35.07,
+   -147.01
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Fireplace/Sprites/Logpile/Sprite_logpile.png",
+  "rect": [
+   0,
+   0,
+   100,
+   79
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 8,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "paintings_1",
+  "prefab_name": "Prefab_Painting_1",
+  "scripted": false,
+  "position": [
+   284.16,
+   -300.16
+  ],
+  "scale": [
+   0.5,
+   0.5
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Paintings/Sprites/Sprite_wall_paintings.png",
+  "rect": [
+   179,
+   159,
+   241,
+   130
+  ],
+  "pivot": [
+   0,
+   0
+  ],
+  "sorting_order": 2,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "Fireplace",
+  "prefab_name": "Prefab_Fireplace",
+  "scripted": false,
+  "position": [
+   35.84,
+   -190.72
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Fireplace/Sprites/Fireplace_inner/Sprite_Fireplace_inner.png",
+  "rect": [
+   0,
+   0,
+   190,
+   135
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 1,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "Fireplace",
+  "prefab_name": "Prefab_Fireplace",
+  "scripted": false,
+  "position": [
+   35.84,
+   -121.6
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Fireplace/Sprites/Fireplace_base/Sprite_Fireplace.png",
+  "rect": [
+   0,
+   0,
+   327,
+   404
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 5,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "rug_02",
+  "prefab_name": "rug_02",
+  "scripted": false,
+  "position": [
+   -337.28,
+   -82.56
+  ],
+  "scale": [
+   1.0,
+   1.0
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Rugs/Rug02/Sprites/Sprite_Rug_02.png",
+  "rect": [
+   0,
+   0,
+   100,
+   102
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 4,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "paintings_4",
+  "prefab_name": "Prefab_Painting_4",
+  "scripted": false,
+  "position": [
+   -318.72,
+   -315.52
+  ],
+  "scale": [
+   0.5,
+   0.5
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Paintings/Sprites/Sprite_wall_paintings.png",
+  "rect": [
+   179,
+   39,
+   93,
+   85
+  ],
+  "pivot": [
+   0,
+   0
+  ],
+  "sorting_order": 2,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "plant",
+  "prefab_name": "Prefab_Plant",
+  "scripted": true,
+  "position": [
+   -478.72,
+   279.68
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Plant/Sprites/Sprite_Plant.png",
+  "rect": [
+   0,
+   0,
+   257,
+   193
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "paintings_2",
+  "prefab_name": "Prefab_Painting_2",
+  "scripted": false,
+  "position": [
+   -386.56,
+   -307.84
+  ],
+  "scale": [
+   0.5,
+   0.5
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Paintings/Sprites/Sprite_wall_paintings.png",
+  "rect": [
+   278,
+   16,
+   141,
+   130
+  ],
+  "pivot": [
+   0,
+   0
+  ],
+  "sorting_order": 2,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "curtain",
+  "prefab_name": "Prefab_Curtain",
+  "scripted": false,
+  "position": [
+   -531.84,
+   -212.61
+  ],
+  "scale": [
+   0.64,
+   0.64
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Curtain/Sprites/Sprite_Curtain.png",
+  "rect": [
+   0,
+   0,
+   88,
+   229
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "paintings_3",
+  "prefab_name": "Prefab_Painting_3",
+  "scripted": false,
+  "position": [
+   -113.92,
+   -279.68
+  ],
+  "scale": [
+   0.5,
+   0.5
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Paintings/Sprites/Sprite_wall_paintings.png",
+  "rect": [
+   31,
+   82,
+   140,
+   205
+  ],
+  "pivot": [
+   0,
+   0
+  ],
+  "sorting_order": 2,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "Bed",
+  "prefab_name": "Prefab_Bed",
+  "scripted": true,
+  "position": [
+   458.62,
+   0.13
+  ],
+  "scale": [
+   0.5,
+   0.5
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Bed/Sprites/Sprite_Bed.png",
+  "rect": [
+   0,
+   0,
+   412,
+   531
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer_id": 0,
+  "flip_x": false,
+  "flip_y": false
+ }
+]

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnjinItem" format=3 uid="uid://4vnvub80hrlt"]
+
+[ext_resource type="Script" uid="uid://cd31vonq6hvuq" path="res://scripts/enjin/data/enjin_item.gd" id="1"]
+[ext_resource type="Texture2D" path="res://art/enjin/gems_and_gold/coins/png_256/coins_2.png" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/enjin/enjin_token.tscn" id="3"]
+
+[sub_resource type="AtlasTexture" id="atlas_gold"]
+atlas = ExtResource("2")
+region = Rect2(19, 21, 93, 92)
+
+[resource]
+script = ExtResource("1")
+unique_id = "gold_coin"
+display_name = "Gold Coin"
+item_sprite = SubResource("atlas_gold")
+visual_prefab = ExtResource("3")
+collection_id = "124570"
+token_id = "1"
+rarity = 0.25

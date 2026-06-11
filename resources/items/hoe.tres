@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Hoe" format=3]
+
+[ext_resource type="Texture2D" path="res://art/tools/hoe/sprites/hoe_icon.png" id="1_s3dr7"]
+[ext_resource type="Script" path="res://scripts/game/items/hoe.gd" id="2_i6ust"]
+[ext_resource type="AudioStream" path="res://audio/planting/digging_using_a_shovel-001.wav" id="3_86we6"]
+[ext_resource type="AudioStream" path="res://audio/planting/digging_using_a_shovel-002.wav" id="4_0wf84"]
+[ext_resource type="AudioStream" path="res://audio/planting/digging_using_a_shovel-003.wav" id="5_ivyin"]
+
+[resource]
+script = ExtResource("2_i6ust")
+unique_id = "hoe"
+display_name = "Hoe"
+item_sprite = ExtResource("1_s3dr7")
+max_stack_size = 1
+consumable = false
+player_animator_trigger_use = "ToolSwing"
+use_sound = Array[AudioStream]([ExtResource("3_86we6"), ExtResource("4_0wf84"), ExtResource("5_ivyin")])

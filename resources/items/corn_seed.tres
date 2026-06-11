@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SeedBag" format=3]
+
+[ext_resource type="Texture2D" path="res://art/crops/corn/sprites/sprite_corn_seedbag.png" id="1_fm8hd"]
+[ext_resource type="Resource" path="res://resources/crops/corn_crop.tres" id="2_k28a3"]
+[ext_resource type="Script" path="res://scripts/game/items/seed_bag.gd" id="3_okjh4"]
+[ext_resource type="AudioStream" path="res://audio/planting/planting_crop.wav" id="4_hnf8b"]
+
+[resource]
+script = ExtResource("3_okjh4")
+planted_crop = ExtResource("2_k28a3")
+unique_id = "corn_seed"
+display_name = "Seed (Corn)"
+item_sprite = ExtResource("1_fm8hd")
+buy_price = 15
+player_animator_trigger_use = "Planting"
+use_sound = Array[AudioStream]([ExtResource("4_hnf8b")])

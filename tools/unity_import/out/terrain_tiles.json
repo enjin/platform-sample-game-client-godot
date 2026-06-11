@@ -1,0 +1,32 @@
+{
+ "tillable": {
+  "texture": "res://art/tiles/dirt/sprites/sprite_tiles_dirt.png",
+  "unity_rel": "Assets/HappyHarvest/Art/Tiles/Dirt/Sprites/Sprite_Tiles_Dirt.png",
+  "rect": [
+   64,
+   64,
+   64,
+   64
+  ]
+ },
+ "tilled": {
+  "texture": "res://art/tiles/soil/sprites/sprite_tiles_soil.png",
+  "unity_rel": "Assets/HappyHarvest/Art/Tiles/Soil/Sprites/Sprite_Tiles_Soil.png",
+  "rect": [
+   192,
+   192,
+   64,
+   64
+  ]
+ },
+ "watered": {
+  "texture": "res://art/tiles/soilwatered/sprite/sprite_tiles_soil_watered.png",
+  "unity_rel": "Assets/HappyHarvest/Art/Tiles/SoilWatered/Sprite/Sprite_Tiles_Soil_Watered.png",
+  "rect": [
+   192,
+   192,
+   64,
+   64
+  ]
+ }
+}

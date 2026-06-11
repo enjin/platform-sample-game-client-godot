@@ -1,0 +1,1018 @@
+[
+ {
+  "cell": [
+   4,
+   20
+  ],
+  "prefab_guid": "0989bacfeb59aaa47827aa442e56aed9",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   5,
+   20
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   6,
+   20
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   7,
+   20
+  ],
+  "prefab_guid": "2a084f5b5f4be744ab5320c261790b1b",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -1,
+   19
+  ],
+  "prefab_guid": "653e262a87c76484cb04848bc8fdb7a3",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   11,
+   19
+  ],
+  "prefab_guid": "0989bacfeb59aaa47827aa442e56aed9",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   12,
+   19
+  ],
+  "prefab_guid": "c0efc4bace3b94647a67f147b1b5efdb",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -1,
+   18
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   12,
+   18
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -1,
+   17
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   12,
+   17
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -1,
+   16
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   12,
+   16
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -2,
+   15
+  ],
+  "prefab_guid": "e737a79774b74d7488d26f9370111371",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -1,
+   15
+  ],
+  "prefab_guid": "b090281caceac884e9216af27dcfe2e2",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   12,
+   15
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   39,
+   15
+  ],
+  "prefab_guid": "e737a79774b74d7488d26f9370111371",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   40,
+   15
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   41,
+   15
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   42,
+   15
+  ],
+  "prefab_guid": "2a084f5b5f4be744ab5320c261790b1b",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   44,
+   15
+  ],
+  "prefab_guid": "0989bacfeb59aaa47827aa442e56aed9",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   45,
+   15
+  ],
+  "prefab_guid": "2a084f5b5f4be744ab5320c261790b1b",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   47,
+   15
+  ],
+  "prefab_guid": "653e262a87c76484cb04848bc8fdb7a3",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -2,
+   14
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   12,
+   14
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   39,
+   14
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   47,
+   14
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -2,
+   13
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   12,
+   13
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   38,
+   13
+  ],
+  "prefab_guid": "e737a79774b74d7488d26f9370111371",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   39,
+   13
+  ],
+  "prefab_guid": "b090281caceac884e9216af27dcfe2e2",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   47,
+   13
+  ],
+  "prefab_guid": "be8bc087b5d02e842ab5c8d60df0c880",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   48,
+   13
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   49,
+   13
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   50,
+   13
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   51,
+   13
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   52,
+   13
+  ],
+  "prefab_guid": "2a084f5b5f4be744ab5320c261790b1b",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -2,
+   12
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   12,
+   12
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   38,
+   12
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -2,
+   11
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   12,
+   11
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   37,
+   11
+  ],
+  "prefab_guid": "e737a79774b74d7488d26f9370111371",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   38,
+   11
+  ],
+  "prefab_guid": "b090281caceac884e9216af27dcfe2e2",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -2,
+   10
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   12,
+   10
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   37,
+   10
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -2,
+   9
+  ],
+  "prefab_guid": "be8bc087b5d02e842ab5c8d60df0c880",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -1,
+   9
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   0,
+   9
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   1,
+   9
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   2,
+   9
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   3,
+   9
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   4,
+   9
+  ],
+  "prefab_guid": "2a084f5b5f4be744ab5320c261790b1b",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   6,
+   9
+  ],
+  "prefab_guid": "0989bacfeb59aaa47827aa442e56aed9",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   7,
+   9
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   8,
+   9
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   9,
+   9
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   10,
+   9
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   11,
+   9
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   12,
+   9
+  ],
+  "prefab_guid": "b090281caceac884e9216af27dcfe2e2",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   37,
+   9
+  ],
+  "prefab_guid": "200f399b5902aa8418efe43a3f8796de",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -18,
+   7
+  ],
+  "prefab_guid": "e737a79774b74d7488d26f9370111371",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -17,
+   7
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -16,
+   7
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -15,
+   7
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -14,
+   7
+  ],
+  "prefab_guid": "2a084f5b5f4be744ab5320c261790b1b",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -18,
+   6
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   37,
+   6
+  ],
+  "prefab_guid": "653e262a87c76484cb04848bc8fdb7a3",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -18,
+   5
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   37,
+   5
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -18,
+   4
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -11,
+   4
+  ],
+  "prefab_guid": "653e262a87c76484cb04848bc8fdb7a3",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -6,
+   4
+  ],
+  "prefab_guid": "653e262a87c76484cb04848bc8fdb7a3",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -3,
+   4
+  ],
+  "prefab_guid": "653e262a87c76484cb04848bc8fdb7a3",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   37,
+   4
+  ],
+  "prefab_guid": "200f399b5902aa8418efe43a3f8796de",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -18,
+   3
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -12,
+   3
+  ],
+  "prefab_guid": "e737a79774b74d7488d26f9370111371",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -11,
+   3
+  ],
+  "prefab_guid": "b090281caceac884e9216af27dcfe2e2",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -6,
+   3
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -3,
+   3
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -18,
+   2
+  ],
+  "prefab_guid": "be8bc087b5d02e842ab5c8d60df0c880",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -17,
+   2
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -16,
+   2
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -15,
+   2
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -14,
+   2
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -13,
+   2
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -12,
+   2
+  ],
+  "prefab_guid": "b090281caceac884e9216af27dcfe2e2",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -8,
+   2
+  ],
+  "prefab_guid": "e737a79774b74d7488d26f9370111371",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -7,
+   2
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -6,
+   2
+  ],
+  "prefab_guid": "b090281caceac884e9216af27dcfe2e2",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -3,
+   2
+  ],
+  "prefab_guid": "be8bc087b5d02e842ab5c8d60df0c880",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -2,
+   2
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -1,
+   2
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   0,
+   2
+  ],
+  "prefab_guid": "c0efc4bace3b94647a67f147b1b5efdb",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -8,
+   1
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   0,
+   1
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   20,
+   1
+  ],
+  "prefab_guid": "653e262a87c76484cb04848bc8fdb7a3",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -8,
+   0
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   0,
+   0
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   20,
+   0
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -8,
+   -1
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   0,
+   -1
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   20,
+   -1
+  ],
+  "prefab_guid": "2c7a5a2155d465f4483cf7cccb3f03f6",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -8,
+   -2
+  ],
+  "prefab_guid": "be8bc087b5d02e842ab5c8d60df0c880",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -7,
+   -2
+  ],
+  "prefab_guid": "c0efc4bace3b94647a67f147b1b5efdb",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -1,
+   -2
+  ],
+  "prefab_guid": "e737a79774b74d7488d26f9370111371",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   0,
+   -2
+  ],
+  "prefab_guid": "b090281caceac884e9216af27dcfe2e2",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   19,
+   -2
+  ],
+  "prefab_guid": "e737a79774b74d7488d26f9370111371",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   20,
+   -2
+  ],
+  "prefab_guid": "b090281caceac884e9216af27dcfe2e2",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -7,
+   -3
+  ],
+  "prefab_guid": "be8bc087b5d02e842ab5c8d60df0c880",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -6,
+   -3
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -5,
+   -3
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -4,
+   -3
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -3,
+   -3
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -2,
+   -3
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   -1,
+   -3
+  ],
+  "prefab_guid": "b090281caceac884e9216af27dcfe2e2",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   18,
+   -3
+  ],
+  "prefab_guid": "e737a79774b74d7488d26f9370111371",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   19,
+   -3
+  ],
+  "prefab_guid": "b090281caceac884e9216af27dcfe2e2",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   1,
+   -4
+  ],
+  "prefab_guid": "0989bacfeb59aaa47827aa442e56aed9",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   2,
+   -4
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   3,
+   -4
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   4,
+   -4
+  ],
+  "prefab_guid": "2a084f5b5f4be744ab5320c261790b1b",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   15,
+   -4
+  ],
+  "prefab_guid": "0989bacfeb59aaa47827aa442e56aed9",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   16,
+   -4
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   17,
+   -4
+  ],
+  "prefab_guid": "69dd790ea4c6d934e8e54714713a45fa",
+  "layer_name": "ObjectsInTiles"
+ },
+ {
+  "cell": [
+   18,
+   -4
+  ],
+  "prefab_guid": "b090281caceac884e9216af27dcfe2e2",
+  "layer_name": "ObjectsInTiles"
+ }
+]

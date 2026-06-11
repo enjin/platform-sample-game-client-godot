@@ -1,0 +1,392 @@
+[
+ {
+  "class": "Crop",
+  "name": "CarrotCrop",
+  "unique_id": "carrot_crop",
+  "growth_stages": [
+   {
+    "texture": "res://art/crops/carrot/sprites/sprite_carrot_00.png",
+    "rect": [
+     0,
+     0,
+     72,
+     81
+    ]
+   },
+   {
+    "texture": "res://art/crops/carrot/sprites/sprite_carrot_01.png",
+    "rect": [
+     0,
+     0,
+     72,
+     81
+    ]
+   },
+   {
+    "texture": "res://art/crops/carrot/sprites/sprite_carrot_02.png",
+    "rect": [
+     0,
+     0,
+     72,
+     81
+    ]
+   },
+   {
+    "texture": "res://art/crops/carrot/sprites/sprite_carrot_03.png",
+    "rect": [
+     0,
+     0,
+     72,
+     81
+    ]
+   }
+  ],
+  "produce_id": "",
+  "produce_guid": "7dd4bfa02c1367b44a3501547025f6b0",
+  "growth_time": 15,
+  "number_of_harvest": 1,
+  "stage_after_harvest": 1,
+  "product_per_harvest": 1,
+  "dry_death_timer": 3000,
+  "guid": "dc17a381c852afb4b9b3bb78384a45c1"
+ },
+ {
+  "class": "Crop",
+  "name": "CornCrop",
+  "unique_id": "corn_crop",
+  "growth_stages": [
+   {
+    "texture": "res://art/crops/corn/sprites/sprite_corn_01.png",
+    "rect": [
+     0,
+     0,
+     192,
+     144
+    ]
+   },
+   {
+    "texture": "res://art/crops/corn/sprites/sprite_corn_02.png",
+    "rect": [
+     0,
+     0,
+     192,
+     144
+    ]
+   },
+   {
+    "texture": "res://art/crops/corn/sprites/sprite_corn_03.png",
+    "rect": [
+     0,
+     0,
+     192,
+     144
+    ]
+   },
+   {
+    "texture": "res://art/crops/corn/sprites/sprite_corn_04.png",
+    "rect": [
+     0,
+     0,
+     192,
+     144
+    ]
+   },
+   {
+    "texture": "res://art/crops/corn/sprites/sprite_corn_05.png",
+    "rect": [
+     0,
+     0,
+     192,
+     144
+    ]
+   }
+  ],
+  "produce_id": "",
+  "produce_guid": "8d7031074574f12499ac3cb4f19de9d3",
+  "growth_time": 15,
+  "number_of_harvest": 2,
+  "stage_after_harvest": 3,
+  "product_per_harvest": 2,
+  "dry_death_timer": 3000,
+  "guid": "4e5ed7b98bc2b9744ac19020ffaa9cc7"
+ },
+ {
+  "class": "Crop",
+  "name": "WheatCrop",
+  "unique_id": "wheat_crop",
+  "growth_stages": [
+   {
+    "texture": "res://art/crops/wheat/sprites/sprite_wheat_01.png",
+    "rect": [
+     0,
+     0,
+     168,
+     121
+    ]
+   },
+   {
+    "texture": "res://art/crops/wheat/sprites/sprite_wheat_02.png",
+    "rect": [
+     0,
+     0,
+     168,
+     121
+    ]
+   },
+   {
+    "texture": "res://art/crops/wheat/sprites/sprite_wheat_03.png",
+    "rect": [
+     0,
+     0,
+     168,
+     121
+    ]
+   },
+   {
+    "texture": "res://art/crops/wheat/sprites/sprite_wheat_04.png",
+    "rect": [
+     0,
+     0,
+     168,
+     121
+    ]
+   },
+   {
+    "texture": "res://art/crops/wheat/sprites/sprite_wheat_05.png",
+    "rect": [
+     0,
+     0,
+     168,
+     121
+    ]
+   }
+  ],
+  "produce_id": "",
+  "produce_guid": "9e9f866ca785dac48a735a2cc4daf87a",
+  "growth_time": 15,
+  "number_of_harvest": 1,
+  "stage_after_harvest": 1,
+  "product_per_harvest": 1,
+  "dry_death_timer": 3000,
+  "guid": "2167d22e2cf07b641bc6d684bef5125c"
+ },
+ {
+  "class": "Basket",
+  "name": "Basket",
+  "unique_id": "basket",
+  "display_name": "Harvest Basket",
+  "item_sprite": {
+   "texture": "res://art/tools/basket/prefabs/sprite_basket.png",
+   "rect": [
+    0,
+    0,
+    256,
+    256
+   ]
+  },
+  "max_stack_size": 1,
+  "consumable": false,
+  "buy_price": -1,
+  "animator_trigger": "Picking",
+  "use_sounds": [
+   "res://audio/planting/picking_up_crop.wav"
+  ],
+  "guid": "56e65a5b3c0576a4a9dda85af469bce9"
+ },
+ {
+  "class": "SeedBag",
+  "name": "CarrotSeedBag",
+  "unique_id": "carrot_seed",
+  "display_name": "Seed (Carrot)",
+  "item_sprite": {
+   "texture": "res://art/crops/carrot/sprites/sprite_carrot_seedbag.png",
+   "rect": [
+    0,
+    0,
+    256,
+    256
+   ]
+  },
+  "max_stack_size": 10,
+  "consumable": true,
+  "buy_price": 10,
+  "animator_trigger": "Planting",
+  "use_sounds": [
+   "res://audio/planting/planting_crop.wav"
+  ],
+  "planted_crop_guid": "dc17a381c852afb4b9b3bb78384a45c1",
+  "guid": "72f289a3f969ccc419c7805ac712fd29"
+ },
+ {
+  "class": "SeedBag",
+  "name": "CornSeedBag",
+  "unique_id": "corn_seed",
+  "display_name": "Seed (Corn)",
+  "item_sprite": {
+   "texture": "res://art/crops/corn/sprites/sprite_corn_seedbag.png",
+   "rect": [
+    0,
+    0,
+    256,
+    256
+   ]
+  },
+  "max_stack_size": 10,
+  "consumable": true,
+  "buy_price": 15,
+  "animator_trigger": "Planting",
+  "use_sounds": [
+   "res://audio/planting/planting_crop.wav"
+  ],
+  "planted_crop_guid": "4e5ed7b98bc2b9744ac19020ffaa9cc7",
+  "guid": "7f6b8f8fade48f64492add0e59a790df"
+ },
+ {
+  "class": "Hoe",
+  "name": "Hoe",
+  "unique_id": "hoe",
+  "display_name": "Hoe",
+  "item_sprite": {
+   "texture": "res://art/tools/hoe/sprites/hoe_icon.png",
+   "rect": [
+    0,
+    0,
+    256,
+    256
+   ]
+  },
+  "max_stack_size": 1,
+  "consumable": false,
+  "buy_price": -1,
+  "animator_trigger": "ToolSwing",
+  "use_sounds": [
+   "res://audio/planting/digging_using_a_shovel-001.wav",
+   "res://audio/planting/digging_using_a_shovel-002.wav",
+   "res://audio/planting/digging_using_a_shovel-003.wav"
+  ],
+  "guid": "ea72e0a3a88d7e640bfa3aab3cc8699c"
+ },
+ {
+  "class": "WaterCan",
+  "name": "WaterCan",
+  "unique_id": "water_can",
+  "display_name": "Watering Can",
+  "item_sprite": {
+   "texture": "res://art/tools/watercan/sprites/sprite_watercan_icon.png",
+   "rect": [
+    0,
+    0,
+    256,
+    256
+   ]
+  },
+  "max_stack_size": 1,
+  "consumable": false,
+  "buy_price": -1,
+  "animator_trigger": "Watering",
+  "use_sounds": [
+   "res://audio/planting/watering_crop-001.wav",
+   "res://audio/planting/watering_crop-002.wav"
+  ],
+  "guid": "5922ff6f3915ddd4a967ab68ccbda8b4"
+ },
+ {
+  "class": "SeedBag",
+  "name": "WheatSeedBag",
+  "unique_id": "wheat_seed",
+  "display_name": "Seed (Wheat)",
+  "item_sprite": {
+   "texture": "res://art/crops/wheat/sprites/sprite_wheat_seedbag.png",
+   "rect": [
+    0,
+    0,
+    256,
+    256
+   ]
+  },
+  "max_stack_size": 10,
+  "consumable": true,
+  "buy_price": 1,
+  "animator_trigger": "Planting",
+  "use_sounds": [
+   "res://audio/planting/planting_crop.wav"
+  ],
+  "planted_crop_guid": "2167d22e2cf07b641bc6d684bef5125c",
+  "guid": "049df2fdc39a1ab4f80a2de6d2d7d8a2"
+ },
+ {
+  "class": "Product",
+  "name": "Carrot",
+  "unique_id": "carrot",
+  "display_name": "Carrot",
+  "item_sprite": {
+   "texture": "res://art/crops/carrot/sprites/sprite_carrot_icon.png",
+   "rect": [
+    0,
+    0,
+    256,
+    256
+   ]
+  },
+  "max_stack_size": 10,
+  "consumable": true,
+  "buy_price": -1,
+  "animator_trigger": "Eating",
+  "use_sounds": [
+   "res://audio/character/chewing_an_apple-001.wav",
+   "res://audio/character/chewing_an_apple-002.wav"
+  ],
+  "sell_price": 10,
+  "guid": "7dd4bfa02c1367b44a3501547025f6b0"
+ },
+ {
+  "class": "Product",
+  "name": "Corn",
+  "unique_id": "corn_cob",
+  "display_name": "Corn Cob",
+  "item_sprite": {
+   "texture": "res://art/crops/corn/sprites/sprite_corn_icon.png",
+   "rect": [
+    0,
+    0,
+    256,
+    256
+   ]
+  },
+  "max_stack_size": 10,
+  "consumable": true,
+  "buy_price": -1,
+  "animator_trigger": "Eating",
+  "use_sounds": [
+   "res://audio/character/chewing_an_apple-001.wav",
+   "res://audio/character/chewing_an_apple-002.wav"
+  ],
+  "sell_price": 10,
+  "guid": "8d7031074574f12499ac3cb4f19de9d3"
+ },
+ {
+  "class": "Product",
+  "name": "Wheat",
+  "unique_id": "wheat_grain",
+  "display_name": "Wheat Grain",
+  "item_sprite": {
+   "texture": "res://art/crops/wheat/sprites/sprite_wheat_icon.png",
+   "rect": [
+    0,
+    0,
+    129,
+    129
+   ]
+  },
+  "max_stack_size": 10,
+  "consumable": true,
+  "buy_price": -1,
+  "animator_trigger": "Eating",
+  "use_sounds": [
+   "res://audio/character/chewing_an_apple-001.wav",
+   "res://audio/character/chewing_an_apple-002.wav"
+  ],
+  "sell_price": 2,
+  "guid": "9e9f866ca785dac48a735a2cc4daf87a"
+ }
+]
