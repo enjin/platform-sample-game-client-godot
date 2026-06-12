@@ -148,6 +148,7 @@ func harvest_at(target: Vector2i) -> Crop:
 	if data.harvest_done:
 		_crop_data.erase(target)
 	_update_crop_visual(target)
+	_spawn_harvest_burst(ground_layer.to_global(ground_layer.map_to_local(target)))
 	return produce
 
 
@@ -219,8 +220,31 @@ func _update_crop_visual(target: Vector2i) -> void:
 	var tex: Texture2D = data.growing_crop.growth_stage_textures[
 		mini(data.current_growth_stage, data.growing_crop.growth_stage_textures.size() - 1)]
 	spr.texture = tex
+	var s: float = data.growing_crop.stage_texture_scale
+	spr.scale = Vector2(s, s)
 	# anchor the sprite's bottom to the cell bottom so tall stages grow upward
-	spr.offset = Vector2(0, -tex.get_height() / 2.0 - 8)
+	# (offset is pre-scale local space)
+	spr.offset = Vector2(0, -tex.get_height() / 2.0 - 8.0 / s)
+
+
+# Leaf-bit burst on harvest (approximation of Crop.HarvestEffect VFX).
+func _spawn_harvest_burst(world_pos: Vector2) -> void:
+	var burst := CPUParticles2D.new()
+	burst.position = to_local(world_pos) + Vector2(0, -16)
+	burst.one_shot = true
+	burst.emitting = true
+	burst.amount = 16
+	burst.lifetime = 0.6
+	burst.spread = 180.0
+	burst.direction = Vector2(0, -1)
+	burst.initial_velocity_min = 60.0
+	burst.initial_velocity_max = 140.0
+	burst.gravity = Vector2(0, 320)
+	burst.scale_amount_min = 2.0
+	burst.scale_amount_max = 4.0
+	burst.color = Color(0.45, 0.72, 0.3)
+	add_child(burst)
+	get_tree().create_timer(1.0).timeout.connect(burst.queue_free)
 
 
 func _spawn_till_puff(world_pos: Vector2) -> void:

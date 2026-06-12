@@ -21,7 +21,7 @@
    0.5
   ],
   "sorting_order": 4,
-  "sorting_layer_id": 0,
+  "sorting_layer": 0,
   "flip_x": false,
   "flip_y": false
  },
@@ -47,7 +47,7 @@
    0.5
   ],
   "sorting_order": 1,
-  "sorting_layer_id": 0,
+  "sorting_layer": 0,
   "flip_x": false,
   "flip_y": false
  },
@@ -73,7 +73,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 0,
   "flip_x": false,
   "flip_y": false
  },
@@ -99,7 +99,7 @@
    0.5
   ],
   "sorting_order": 1,
-  "sorting_layer_id": 0,
+  "sorting_layer": 0,
   "flip_x": false,
   "flip_y": false
  },
@@ -107,6 +107,12 @@
   "name": "curtain (2)",
   "prefab_name": "Prefab_Curtain",
   "scripted": false,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    -158.72,
    -212.61
@@ -127,7 +133,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -135,6 +141,12 @@
   "name": "pillowA (1)",
   "prefab_name": "Prefab_pillowA",
   "scripted": false,
+  "color": [
+   0.2866,
+   0.5353,
+   0.6509,
+   1
+  ],
   "position": [
    56.51,
    21.82
@@ -155,7 +167,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -163,6 +175,12 @@
   "name": "curtain (3)",
   "prefab_name": "Prefab_Curtain",
   "scripted": false,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    428.54,
    -212.61
@@ -183,7 +201,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -191,6 +209,12 @@
   "name": "plant (1)",
   "prefab_name": "Prefab_Plant",
   "scripted": true,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    494.72,
    120.32
@@ -211,7 +235,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -219,6 +243,12 @@
   "name": "curtain (4)",
   "prefab_name": "Prefab_Curtain",
   "scripted": false,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    534.21,
    -212.61
@@ -239,7 +269,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -247,6 +277,12 @@
   "name": "barrel (3)",
   "prefab_name": "Prefab_Barrel",
   "scripted": true,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    520.96,
    291.2
@@ -267,7 +303,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -275,6 +311,12 @@
   "name": "barrel",
   "prefab_name": "Prefab_Barrel",
   "scripted": true,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    519.68,
    220.8
@@ -295,7 +337,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -303,6 +345,12 @@
   "name": "barrel (4)",
   "prefab_name": "Prefab_Barrel",
   "scripted": true,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    501.12,
    327.68
@@ -323,7 +371,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -331,6 +379,12 @@
   "name": "Character",
   "prefab_name": "Character",
   "scripted": true,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    28.03,
    -18.38
@@ -351,7 +405,7 @@
    0.5
   ],
   "sorting_order": 50,
-  "sorting_layer_id": 0,
+  "sorting_layer": 3,
   "flip_x": false,
   "flip_y": false
  },
@@ -359,6 +413,12 @@
   "name": "Chair",
   "prefab_name": "Prefab_Chair",
   "scripted": true,
+  "color": [
+   0.8019,
+   0.5208,
+   0.4211,
+   1
+  ],
   "position": [
    158.08,
    -56.96
@@ -379,7 +439,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -387,6 +447,12 @@
   "name": "barrel (5)",
   "prefab_name": "Prefab_Barrel",
   "scripted": true,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    -350.08,
    354.56
@@ -407,7 +473,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -415,6 +481,12 @@
   "name": "barrel (1)",
   "prefab_name": "Prefab_Barrel",
   "scripted": true,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    -519.04,
    -164.48
@@ -435,7 +507,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -443,6 +515,12 @@
   "name": "Sofa",
   "prefab_name": "Prefab_Sofa",
   "scripted": true,
+  "color": [
+   0.3459,
+   0.5413,
+   1,
+   1
+  ],
   "position": [
    -352.64,
    -195.65
@@ -463,7 +541,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -471,6 +549,12 @@
   "name": "Character",
   "prefab_name": "Character",
   "scripted": true,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    28.03,
    -18.38
@@ -491,7 +575,7 @@
    0.5
   ],
   "sorting_order": 50,
-  "sorting_layer_id": 0,
+  "sorting_layer": 3,
   "flip_x": false,
   "flip_y": false
  },
@@ -499,6 +583,12 @@
   "name": "plant (2)",
   "prefab_name": "Prefab_Plant",
   "scripted": true,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    -159.23,
    -168.06
@@ -519,7 +609,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -527,6 +617,12 @@
   "name": "rug_02",
   "prefab_name": "rug_02",
   "scripted": false,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    32.68,
    -42.68
@@ -547,7 +643,7 @@
    0.5
   ],
   "sorting_order": 4,
-  "sorting_layer_id": 0,
+  "sorting_layer": 0,
   "flip_x": false,
   "flip_y": false
  },
@@ -555,6 +651,12 @@
   "name": "Chair",
   "prefab_name": "Prefab_Chair",
   "scripted": true,
+  "color": [
+   0.8019,
+   0.5208,
+   0.4211,
+   1
+  ],
   "position": [
    -95.36,
    -56.96
@@ -575,7 +677,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -583,6 +685,12 @@
   "name": "barrel (2)",
   "prefab_name": "Prefab_Barrel",
   "scripted": true,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    471.68,
    245.12
@@ -603,7 +711,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -611,6 +719,12 @@
   "name": "Sofa",
   "prefab_name": "Prefab_Sofa",
   "scripted": true,
+  "color": [
+   0.374,
+   0.6226,
+   0.5786,
+   1
+  ],
   "position": [
    250.24,
    -180.48
@@ -631,7 +745,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -639,6 +753,12 @@
   "name": "VFX_Fire",
   "prefab_name": "VFX_Fire",
   "scripted": true,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    35.07,
    -147.01
@@ -659,7 +779,7 @@
    0.5
   ],
   "sorting_order": 8,
-  "sorting_layer_id": 0,
+  "sorting_layer": 0,
   "flip_x": false,
   "flip_y": false
  },
@@ -667,6 +787,12 @@
   "name": "paintings_1",
   "prefab_name": "Prefab_Painting_1",
   "scripted": false,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    284.16,
    -300.16
@@ -687,7 +813,7 @@
    0
   ],
   "sorting_order": 2,
-  "sorting_layer_id": 0,
+  "sorting_layer": 0,
   "flip_x": false,
   "flip_y": false
  },
@@ -695,6 +821,12 @@
   "name": "Fireplace",
   "prefab_name": "Prefab_Fireplace",
   "scripted": false,
+  "color": [
+   0.8585,
+   0.8585,
+   0.8585,
+   1
+  ],
   "position": [
    35.84,
    -190.72
@@ -715,7 +847,7 @@
    0.5
   ],
   "sorting_order": 1,
-  "sorting_layer_id": 0,
+  "sorting_layer": 0,
   "flip_x": false,
   "flip_y": false
  },
@@ -723,6 +855,12 @@
   "name": "Fireplace",
   "prefab_name": "Prefab_Fireplace",
   "scripted": false,
+  "color": [
+   0.8585,
+   0.8585,
+   0.8585,
+   1
+  ],
   "position": [
    35.84,
    -121.6
@@ -743,7 +881,7 @@
    0.5
   ],
   "sorting_order": 5,
-  "sorting_layer_id": 0,
+  "sorting_layer": 0,
   "flip_x": false,
   "flip_y": false
  },
@@ -751,6 +889,12 @@
   "name": "rug_02",
   "prefab_name": "rug_02",
   "scripted": false,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    -337.28,
    -82.56
@@ -771,7 +915,7 @@
    0.5
   ],
   "sorting_order": 4,
-  "sorting_layer_id": 0,
+  "sorting_layer": 0,
   "flip_x": false,
   "flip_y": false
  },
@@ -779,6 +923,12 @@
   "name": "paintings_4",
   "prefab_name": "Prefab_Painting_4",
   "scripted": false,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    -318.72,
    -315.52
@@ -799,7 +949,7 @@
    0
   ],
   "sorting_order": 2,
-  "sorting_layer_id": 0,
+  "sorting_layer": 0,
   "flip_x": false,
   "flip_y": false
  },
@@ -807,6 +957,12 @@
   "name": "plant",
   "prefab_name": "Prefab_Plant",
   "scripted": true,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    -478.72,
    279.68
@@ -827,7 +983,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -835,6 +991,12 @@
   "name": "paintings_2",
   "prefab_name": "Prefab_Painting_2",
   "scripted": false,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    -386.56,
    -307.84
@@ -855,7 +1017,7 @@
    0
   ],
   "sorting_order": 2,
-  "sorting_layer_id": 0,
+  "sorting_layer": 0,
   "flip_x": false,
   "flip_y": false
  },
@@ -863,6 +1025,12 @@
   "name": "curtain",
   "prefab_name": "Prefab_Curtain",
   "scripted": false,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    -531.84,
    -212.61
@@ -883,7 +1051,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  },
@@ -891,6 +1059,12 @@
   "name": "paintings_3",
   "prefab_name": "Prefab_Painting_3",
   "scripted": false,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    -113.92,
    -279.68
@@ -911,7 +1085,7 @@
    0
   ],
   "sorting_order": 2,
-  "sorting_layer_id": 0,
+  "sorting_layer": 0,
   "flip_x": false,
   "flip_y": false
  },
@@ -919,6 +1093,12 @@
   "name": "Bed",
   "prefab_name": "Prefab_Bed",
   "scripted": true,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
   "position": [
    458.62,
    0.13
@@ -939,7 +1119,7 @@
    0.5
   ],
   "sorting_order": 0,
-  "sorting_layer_id": 0,
+  "sorting_layer": 1,
   "flip_x": false,
   "flip_y": false
  }

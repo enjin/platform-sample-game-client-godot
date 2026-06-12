@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://scripts/game/player_controller.gd" id="1_player"]
 [ext_resource type="SpriteFrames" path="res://resources/player_frames.tres" id="2_frames"]
-[ext_resource type="Texture2D" path="res://art/ui/sprite_target.png" id="3_target"]
+[ext_resource type="Texture2D" path="res://art/ui/sprite_marker.png" id="3_target"]
 [ext_resource type="Script" path="res://scripts/game/audio/step_sound_handler.gd" id="4_steps"]
 
 [sub_resource type="CapsuleShape2D" id="shape_feet"]
 radius = 14.0
 height = 30.0
+
+[sub_resource type="Gradient" id="dust_grad"]
+offsets = PackedFloat32Array(0.0, 0.4, 1.0)
+colors = PackedColorArray(0.72, 0.64, 0.5, 0.5, 0.7, 0.62, 0.5, 0.3, 0.7, 0.62, 0.5, 0)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -31,6 +35,7 @@ position = Vector2(0, -64)
 [node name="TargetMarker" type="Sprite2D" parent="."]
 top_level = true
 texture = ExtResource("3_target")
+scale = Vector2(0.64, 0.64)
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -40,3 +45,18 @@ position_smoothing_speed = 8.0
 
 [node name="StepSounds" type="Node" parent="."]
 script = ExtResource("4_steps")
+
+[node name="StepDust" type="CPUParticles2D" parent="."]
+position = Vector2(0, -2)
+emitting = false
+amount = 8
+lifetime = 0.45
+local_coords = false
+direction = Vector2(0, -1)
+spread = 50.0
+gravity = Vector2(0, -25)
+initial_velocity_min = 8.0
+initial_velocity_max = 22.0
+scale_amount_min = 2.0
+scale_amount_max = 3.5
+color_ramp = SubResource("dust_grad")

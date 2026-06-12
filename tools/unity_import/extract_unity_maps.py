@@ -49,6 +49,7 @@ CLASS_MONOBEHAVIOUR = 114
 CLASS_TILEMAP = 1839735485
 CLASS_TILEMAP_RENDERER = 483693784
 CLASS_TILEMAP_COLLIDER = 19719996
+CLASS_BOX_COLLIDER = 61
 CLASS_PREFAB_INSTANCE = 1001
 
 DOC_RE = re.compile(r"^--- !u!(\d+) &(\d+)( stripped)?\s*$", re.M)
@@ -205,6 +206,12 @@ def is_identity(matrix):
     return all(abs(matrix.get(k, 0) - v) < 1e-6 for k, v in IDENTITY.items())
 
 
+def color_of(doc):
+    c = doc.get("m_Color") or {}
+    return [round(c.get("r", 1), 4), round(c.get("g", 1), 4),
+            round(c.get("b", 1), 4), round(c.get("a", 1), 4)]
+
+
 def build_maps(docs):
     """Helper lookup tables over a parsed scene."""
     go_name = {}        # gameobject anchor -> name
@@ -267,12 +274,19 @@ def extract_tilemaps(docs, tex_index, scene_name, prefab_index=None,
         go = doc.get("m_GameObject", {}).get("fileID", 0)
         name = go_name.get(go, f"tilemap_{anchor}")
         sorting_order = 0
+        # Unity sorting layer rank: Bottom=-1, Default=0, Objects=1,
+        # ObjectsFront=2 (TagManager order). Objects+ draw above the ground.
+        sorting_layer = 0
         has_collider = False
+        box_colliders = []
         for cid, comp_anchor in go_components.get(go, []):
             if cid == CLASS_TILEMAP_RENDERER:
                 sorting_order = docs[comp_anchor][1].get("m_SortingOrder", 0)
+                sorting_layer = docs[comp_anchor][1].get("m_SortingLayer", 0)
             elif cid == CLASS_TILEMAP_COLLIDER:
                 has_collider = True
+            elif cid == CLASS_BOX_COLLIDER:
+                box_colliders.append(docs[comp_anchor][1])
         sprite_array = doc.get("m_TileSpriteArray") or []
         matrix_array = doc.get("m_TileMatrixArray") or []
         object_array = doc.get("m_TileObjectToInstantiateArray") or []
@@ -331,14 +345,26 @@ def extract_tilemaps(docs, tex_index, scene_name, prefab_index=None,
                 "texture": entry["rel"],
                 "rect": rect,
             })
+        # BoxCollider2D on building tilemaps (House): center + size in godot px
+        boxes = []
+        for bc in box_colliders:
+            off = bc.get("m_Offset", {"x": 0, "y": 0})
+            size = bc.get("m_Size", {"x": 1, "y": 1})
+            boxes.append({
+                "center": [round((ox + off["x"]) * PPU, 2),
+                           round(-(oy + off["y"]) * PPU, 2)],
+                "size": [round(size["x"] * PPU, 2), round(size["y"] * PPU, 2)],
+            })
         layers.append({
             "layer_name": name,
             "sorting_order": sorting_order,
+            "sorting_layer": sorting_layer,
             "has_collider": has_collider,
+            "box_colliders": boxes,
             "tile_anchor": [anchor_off.get("x", 0.5), anchor_off.get("y", 0.5)],
             "cells": cells,
         })
-    layers.sort(key=lambda l: l["sorting_order"])
+    layers.sort(key=lambda l: (l["sorting_layer"], l["sorting_order"]))
     if warned_matrices:
         print(f"  WARN: {warned_matrices} cells use non-identity tile matrices (flips/rotations dropped)")
     if animated:
@@ -382,7 +408,7 @@ def extract_props(docs, tex_index):
             "rect": rect,
             "pivot": pivot,  # unity pivot (0..1, y-up, relative to rect)
             "sorting_order": doc.get("m_SortingOrder", 0),
-            "sorting_layer_id": doc.get("m_SortingLayerID", 0),
+            "sorting_layer": doc.get("m_SortingLayer", 0),
             "flip_x": bool(doc.get("m_FlipX", 0)),
             "flip_y": bool(doc.get("m_FlipY", 0)),
         })
@@ -413,13 +439,17 @@ def index_prefabs():
 _PREFAB_SPRITE_CACHE = {}
 
 
-def prefab_root_sprite(prefab_index, guid):
+def prefab_root_sprite(prefab_index, guid, _depth=0):
     """Resolve a prefab's visual: its root-most SpriteRenderer sprite ref,
     that renderer's sorting order, and whether the prefab is animated/scripted
     (Animator or MonoBehaviour present -> gameplay object, not a static prop).
+    Prefab VARIANTS (a PrefabInstance wrapping a base prefab with an m_Sprite
+    override - fences, crops, market...) resolve through their base.
     Returns dict or None."""
     if guid in _PREFAB_SPRITE_CACHE:
         return _PREFAB_SPRITE_CACHE[guid]
+    if _depth > 4:
+        return None
     path = prefab_index.get(guid)
     result = None
     if path and os.path.exists(path):
@@ -465,6 +495,8 @@ def prefab_root_sprite(prefab_index, guid):
                 "local_offset": [round(x * PPU, 2), round(-y * PPU, 2)],
                 "local_scale": [sx, sy],
                 "sorting_order": doc.get("m_SortingOrder", 0),
+                "sorting_layer": doc.get("m_SortingLayer", 0),
+                "color": color_of(doc),
                 "flip_x": bool(doc.get("m_FlipX", 0)),
             })
         if renderers:
@@ -474,8 +506,44 @@ def prefab_root_sprite(prefab_index, guid):
                 "scripted": has_script,
                 "prefab_name": os.path.splitext(os.path.basename(path))[0],
             }
+        else:
+            # prefab variant: resolve via the base prefab, apply the variant's
+            # m_Sprite override, and inherit animated/scripted from the base
+            for _anchor, (class_id, doc, _tag) in docs.items():
+                if class_id != CLASS_PREFAB_INSTANCE:
+                    continue
+                base_guid = (doc.get("m_SourcePrefab") or {}).get("guid")
+                if not base_guid:
+                    continue
+                base = prefab_root_sprite(prefab_index, base_guid, _depth + 1)
+                if base is None:
+                    continue
+                sprite_override = None
+                for m in (doc.get("m_Modification") or {}).get("m_Modifications") or []:
+                    if m.get("propertyPath") == "m_Sprite":
+                        ref = m.get("objectReference") or {}
+                        if ref.get("guid"):
+                            sprite_override = ref
+                            break
+                base_renderers = [dict(r) for r in base["renderers"]]
+                if sprite_override and base_renderers:
+                    base_renderers[0]["sprite_guid"] = sprite_override["guid"]
+                    base_renderers[0]["sprite_file_id"] = sprite_override.get("fileID", 0)
+                result = {
+                    "renderers": base_renderers,
+                    "animated": base["animated"] or has_animator,
+                    "scripted": base["scripted"] or has_script,
+                    "prefab_name": os.path.splitext(os.path.basename(path))[0],
+                }
+                break
     _PREFAB_SPRITE_CACHE[guid] = result
     return result
+
+
+# Animated prefabs whose motion is decorative (sway/flap): a static prop
+# beats a missing one. Animals are NOT here - a frozen chicken looks wrong.
+STATIC_OK = {"Prefab_Market", "Prefab_Scarecow", "Prefab_Scarecow2",
+             "log_horizontal", "log_vertical"}
 
 
 def extract_prefab_instances(docs, tex_index, prefab_index, props_out):
@@ -491,6 +559,7 @@ def extract_prefab_instances(docs, tex_index, prefab_index, props_out):
         guid = (doc.get("m_SourcePrefab") or {}).get("guid", "")
         pos = {"x": 0.0, "y": 0.0}
         name = ""
+        color_override = {}
         for m in mod.get("m_Modifications") or []:
             prop = m.get("propertyPath", "")
             if prop == "m_LocalPosition.x":
@@ -499,6 +568,8 @@ def extract_prefab_instances(docs, tex_index, prefab_index, props_out):
                 pos["y"] = float(m.get("value", 0) or 0)
             elif prop == "m_Name" and not name:
                 name = m.get("value", "")
+            elif prop.startswith("m_Color."):
+                color_override[prop[-1]] = float(m.get("value", 1) or 0)
         # the instance's local position is relative to its scene parent
         parent_t = (mod.get("m_TransformParent") or {}).get("fileID", 0)
         px, py, _psx, _psy = world_position_from_transform(transforms, parent_t or None)
@@ -509,7 +580,8 @@ def extract_prefab_instances(docs, tex_index, prefab_index, props_out):
         # (managers, lights) go to the manual list; scripted-but-static ones
         # (bushes, trees, lamps) are still emitted as props, tagged "scripted"
         # so behaviors (fader/rustle/light) can be attached in later phases.
-        if info is None or info["animated"]:
+        if info is None or (info["animated"]
+                and info["prefab_name"] not in STATIC_OK):
             manual.append({
                 "name": name or (info or {}).get("prefab_name", guid),
                 "prefab_guid": guid,
@@ -526,10 +598,15 @@ def extract_prefab_instances(docs, tex_index, prefab_index, props_out):
             entry, rect, pivot, _physics = resolved
             ppu_scale = PPU / float(entry["parsed"]["ppu"] or PPU)
             lsx, lsy = r.get("local_scale", [1, 1])
+            color = list(r.get("color", [1, 1, 1, 1]))
+            for i, ch in enumerate("rgba"):
+                if ch in color_override:
+                    color[i] = round(color_override[ch], 4)
             props_out.append({
                 "name": name or info["prefab_name"],
                 "prefab_name": info["prefab_name"],
                 "scripted": info["scripted"],
+                "color": color,
                 "position": [instance_pos[0] + r["local_offset"][0],
                              instance_pos[1] + r["local_offset"][1]],
                 "scale": [round(lsx * ppu_scale, 4), round(lsy * ppu_scale, 4)],
@@ -537,7 +614,7 @@ def extract_prefab_instances(docs, tex_index, prefab_index, props_out):
                 "rect": rect,
                 "pivot": pivot,
                 "sorting_order": r["sorting_order"],
-                "sorting_layer_id": 0,
+                "sorting_layer": r.get("sorting_layer", 0),
                 "flip_x": r["flip_x"],
                 "flip_y": False,
             })
@@ -666,7 +743,8 @@ def main():
         # keep the raw cell list for the collision pass.
         for to in tile_objects:
             info = prefab_root_sprite(prefab_index, to["prefab_guid"])
-            if not info or info["animated"]:
+            if not info or (info["animated"]
+                    and info["prefab_name"] not in STATIC_OK):
                 continue
             cx = to["cell"][0] * PPU + PPU / 2
             cy = to["cell"][1] * PPU + PPU / 2
@@ -679,6 +757,7 @@ def main():
                 lsx, lsy = r.get("local_scale", [1, 1])
                 props.append({
                     "name": info["prefab_name"],
+                    "color": r.get("color", [1, 1, 1, 1]),
                     "position": [round(cx + r["local_offset"][0], 2),
                                  round(cy + r["local_offset"][1], 2)],
                     "scale": [round(lsx * ppu_scale, 4), round(lsy * ppu_scale, 4)],
@@ -686,7 +765,7 @@ def main():
                     "rect": rect,
                     "pivot": pivot,
                     "sorting_order": r["sorting_order"],
-                    "sorting_layer_id": 0,
+                    "sorting_layer": r.get("sorting_layer", 0),
                     "flip_x": r["flip_x"],
                     "flip_y": False,
                 })

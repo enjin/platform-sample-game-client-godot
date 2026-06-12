@@ -1,0 +1,6 @@
+{
+ "Prefab_Market": {"center_offset": [0, -85.55]},
+ "Prefab_Scarecrow": {"center_offset": [-1.33, -96.77]},
+ "Prefab_Chicken": {"center_offset": [1.5, -48.5]},
+ "Prefab_piggy": {"center_offset": [6.13, -30.98]}
+}

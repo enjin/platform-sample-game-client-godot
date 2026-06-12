@@ -163,27 +163,5 @@
    -1013.76,
    398.72
   ]
- },
- {
-  "name": "log_horizontal",
-  "prefab_guid": "0f387bbce2e73b241984a11df8b6a03a",
-  "prefab_name": "",
-  "animated": false,
-  "scripted": false,
-  "position": [
-   -1402.05,
-   440.83
-  ]
- },
- {
-  "name": "log_vertical",
-  "prefab_guid": "0f387bbce2e73b241984a11df8b6a03a",
-  "prefab_name": "",
-  "animated": false,
-  "scripted": false,
-  "position": [
-   -1189.76,
-   236.16
-  ]
  }
 ]

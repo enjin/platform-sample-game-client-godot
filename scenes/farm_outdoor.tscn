@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3]
+[gd_scene load_steps=23 format=3]
 
 [ext_resource type="Script" path="res://scripts/game/game_scene.gd" id="1_scene"]
 [ext_resource type="PackedScene" path="res://scenes/maps/farm_outdoor_tilemaps.tscn" id="2_maps"]
@@ -19,6 +19,10 @@
 [ext_resource type="AudioStream" path="res://audio/ambience/background_ambience_outside_-_day.wav" id="17_amb_day"]
 [ext_resource type="AudioStream" path="res://audio/ambience/background_ambience_outside_-_night.wav" id="18_amb_night"]
 [ext_resource type="Script" path="res://scripts/game/lamp_lights.gd" id="19_lamps"]
+[ext_resource type="PackedScene" path="res://scenes/world/chimney_smoke.tscn" id="20_smoke"]
+[ext_resource type="PackedScene" path="res://scenes/world/waterfall_mist.tscn" id="21_mist"]
+[ext_resource type="Script" path="res://scripts/game/effects/day_gated_light.gd" id="22_nightlight"]
+[ext_resource type="Texture2D" path="res://resources/day_night/radial_light.tres" id="23_lighttex"]
 
 [sub_resource type="RectangleShape2D" id="shape_door"]
 size = Vector2(96, 40)
@@ -103,3 +107,25 @@ bus = &"Ambience"
 script = ExtResource("19_lamps")
 props_root = NodePath("../Maps/Props")
 day_handler = NodePath("../DayEvents")
+
+[node name="ChimneySmoke" parent="." instance=ExtResource("20_smoke")]
+position = Vector2(805.76, -352.64)
+
+[node name="WaterfallMist" parent="." instance=ExtResource("21_mist")]
+position = Vector2(3543.68, 1222.4)
+
+[node name="WarehouseWindowLight1" type="PointLight2D" parent="."]
+position = Vector2(-545.09, -293.63)
+color = Color(1, 0.82, 0.55, 1)
+energy = 0.7
+texture = ExtResource("23_lighttex")
+texture_scale = 1.3
+script = ExtResource("22_nightlight")
+
+[node name="WarehouseWindowLight2" type="PointLight2D" parent="."]
+position = Vector2(640, 320)
+color = Color(1, 0.82, 0.55, 1)
+energy = 0.7
+texture = ExtResource("23_lighttex")
+texture_scale = 1.3
+script = ExtResource("22_nightlight")

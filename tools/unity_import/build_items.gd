@@ -85,6 +85,7 @@ func _build(it: Dictionary, by_guid: Dictionary) -> Resource:
 			if t:
 				stages.append(t)
 		crop.growth_stage_textures = stages
+		crop.stage_texture_scale = it.get("stage_scale", 1.0)
 		crop.produce = by_guid.get(it.produce_guid)
 		crop.growth_time = it.growth_time
 		crop.number_of_harvest = int(it.number_of_harvest)

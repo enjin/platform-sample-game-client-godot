@@ -61,7 +61,8 @@ def main():
         if resolved is None:
             return None
         entry, rect, _pivot, _phys = resolved
-        return {"texture": "res://" + godot_art_path(entry["rel"]), "rect": rect}
+        return {"texture": "res://" + godot_art_path(entry["rel"]), "rect": rect,
+                "ppu": entry["parsed"]["ppu"]}
 
     def audio_ref(ref):
         if not ref or not ref.get("guid") or ref["guid"] not in audio_index:
@@ -116,8 +117,13 @@ def main():
             "unique_id": a.get("UniqueID", ""),
         }
         if cls == "Crop":
+            stages = [tile_sprite(t) for t in a.get("GrowthStagesTiles") or []]
+            # Unity draws stage sprites at pixels/PPU units; our crop Sprite2Ds
+            # are native-pixel, so they carry a 64/ppu scale
+            ppu = next((s["ppu"] for s in stages if s), 100)
             entry.update({
-                "growth_stages": [tile_sprite(t) for t in a.get("GrowthStagesTiles") or []],
+                "growth_stages": stages,
+                "stage_scale": round(64.0 / ppu, 4),
                 "produce_id": "",  # filled below via guid map
                 "produce_guid": (a.get("Produce") or {}).get("guid", ""),
                 "growth_time": a.get("GrowthTime", 1.0),

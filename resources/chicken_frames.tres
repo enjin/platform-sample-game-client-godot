@@ -1,0 +1,239 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_000.png" id="1_nxahy"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_001.png" id="2_lp4ex"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_002.png" id="3_veolg"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_003.png" id="4_a5mci"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_004.png" id="5_u4vh7"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_005.png" id="6_yia5j"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_006.png" id="7_bdxq1"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_007.png" id="8_tjbj6"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_008.png" id="9_fh271"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_009.png" id="10_4yr04"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_010.png" id="11_rsptq"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_011.png" id="12_gmg24"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_012.png" id="13_fjap7"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_013.png" id="14_tetm3"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_014.png" id="15_j0x8x"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_015.png" id="16_aat8g"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_016.png" id="17_gy3w8"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_017.png" id="18_qpsqq"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_018.png" id="19_m5f68"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_019.png" id="20_bnkx1"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_020.png" id="21_ubccw"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_021.png" id="22_f26qa"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_022.png" id="23_572u4"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_023.png" id="24_58ifo"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_024.png" id="25_va3x5"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_025.png" id="26_ujl6d"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_026.png" id="27_kw16i"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_027.png" id="28_lgimf"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_028.png" id="29_dyqbd"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_029.png" id="30_oxlah"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_030.png" id="31_n1b08"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_031.png" id="32_dvplg"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_032.png" id="33_cdxwp"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_033.png" id="34_sdti8"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_034.png" id="35_4dxg2"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_035.png" id="36_wdesk"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_036.png" id="37_3wdy7"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_037.png" id="38_1ghv3"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_038.png" id="39_uumej"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_039.png" id="40_q56er"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_040.png" id="41_mb4nq"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_041.png" id="42_dxuft"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_042.png" id="43_aw0a4"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_043.png" id="44_jweni"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_044.png" id="45_evdpd"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_045.png" id="46_n1h7m"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_046.png" id="47_hkfc8"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/idle/frame_047.png" id="48_ecmn0"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/walk/frame_000.png" id="49_fpxy2"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/walk/frame_001.png" id="50_l8yvq"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/walk/frame_002.png" id="51_u6pdj"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/walk/frame_003.png" id="52_v8df5"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/walk/frame_004.png" id="53_cf4x5"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/walk/frame_005.png" id="54_cwbr5"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/walk/frame_006.png" id="55_jfwdu"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/chicken/walk/frame_007.png" id="56_u07h2"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nxahy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lp4ex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_veolg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a5mci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u4vh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yia5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bdxq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tjbj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fh271")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4yr04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rsptq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gmg24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fjap7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tetm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_j0x8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_aat8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gy3w8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qpsqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_m5f68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bnkx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ubccw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_f26qa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_572u4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_58ifo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_va3x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ujl6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_kw16i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_lgimf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_dyqbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_oxlah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_n1b08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_dvplg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_cdxwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_sdti8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_4dxg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_wdesk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_3wdy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_1ghv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_uumej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_q56er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_mb4nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_dxuft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_aw0a4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_jweni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_evdpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_n1h7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_hkfc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_ecmn0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_fpxy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_l8yvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_u6pdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_v8df5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_cf4x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_cwbr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_jfwdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_u07h2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]

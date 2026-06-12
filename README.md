@@ -146,13 +146,20 @@ Run order: extractor → `--headless --import` → builders.
 - **Lighting:** Unity blends five additive URP Light2D gradients; here a
   single `CanvasModulate` samples one gradient. No rim lights or rotating
   building shadows (`LightInterpolator` not ported). Street/house lamps get
-  procedural `PointLight2D`s with flicker at night.
+  procedural `PointLight2D`s with flicker at night; warehouse windows light
+  up at night, interior windows cast warm light during the day, and the
+  fireplace burns with a flickering glow.
+- **Particles:** Unity's VFX-graph effects are approximated with
+  `CPUParticles2D`: chimney smoke, waterfall mist, fireplace flames/embers,
+  tilling dust, harvest leaf bursts, walking step dust, and rain.
 - **Tilled/watered soil** uses the RuleTile's centre tile only (no edge
   matching) — tile visuals at bed borders are slightly simpler.
 - **Tool hand visuals** (animated hoe/watercan prefabs in the player's hand)
   are not ported; the character's own use animations still play.
-- **Animals, market and warehouse NPCs** are not ported (the Unity build also
-  shipped market/warehouse UI disabled).
+- **Chickens and pigs** roam their pens with baked idle/walk animations
+  (frames sampled from the Unity rigs by `BakeAnimalFrames.cs`); the market
+  and scarecrows are static baked sprites, and market/warehouse UIs are not
+  ported (the Unity build shipped them disabled too).
 - Water tiles are static (Unity's animated water tile is baked to one frame).
 
 ## Exporting

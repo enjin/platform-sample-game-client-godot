@@ -181,7 +181,17 @@ func _build_scene(scene_name: String, layers: Variant, tileset: TileSet,
 		var tml := TileMapLayer.new()
 		tml.name = layer.layer_name
 		tml.tile_set = tileset
-		tml.z_index = int(layer.sorting_order) if int(layer.sorting_order) > 5 else -1
+		# Unity sorting layers map to z planes: Bottom/Default (<=0) are
+		# ground at z -1; Objects (1: house/warehouse walls, tree tops) share
+		# z 0 with props and the player; ObjectsFront (2: roof, chimney)
+		# keeps its explicit order above the player.
+		var rank := int(layer.get("sorting_layer", 0))
+		if rank <= 0:
+			tml.z_index = -1
+		elif rank == 1:
+			tml.z_index = 0
+		else:
+			tml.z_index = maxi(1, int(layer.sorting_order))
 		root.add_child(tml)
 		tml.owner = root
 		for cell: Dictionary in layer.cells:
@@ -194,7 +204,10 @@ func _build_scene(scene_name: String, layers: Variant, tileset: TileSet,
 			tml.set_cell(Vector2i(int(cell.x), int(cell.y)), sid, coords)
 
 	_add_props(root, scene_name, textures)
+	_add_baked_props(root, scene_name)
+	_add_animals(root, scene_name)
 	_add_fence_collision(root, scene_name)
+	_add_building_collision(root, layers)
 
 	if missing > 0:
 		push_warning("%s: %d cells skipped (missing tiles)" % [scene_name, missing])
@@ -245,12 +258,111 @@ func _add_props(root: Node2D, scene_name: String, textures: Dictionary) -> void:
 		spr.offset = Vector2((0.5 - float(pivot[0])) * float(rect[2]),
 				(float(pivot[1]) - 0.5) * float(rect[3]))
 		spr.flip_h = bool(p.flip_x)
+		# Unity tints white base art per renderer/instance (couches, chairs)
+		var c: Array = p.get("color", [1, 1, 1, 1])
+		spr.modulate = Color(c[0], c[1], c[2], c[3])
 		spr.flip_v = bool(p.flip_y)
 		spr.scale = Vector2(p.scale[0], p.scale[1])
-		if int(p.sorting_order) < 0:
-			spr.z_index = int(p.sorting_order)
+		# same z planes as the tile layers (see _build_scene)
+		var rank := int(p.get("sorting_layer", 0))
+		if rank <= 0 and rank + int(p.sorting_order) < 0:
+			spr.z_index = -1
+		elif rank >= 2:
+			spr.z_index = maxi(1, int(p.sorting_order))
 		parent.add_child(spr)
 		spr.owner = root
+
+
+# PSD-rigged set pieces (market, scarecrows, animals) were baked to single
+# PNGs by BakePrefabSprites.cs in the Unity project; place them at the
+# positions recorded in the manual-pass prefab list.
+func _add_baked_props(root: Node2D, scene_name: String) -> void:
+	var baked: Dictionary = _read_json(
+		ProjectSettings.globalize_path("res://art/baked_props/baked_props.json"))
+	var manual: Variant = _read_json("%s/%s_prefabs.json" % [_manifest_dir, scene_name])
+	if baked.is_empty() or not manual is Array:
+		return
+	var parent := root.get_node_or_null("Props") as Node2D
+	if parent == null:
+		return
+	# scene instance names -> baked prefab file names (typo'd in the scene)
+	var aliases := {
+		"Prefab_Scarecow": "Prefab_Scarecrow",
+		"Prefab_Scarecow2": "Prefab_Scarecrow",
+		"piggy": "Prefab_piggy",
+	}
+	var idx := 1
+	for entry: Dictionary in manual:
+		var pname: String = entry.get("prefab_name", "")
+		if pname.is_empty():
+			pname = str(entry.get("name", "")).get_slice(" (", 0)
+		pname = aliases.get(pname, pname)
+		# animals are live animated scenes now (_add_animals), not static art
+		if pname in ["Prefab_Chicken", "Prefab_piggy"]:
+			continue
+		if not baked.has(pname):
+			continue
+		var tex: Texture2D = load("res://art/baked_props/%s.png" % pname)
+		if tex == null:
+			continue
+		var spr := Sprite2D.new()
+		spr.name = "%s_%d" % [pname.validate_node_name(), idx]
+		idx += 1
+		spr.texture = tex
+		var off: Array = baked[pname].center_offset
+		spr.position = Vector2(entry.position[0], entry.position[1])
+		spr.offset = Vector2(off[0], off[1])
+		parent.add_child(spr)
+		spr.owner = root
+
+
+# Live animated animals (chicken/pig wander scenes), placed from the
+# extractor's animals.json (instance position + pen collider rect + params).
+func _add_animals(root: Node2D, scene_name: String) -> void:
+	var animals: Variant = _read_json("%s/%s_animals.json" % [_manifest_dir, scene_name])
+	if not animals is Array or (animals as Array).is_empty():
+		return
+	var parent := root.get_node_or_null("Props") as Node2D
+	if parent == null:
+		return
+	var scenes := {
+		"chicken": load("res://scenes/animals/chicken.tscn"),
+		"pig": load("res://scenes/animals/pig.tscn"),
+	}
+	var idx := 1
+	for a: Dictionary in animals:
+		var packed: PackedScene = scenes.get(a.kind)
+		if packed == null:
+			continue
+		var inst: Node2D = packed.instantiate()
+		inst.name = "%s_%d" % [String(a.kind).capitalize(), idx]
+		idx += 1
+		inst.position = Vector2(a.position[0], a.position[1])
+		inst.area = Rect2(a.area[0], a.area[1], a.area[2], a.area[3])
+		parent.add_child(inst)
+		inst.owner = root
+func _add_building_collision(root: Node2D, layers: Variant) -> void:
+	var boxes := []
+	for layer: Dictionary in layers:
+		boxes.append_array(layer.get("box_colliders", []))
+	if boxes.is_empty():
+		return
+	var body := StaticBody2D.new()
+	body.name = "BuildingCollision"
+	body.collision_layer = 1
+	root.add_child(body)
+	body.owner = root
+	var idx := 1
+	for b: Dictionary in boxes:
+		var shape := CollisionShape2D.new()
+		var rect := RectangleShape2D.new()
+		rect.size = Vector2(b.size[0], b.size[1])
+		shape.shape = rect
+		shape.position = Vector2(b.center[0], b.center[1])
+		shape.name = "Box_%d" % idx
+		idx += 1
+		body.add_child(shape)
+		shape.owner = root
 
 
 # Fences are tile-object prefabs in Unity (colliders included); approximate

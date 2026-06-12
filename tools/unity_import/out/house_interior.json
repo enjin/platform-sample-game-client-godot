@@ -2,7 +2,9 @@
  {
   "layer_name": "Tilemap",
   "sorting_order": 0,
+  "sorting_layer": 0,
   "has_collider": true,
+  "box_colliders": [],
   "tile_anchor": [
    0.5,
    0.5
@@ -2213,7 +2215,9 @@
  {
   "layer_name": "walls",
   "sorting_order": 0,
+  "sorting_layer": 2,
   "has_collider": true,
+  "box_colliders": [],
   "tile_anchor": [
    0.5,
    0.5

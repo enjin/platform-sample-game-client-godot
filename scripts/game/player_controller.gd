@@ -23,6 +23,7 @@ var _item_visuals := {}  # Item -> Node2D under ItemAttachBone
 @onready var target_marker: Sprite2D = $TargetMarker
 @onready var item_attach_bone: Node2D = $ItemAttachBone
 @onready var camera: Camera2D = $Camera2D
+@onready var step_dust: CPUParticles2D = $StepDust
 
 
 func _ready() -> void:
@@ -58,6 +59,7 @@ func _physics_process(_delta: float) -> void:
 		_set_look_direction_from(get_global_mouse_position() - global_position)
 	velocity = move * SPEED
 	move_and_slide()
+	step_dust.emitting = move != Vector2.ZERO
 	_update_animation(move)
 
 

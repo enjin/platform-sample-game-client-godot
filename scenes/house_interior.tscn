@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="Script" path="res://scripts/game/game_scene.gd" id="1_scene"]
 [ext_resource type="PackedScene" path="res://scenes/maps/house_interior_tilemaps.tscn" id="2_maps"]
@@ -8,6 +8,11 @@
 [ext_resource type="PackedScene" path="res://ui/game_hud.tscn" id="6_hud"]
 [ext_resource type="Script" path="res://scripts/game/day_cycle_controller.gd" id="7_daycycle"]
 [ext_resource type="Gradient" path="res://resources/day_night/day_tint_gradient_interior.tres" id="8_gradient"]
+[ext_resource type="PackedScene" path="res://scenes/world/fireplace_fire.tscn" id="9_fire"]
+[ext_resource type="Script" path="res://scripts/game/effects/day_gated_light.gd" id="10_daylight"]
+[ext_resource type="Texture2D" path="res://resources/day_night/radial_light.tres" id="11_lighttex"]
+[ext_resource type="Texture2D" path="res://art/interior/vfx/sprite_windows_light.png" id="12_wincookie"]
+[ext_resource type="Texture2D" path="res://art/interior/vfx/sprite_windows_light_side.png" id="13_wincookie_side"]
 
 [sub_resource type="RectangleShape2D" id="shape_exit"]
 size = Vector2(96, 40)
@@ -53,3 +58,57 @@ position = Vector2(31, -43)
 [node name="DayNight" type="CanvasModulate" parent="."]
 script = ExtResource("7_daycycle")
 tint_gradient = ExtResource("8_gradient")
+
+[node name="FireplaceFire" parent="." instance=ExtResource("9_fire")]
+position = Vector2(35.07, -147.01)
+z_index = 1
+
+[node name="WindowLight1" type="PointLight2D" parent="."]
+position = Vector2(-220.8, -246.4)
+color = Color(0.98, 0.94, 0.36, 1)
+energy = 0.9
+texture = ExtResource("12_wincookie")
+texture_scale = 0.8
+offset = Vector2(0, 55)
+script = ExtResource("10_daylight")
+active_during_day = true
+
+[node name="WindowLight2" type="PointLight2D" parent="."]
+position = Vector2(-480.58, -246.4)
+color = Color(0.98, 0.94, 0.36, 1)
+energy = 0.9
+texture = ExtResource("12_wincookie")
+texture_scale = 0.8
+offset = Vector2(0, 55)
+script = ExtResource("10_daylight")
+active_during_day = true
+
+[node name="WindowLight3" type="PointLight2D" parent="."]
+position = Vector2(478.08, -273.28)
+color = Color(0.98, 0.94, 0.36, 1)
+energy = 0.9
+texture = ExtResource("12_wincookie")
+texture_scale = 0.8
+offset = Vector2(0, 55)
+script = ExtResource("10_daylight")
+active_during_day = true
+
+[node name="WindowLight4" type="PointLight2D" parent="."]
+position = Vector2(-555.52, 237.44)
+color = Color(0.98, 0.94, 0.36, 1)
+energy = 0.9
+texture = ExtResource("12_wincookie")
+texture_scale = 0.8
+offset = Vector2(0, 55)
+script = ExtResource("10_daylight")
+active_during_day = true
+
+[node name="WindowLight5" type="PointLight2D" parent="."]
+position = Vector2(545.28, 104.96)
+color = Color(0.98, 0.94, 0.36, 1)
+energy = 0.9
+texture = ExtResource("13_wincookie_side")
+texture_scale = 0.8
+offset = Vector2(-40, 30)
+script = ExtResource("10_daylight")
+active_during_day = true

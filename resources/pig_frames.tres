@@ -1,0 +1,111 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_000.png" id="1_yathy"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_001.png" id="2_65qsi"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_002.png" id="3_hugp1"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_003.png" id="4_t1sb7"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_004.png" id="5_lqrl5"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_005.png" id="6_m6h8u"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_006.png" id="7_y8qj2"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_007.png" id="8_blaqc"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_008.png" id="9_cfpus"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_009.png" id="10_0vxlm"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_010.png" id="11_jyeb2"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_011.png" id="12_phw4e"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_012.png" id="13_m8wkh"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_013.png" id="14_bc5yi"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_014.png" id="15_xlcvq"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_015.png" id="16_7pn26"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_016.png" id="17_4fr2x"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/idle/frame_017.png" id="18_ette0"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/walk/frame_000.png" id="19_xpixm"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/walk/frame_001.png" id="20_7sygt"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/walk/frame_002.png" id="21_ho2jp"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/walk/frame_003.png" id="22_cvhhc"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/walk/frame_004.png" id="23_l5nhs"]
+[ext_resource type="Texture2D" path="res://art/animals/baked/pig/walk/frame_005.png" id="24_46slk"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yathy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_65qsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hugp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t1sb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lqrl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m6h8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_y8qj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_blaqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cfpus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0vxlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jyeb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_phw4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_m8wkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_bc5yi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xlcvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7pn26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_4fr2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ette0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_xpixm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7sygt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ho2jp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_cvhhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_l5nhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_46slk")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]

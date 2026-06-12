@@ -202,6 +202,13 @@
    144
   ]
  },
+ "Assets/HappyHarvest/Art/Environment/Log/LogVertical/log_vertical.png": {
+  "godot_path": "res://art/environment/log/logvertical/log_vertical.png",
+  "size": [
+   49,
+   182
+  ]
+ },
  "Assets/HappyHarvest/Art/Environment/WaterLilly/Sprites/Sprite_WaterLilly_leaf.png": {
   "godot_path": "res://art/environment/waterlilly/sprites/sprite_waterlilly_leaf.png",
   "size": [
@@ -242,6 +249,13 @@
   "size": [
    84,
    70
+  ]
+ },
+ "Assets/HappyHarvest/Art/Tiles/Fence/Sprite/Sprite_Tiles_Fence.png": {
+  "godot_path": "res://art/tiles/fence/sprite/sprite_tiles_fence.png",
+  "size": [
+   256,
+   256
   ]
  },
  "Assets/HappyHarvest/Art/Environment/Barrel/Sprites/Sprite_Barrel.png": {

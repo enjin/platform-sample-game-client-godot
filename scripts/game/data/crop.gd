@@ -6,6 +6,8 @@ extends Resource
 
 @export var unique_id: String = ""
 @export var growth_stage_textures: Array[Texture2D] = []
+# stage textures are authored at Unity PPU 100; world scale = 64/ppu
+@export var stage_texture_scale: float = 1.0
 @export var produce: Product
 @export var growth_time: float = 1.0
 @export var number_of_harvest: int = 1

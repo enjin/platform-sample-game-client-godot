@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3]
+
+[sub_resource type="Gradient" id="smoke_grad"]
+offsets = PackedFloat32Array(0.0, 0.25, 1.0)
+colors = PackedColorArray(0.85, 0.85, 0.85, 0, 0.8, 0.8, 0.82, 0.5, 0.7, 0.7, 0.72, 0)
+
+[sub_resource type="GradientTexture2D" id="smoke_tex"]
+gradient = SubResource("smoke_grad")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.0)
+
+[node name="ChimneySmoke" type="CPUParticles2D"]
+z_index = 14
+amount = 14
+lifetime = 3.5
+preprocess = 3.0
+randomness = 0.4
+texture = SubResource("smoke_tex")
+direction = Vector2(0.25, -1)
+spread = 12.0
+gravity = Vector2(8, -30)
+initial_velocity_min = 18.0
+initial_velocity_max = 32.0
+scale_amount_min = 1.0
+scale_amount_max = 1.8

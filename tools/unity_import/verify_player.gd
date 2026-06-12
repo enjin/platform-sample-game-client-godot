@@ -31,17 +31,29 @@ func _run() -> void:
 	_check(cam == player.get_node("Camera2D"), "player camera current")
 	_check(cam.limit_right == 4480, "camera limits applied from game_scene")
 
-	# walk right for half a second
+	# walk right for half a second from open ground south of the porch
+	# (the spawn itself is boxed in by the house wall colliders, as in Unity)
+	player.global_position = Vector2(671, 420)
 	var x0 := player.global_position.x
 	Input.action_press("move_right")
 	await create_timer(0.5).timeout
 	Input.action_release("move_right")
 	var moved := player.global_position.x - x0
 	_check(moved > 80.0, "moved right (%0.f px)" % moved)
+
+	# the house wall collider blocks walking right from the porch spawn
+	player.global_position = Vector2(671, 247)
+	Input.action_press("move_right")
+	await create_timer(0.5).timeout
+	# assert while the key is still held: on release the look direction falls
+	# back to facing the mouse, which sits at (0,0) in headless runs
+	_check(player.global_position.x < 760.0,
+		"house wall blocks porch exit right (x=%.0f)" % player.global_position.x)
 	_check(player.get_node("AnimatedSprite2D").animation in [&"walk_side", &"idle_side"],
 		"side animation playing (%s)" % player.get_node("AnimatedSprite2D").animation)
-	await process_frame
 	_check(player.look_direction == Vector2.RIGHT, "look direction right")
+	Input.action_release("move_right")
+	await process_frame
 
 	# walk down into the pond area south of spawn; collision should stop us
 	Input.action_press("move_down")
