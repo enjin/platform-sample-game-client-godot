@@ -2,14 +2,19 @@
 
 [ext_resource type="Texture2D" path="res://art/crops/wheat/sprites/sprite_wheat_icon.png" id="1_cv45e"]
 [ext_resource type="Script" path="res://scripts/game/items/product.gd" id="2_4saac"]
+[ext_resource type="Texture2D" path="res://art/crops/wheat/sprites/sprite_wheat_icon_normal.png" id="2_rdva3"]
 [ext_resource type="AudioStream" path="res://audio/character/chewing_an_apple-001.wav" id="3_rdva3"]
 [ext_resource type="AudioStream" path="res://audio/character/chewing_an_apple-002.wav" id="4_hhmw6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hhmw6"]
+diffuse_texture = ExtResource("1_cv45e")
+normal_texture = ExtResource("2_rdva3")
 
 [resource]
 script = ExtResource("2_4saac")
 sell_price = 2
 unique_id = "wheat_grain"
 display_name = "Wheat Grain"
-item_sprite = ExtResource("1_cv45e")
+item_sprite = SubResource("CanvasTexture_hhmw6")
 player_animator_trigger_use = "Eating"
 use_sound = Array[AudioStream]([ExtResource("3_rdva3"), ExtResource("4_hhmw6")])

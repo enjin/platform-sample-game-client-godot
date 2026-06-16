@@ -107,6 +107,8 @@
   "name": "curtain (2)",
   "prefab_name": "Prefab_Curtain",
   "scripted": false,
+  "shadow": null,
+  "colliders": [],
   "color": [
    1,
    1,
@@ -141,6 +143,8 @@
   "name": "pillowA (1)",
   "prefab_name": "Prefab_pillowA",
   "scripted": false,
+  "shadow": null,
+  "colliders": [],
   "color": [
    0.2866,
    0.5353,
@@ -175,6 +179,8 @@
   "name": "curtain (3)",
   "prefab_name": "Prefab_Curtain",
   "scripted": false,
+  "shadow": null,
+  "colliders": [],
   "color": [
    1,
    1,
@@ -209,6 +215,31 @@
   "name": "plant (1)",
   "prefab_name": "Prefab_Plant",
   "scripted": true,
+  "shadow": {
+   "offset": [
+    -3.58,
+    -1.86
+   ],
+   "scale": [
+    0.92,
+    0.368
+   ],
+   "base_length": 1.0
+  },
+  "colliders": [
+   {
+    "type": "box",
+    "offset": [
+     -0.77,
+     -8.69
+    ],
+    "size": [
+     41.85,
+     28.25
+    ],
+    "radius": 0
+   }
+  ],
   "color": [
    1,
    1,
@@ -243,6 +274,8 @@
   "name": "curtain (4)",
   "prefab_name": "Prefab_Curtain",
   "scripted": false,
+  "shadow": null,
+  "colliders": [],
   "color": [
    1,
    1,
@@ -277,6 +310,31 @@
   "name": "barrel (3)",
   "prefab_name": "Prefab_Barrel",
   "scripted": true,
+  "shadow": {
+   "offset": [
+    -0.64,
+    -8.32
+   ],
+   "scale": [
+    1.504,
+    0.602
+   ],
+   "base_length": 1.0
+  },
+  "colliders": [
+   {
+    "type": "box",
+    "offset": [
+     0.0,
+     -5.686976000000001
+    ],
+    "size": [
+     55.197120000000005,
+     20.573472000000002
+    ],
+    "radius": 0.0
+   }
+  ],
   "color": [
    1,
    1,
@@ -288,8 +346,8 @@
    291.2
   ],
   "scale": [
-   0.64,
-   0.64
+   0.3345,
+   0.3345
   ],
   "texture": "Assets/HappyHarvest/Art/Environment/Barrel/Sprites/Sprite_Barrel.png",
   "rect": [
@@ -311,6 +369,31 @@
   "name": "barrel",
   "prefab_name": "Prefab_Barrel",
   "scripted": true,
+  "shadow": {
+   "offset": [
+    -0.64,
+    -8.32
+   ],
+   "scale": [
+    1.504,
+    0.602
+   ],
+   "base_length": 1.0
+  },
+  "colliders": [
+   {
+    "type": "box",
+    "offset": [
+     0.0,
+     -5.686976000000001
+    ],
+    "size": [
+     55.197120000000005,
+     20.573472000000002
+    ],
+    "radius": 0.0
+   }
+  ],
   "color": [
    1,
    1,
@@ -322,8 +405,8 @@
    220.8
   ],
   "scale": [
-   0.64,
-   0.64
+   0.3345,
+   0.3345
   ],
   "texture": "Assets/HappyHarvest/Art/Environment/Barrel/Sprites/Sprite_Barrel.png",
   "rect": [
@@ -345,6 +428,31 @@
   "name": "barrel (4)",
   "prefab_name": "Prefab_Barrel",
   "scripted": true,
+  "shadow": {
+   "offset": [
+    -0.64,
+    -8.32
+   ],
+   "scale": [
+    1.504,
+    0.602
+   ],
+   "base_length": 1.0
+  },
+  "colliders": [
+   {
+    "type": "box",
+    "offset": [
+     0.0,
+     -5.686976000000001
+    ],
+    "size": [
+     55.197120000000005,
+     20.573472000000002
+    ],
+    "radius": 0.0
+   }
+  ],
   "color": [
    1,
    1,
@@ -356,8 +464,8 @@
    327.68
   ],
   "scale": [
-   0.64,
-   0.64
+   0.3345,
+   0.3345
   ],
   "texture": "Assets/HappyHarvest/Art/Environment/Barrel/Sprites/Sprite_Barrel.png",
   "rect": [
@@ -379,6 +487,28 @@
   "name": "Character",
   "prefab_name": "Character",
   "scripted": true,
+  "shadow": {
+   "offset": [
+    -0.0,
+    -0.0
+   ],
+   "scale": [
+    1.575,
+    0.12
+   ],
+   "base_length": 1.0
+  },
+  "colliders": [
+   {
+    "type": "circle",
+    "offset": [
+     -1.1,
+     -16.89
+    ],
+    "radius": 19.28,
+    "size": null
+   }
+  ],
   "color": [
    1,
    1,
@@ -413,6 +543,18 @@
   "name": "Chair",
   "prefab_name": "Prefab_Chair",
   "scripted": true,
+  "shadow": null,
+  "colliders": [
+   {
+    "type": "circle",
+    "offset": [
+     -3.79,
+     16.33
+    ],
+    "radius": -37.35,
+    "size": null
+   }
+  ],
   "color": [
    0.8019,
    0.5208,
@@ -424,7 +566,7 @@
    -56.96
   ],
   "scale": [
-   0.5,
+   -0.5,
    0.5
   ],
   "texture": "Assets/HappyHarvest/Art/Interior/Chair/Sprites/Sprite_Chair.png",
@@ -447,6 +589,31 @@
   "name": "barrel (5)",
   "prefab_name": "Prefab_Barrel",
   "scripted": true,
+  "shadow": {
+   "offset": [
+    -0.64,
+    -8.32
+   ],
+   "scale": [
+    1.504,
+    0.602
+   ],
+   "base_length": 1.0
+  },
+  "colliders": [
+   {
+    "type": "box",
+    "offset": [
+     0.0,
+     -5.686976000000001
+    ],
+    "size": [
+     55.197120000000005,
+     20.573472000000002
+    ],
+    "radius": 0.0
+   }
+  ],
   "color": [
    1,
    1,
@@ -458,8 +625,8 @@
    354.56
   ],
   "scale": [
-   0.64,
-   0.64
+   0.3345,
+   0.3345
   ],
   "texture": "Assets/HappyHarvest/Art/Environment/Barrel/Sprites/Sprite_Barrel.png",
   "rect": [
@@ -481,6 +648,31 @@
   "name": "barrel (1)",
   "prefab_name": "Prefab_Barrel",
   "scripted": true,
+  "shadow": {
+   "offset": [
+    -0.64,
+    -8.32
+   ],
+   "scale": [
+    1.504,
+    0.602
+   ],
+   "base_length": 1.0
+  },
+  "colliders": [
+   {
+    "type": "box",
+    "offset": [
+     0.0,
+     -5.686976000000001
+    ],
+    "size": [
+     55.197120000000005,
+     20.573472000000002
+    ],
+    "radius": 0.0
+   }
+  ],
   "color": [
    1,
    1,
@@ -492,8 +684,8 @@
    -164.48
   ],
   "scale": [
-   0.64,
-   0.64
+   0.3345,
+   0.3345
   ],
   "texture": "Assets/HappyHarvest/Art/Environment/Barrel/Sprites/Sprite_Barrel.png",
   "rect": [
@@ -515,6 +707,21 @@
   "name": "Sofa",
   "prefab_name": "Prefab_Sofa",
   "scripted": true,
+  "shadow": null,
+  "colliders": [
+   {
+    "type": "box",
+    "offset": [
+     -0.36,
+     28.48
+    ],
+    "size": [
+     194.59,
+     72.57
+    ],
+    "radius": 0
+   }
+  ],
   "color": [
    0.3459,
    0.5413,
@@ -546,9 +753,103 @@
   "flip_y": false
  },
  {
+  "name": "Sofa",
+  "prefab_name": "Prefab_Sofa",
+  "scripted": true,
+  "shadow": null,
+  "colliders": null,
+  "color": [
+   0.5352,
+   0.5615,
+   0.8774,
+   1
+  ],
+  "position": [
+   -404.48,
+   -168.77
+  ],
+  "scale": [
+   0.5,
+   0.5
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Pillows/Pillow_A/Sprites/Sprite_pillowA.png",
+  "rect": [
+   0,
+   0,
+   93,
+   126
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer": 1,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "Sofa",
+  "prefab_name": "Prefab_Sofa",
+  "scripted": true,
+  "shadow": null,
+  "colliders": null,
+  "color": [
+   0.5352,
+   0.5615,
+   0.8774,
+   1
+  ],
+  "position": [
+   -302.08,
+   -189.95000000000002
+  ],
+  "scale": [
+   0.5,
+   0.5
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Pillows/Pillow_B/Sprites/Sprite_PillowB.png",
+  "rect": [
+   0,
+   0,
+   104,
+   104
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer": 1,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
   "name": "Character",
   "prefab_name": "Character",
   "scripted": true,
+  "shadow": {
+   "offset": [
+    -0.0,
+    -0.0
+   ],
+   "scale": [
+    1.575,
+    0.12
+   ],
+   "base_length": 1.0
+  },
+  "colliders": [
+   {
+    "type": "circle",
+    "offset": [
+     -1.1,
+     -16.89
+    ],
+    "radius": 19.28,
+    "size": null
+   }
+  ],
   "color": [
    1,
    1,
@@ -583,6 +884,31 @@
   "name": "plant (2)",
   "prefab_name": "Prefab_Plant",
   "scripted": true,
+  "shadow": {
+   "offset": [
+    -3.58,
+    -1.86
+   ],
+   "scale": [
+    0.92,
+    0.368
+   ],
+   "base_length": 1.0
+  },
+  "colliders": [
+   {
+    "type": "box",
+    "offset": [
+     -0.77,
+     -8.69
+    ],
+    "size": [
+     41.85,
+     28.25
+    ],
+    "radius": 0
+   }
+  ],
   "color": [
    1,
    1,
@@ -617,6 +943,8 @@
   "name": "rug_02",
   "prefab_name": "rug_02",
   "scripted": false,
+  "shadow": null,
+  "colliders": [],
   "color": [
    1,
    1,
@@ -628,8 +956,8 @@
    -42.68
   ],
   "scale": [
-   1.0,
-   1.0
+   1.2236,
+   1.4569
   ],
   "texture": "Assets/HappyHarvest/Art/Interior/Rugs/Rug02/Sprites/Sprite_Rug_02.png",
   "rect": [
@@ -651,6 +979,18 @@
   "name": "Chair",
   "prefab_name": "Prefab_Chair",
   "scripted": true,
+  "shadow": null,
+  "colliders": [
+   {
+    "type": "circle",
+    "offset": [
+     3.79,
+     16.33
+    ],
+    "radius": 37.35,
+    "size": null
+   }
+  ],
   "color": [
    0.8019,
    0.5208,
@@ -685,6 +1025,31 @@
   "name": "barrel (2)",
   "prefab_name": "Prefab_Barrel",
   "scripted": true,
+  "shadow": {
+   "offset": [
+    -0.64,
+    -8.32
+   ],
+   "scale": [
+    1.504,
+    0.602
+   ],
+   "base_length": 1.0
+  },
+  "colliders": [
+   {
+    "type": "box",
+    "offset": [
+     0.0,
+     -5.686976000000001
+    ],
+    "size": [
+     55.197120000000005,
+     20.573472000000002
+    ],
+    "radius": 0.0
+   }
+  ],
   "color": [
    1,
    1,
@@ -696,8 +1061,8 @@
    245.12
   ],
   "scale": [
-   0.64,
-   0.64
+   0.3345,
+   0.3345
   ],
   "texture": "Assets/HappyHarvest/Art/Environment/Barrel/Sprites/Sprite_Barrel.png",
   "rect": [
@@ -719,6 +1084,21 @@
   "name": "Sofa",
   "prefab_name": "Prefab_Sofa",
   "scripted": true,
+  "shadow": null,
+  "colliders": [
+   {
+    "type": "box",
+    "offset": [
+     -0.36,
+     28.48
+    ],
+    "size": [
+     194.59,
+     72.57
+    ],
+    "radius": 0
+   }
+  ],
   "color": [
    0.374,
    0.6226,
@@ -750,9 +1130,83 @@
   "flip_y": false
  },
  {
+  "name": "Sofa",
+  "prefab_name": "Prefab_Sofa",
+  "scripted": true,
+  "shadow": null,
+  "colliders": null,
+  "color": [
+   0.374,
+   0.6226,
+   0.5786,
+   1
+  ],
+  "position": [
+   198.4,
+   -153.6
+  ],
+  "scale": [
+   0.5,
+   0.5
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Pillows/Pillow_A/Sprites/Sprite_pillowA.png",
+  "rect": [
+   0,
+   0,
+   93,
+   126
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer": 1,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
+  "name": "Sofa",
+  "prefab_name": "Prefab_Sofa",
+  "scripted": true,
+  "shadow": null,
+  "colliders": null,
+  "color": [
+   0.374,
+   0.6226,
+   0.5786,
+   1
+  ],
+  "position": [
+   300.8,
+   -174.78
+  ],
+  "scale": [
+   0.5,
+   0.5
+  ],
+  "texture": "Assets/HappyHarvest/Art/Interior/Pillows/Pillow_B/Sprites/Sprite_PillowB.png",
+  "rect": [
+   0,
+   0,
+   104,
+   104
+  ],
+  "pivot": [
+   0.5,
+   0.5
+  ],
+  "sorting_order": 0,
+  "sorting_layer": 1,
+  "flip_x": false,
+  "flip_y": false
+ },
+ {
   "name": "VFX_Fire",
   "prefab_name": "VFX_Fire",
   "scripted": true,
+  "shadow": null,
+  "colliders": [],
   "color": [
    1,
    1,
@@ -787,6 +1241,8 @@
   "name": "paintings_1",
   "prefab_name": "Prefab_Painting_1",
   "scripted": false,
+  "shadow": null,
+  "colliders": [],
   "color": [
    1,
    1,
@@ -821,6 +1277,21 @@
   "name": "Fireplace",
   "prefab_name": "Prefab_Fireplace",
   "scripted": false,
+  "shadow": null,
+  "colliders": [
+   {
+    "type": "box",
+    "offset": [
+     -0.23,
+     -35.21
+    ],
+    "size": [
+     210.72,
+     98.69
+    ],
+    "radius": 0
+   }
+  ],
   "color": [
    0.8585,
    0.8585,
@@ -855,6 +1326,8 @@
   "name": "Fireplace",
   "prefab_name": "Prefab_Fireplace",
   "scripted": false,
+  "shadow": null,
+  "colliders": null,
   "color": [
    0.8585,
    0.8585,
@@ -889,6 +1362,8 @@
   "name": "rug_02",
   "prefab_name": "rug_02",
   "scripted": false,
+  "shadow": null,
+  "colliders": [],
   "color": [
    1,
    1,
@@ -900,8 +1375,8 @@
    -82.56
   ],
   "scale": [
-   1.0,
-   1.0
+   1.2236,
+   1.4569
   ],
   "texture": "Assets/HappyHarvest/Art/Interior/Rugs/Rug02/Sprites/Sprite_Rug_02.png",
   "rect": [
@@ -923,6 +1398,8 @@
   "name": "paintings_4",
   "prefab_name": "Prefab_Painting_4",
   "scripted": false,
+  "shadow": null,
+  "colliders": [],
   "color": [
    1,
    1,
@@ -957,6 +1434,31 @@
   "name": "plant",
   "prefab_name": "Prefab_Plant",
   "scripted": true,
+  "shadow": {
+   "offset": [
+    -3.58,
+    -1.86
+   ],
+   "scale": [
+    0.92,
+    0.368
+   ],
+   "base_length": 1.0
+  },
+  "colliders": [
+   {
+    "type": "box",
+    "offset": [
+     -0.77,
+     -8.69
+    ],
+    "size": [
+     41.85,
+     28.25
+    ],
+    "radius": 0
+   }
+  ],
   "color": [
    1,
    1,
@@ -991,6 +1493,8 @@
   "name": "paintings_2",
   "prefab_name": "Prefab_Painting_2",
   "scripted": false,
+  "shadow": null,
+  "colliders": [],
   "color": [
    1,
    1,
@@ -1002,8 +1506,8 @@
    -307.84
   ],
   "scale": [
-   0.5,
-   0.5
+   0.414,
+   0.414
   ],
   "texture": "Assets/HappyHarvest/Art/Interior/Paintings/Sprites/Sprite_wall_paintings.png",
   "rect": [
@@ -1025,6 +1529,8 @@
   "name": "curtain",
   "prefab_name": "Prefab_Curtain",
   "scripted": false,
+  "shadow": null,
+  "colliders": [],
   "color": [
    1,
    1,
@@ -1059,6 +1565,8 @@
   "name": "paintings_3",
   "prefab_name": "Prefab_Painting_3",
   "scripted": false,
+  "shadow": null,
+  "colliders": [],
   "color": [
    1,
    1,
@@ -1093,6 +1601,21 @@
   "name": "Bed",
   "prefab_name": "Prefab_Bed",
   "scripted": true,
+  "shadow": null,
+  "colliders": [
+   {
+    "type": "box",
+    "offset": [
+     -4.83,
+     -91.74
+    ],
+    "size": [
+     177.0,
+     199.6
+    ],
+    "radius": 0
+   }
+  ],
   "color": [
    1,
    1,

@@ -21,7 +21,7 @@ size = Vector2(96, 40)
 y_sort_enabled = true
 script = ExtResource("1_scene")
 unique_scene_name = "House"
-camera_limits = Rect2i(-640, -448, 1280, 896)
+camera_limits = Rect2i(-640, -376, 1280, 720)
 
 [node name="Maps" parent="." instance=ExtResource("2_maps")]
 
@@ -59,8 +59,15 @@ position = Vector2(31, -43)
 script = ExtResource("7_daycycle")
 tint_gradient = ExtResource("8_gradient")
 
+[node name="RoomKeyLight" type="PointLight2D" parent="."]
+position = Vector2(0, -60)
+color = Color(1, 0.96, 0.88, 1)
+energy = 0.35
+texture = ExtResource("11_lighttex")
+texture_scale = 5.5
+
 [node name="FireplaceFire" parent="." instance=ExtResource("9_fire")]
-position = Vector2(35.07, -147.01)
+position = Vector2(35.07, -112.0)
 z_index = 1
 
 [node name="WindowLight1" type="PointLight2D" parent="."]

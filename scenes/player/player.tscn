@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://scripts/game/player_controller.gd" id="1_player"]
 [ext_resource type="SpriteFrames" path="res://resources/player_frames.tres" id="2_frames"]
 [ext_resource type="Texture2D" path="res://art/ui/sprite_marker.png" id="3_target"]
 [ext_resource type="Script" path="res://scripts/game/audio/step_sound_handler.gd" id="4_steps"]
+[ext_resource type="Script" path="res://scripts/game/effects/sun_shadow.gd" id="5_shadow"]
+[ext_resource type="Texture2D" path="res://art/vfx/shadow_circle.png" id="6_shadowtex"]
 
 [sub_resource type="CapsuleShape2D" id="shape_feet"]
 radius = 14.0
@@ -17,6 +19,12 @@ colors = PackedColorArray(0.72, 0.64, 0.5, 0.5, 0.7, 0.62, 0.5, 0.3, 0.7, 0.62, 
 collision_layer = 2
 collision_mask = 1
 script = ExtResource("1_player")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+scale = Vector2(0.45, 0.18)
+texture = ExtResource("6_shadowtex")
+script = ExtResource("5_shadow")
+base_length = 0.9
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 0)

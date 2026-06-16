@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3]
+[gd_scene load_steps=24 format=3]
 
 [ext_resource type="Script" path="res://scripts/game/game_scene.gd" id="1_scene"]
 [ext_resource type="PackedScene" path="res://scenes/maps/farm_outdoor_tilemaps.tscn" id="2_maps"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" path="res://scenes/world/waterfall_mist.tscn" id="21_mist"]
 [ext_resource type="Script" path="res://scripts/game/effects/day_gated_light.gd" id="22_nightlight"]
 [ext_resource type="Texture2D" path="res://resources/day_night/radial_light.tres" id="23_lighttex"]
+[ext_resource type="Script" path="res://scripts/game/sun_shadow_driver.gd" id="24_sunshadow"]
 
 [sub_resource type="RectangleShape2D" id="shape_door"]
 size = Vector2(96, 40)
@@ -31,7 +32,7 @@ size = Vector2(96, 40)
 y_sort_enabled = true
 script = ExtResource("1_scene")
 unique_scene_name = "Farm"
-camera_limits = Rect2i(-2304, -2176, 6784, 5056)
+camera_limits = Rect2i(-659, -1065, 3968, 1792)
 
 [node name="Maps" parent="." instance=ExtResource("2_maps")]
 
@@ -76,6 +77,9 @@ position = Vector2(671, 247)
 [node name="DayNight" type="CanvasModulate" parent="."]
 script = ExtResource("10_daycycle")
 tint_gradient = ExtResource("11_gradient")
+
+[node name="SunShadows" type="Node" parent="."]
+script = ExtResource("24_sunshadow")
 
 [node name="DayEvents" type="Node" parent="."]
 script = ExtResource("12_dayevents")

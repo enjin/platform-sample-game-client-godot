@@ -29,7 +29,8 @@ func _run() -> void:
 		"player at spawn 0")
 	var cam := player.get_viewport().get_camera_2d()
 	_check(cam == player.get_node("Camera2D"), "player camera current")
-	_check(cam.limit_right == 4480, "camera limits applied from game_scene")
+	# right edge of the Unity Cinemachine confiner polygon (-659 + 3968)
+	_check(cam.limit_right == 3309, "camera limits applied from game_scene")
 
 	# walk right for half a second from open ground south of the porch
 	# (the spawn itself is boxed in by the house wall colliders, as in Unity)

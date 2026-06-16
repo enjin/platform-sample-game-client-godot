@@ -3,14 +3,34 @@
 [ext_resource type="Texture2D" path="res://art/crops/carrot/sprites/sprite_carrot_00.png" id="1_d3s78"]
 [ext_resource type="Resource" path="res://resources/products/carrot.tres" id="1_taudk"]
 [ext_resource type="Texture2D" path="res://art/crops/carrot/sprites/sprite_carrot_01.png" id="2_555cc"]
+[ext_resource type="Texture2D" path="res://art/crops/carrot/sprites/sprite_carrot_00_normal.png" id="2_ceqs8"]
 [ext_resource type="Script" path="res://scripts/game/data/crop.gd" id="2_d3s78"]
 [ext_resource type="Texture2D" path="res://art/crops/carrot/sprites/sprite_carrot_02.png" id="3_ka2q2"]
+[ext_resource type="Texture2D" path="res://art/crops/carrot/sprites/sprite_carrot_01_normal.png" id="4_a0a3s"]
 [ext_resource type="Texture2D" path="res://art/crops/carrot/sprites/sprite_carrot_03.png" id="4_ynuq2"]
+[ext_resource type="Texture2D" path="res://art/crops/carrot/sprites/sprite_carrot_02_normal.png" id="6_aresk"]
+[ext_resource type="Texture2D" path="res://art/crops/carrot/sprites/sprite_carrot_03_normal.png" id="8_n1pte"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pwfru"]
+diffuse_texture = ExtResource("1_d3s78")
+normal_texture = ExtResource("2_ceqs8")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1dbih"]
+diffuse_texture = ExtResource("2_555cc")
+normal_texture = ExtResource("4_a0a3s")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_52htr"]
+diffuse_texture = ExtResource("3_ka2q2")
+normal_texture = ExtResource("6_aresk")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jir6e"]
+diffuse_texture = ExtResource("4_ynuq2")
+normal_texture = ExtResource("8_n1pte")
 
 [resource]
 script = ExtResource("2_d3s78")
 unique_id = "carrot_crop"
-growth_stage_textures = Array[Texture2D]([ExtResource("1_d3s78"), ExtResource("2_555cc"), ExtResource("3_ka2q2"), ExtResource("4_ynuq2")])
+growth_stage_textures = Array[Texture2D]([SubResource("CanvasTexture_pwfru"), SubResource("CanvasTexture_1dbih"), SubResource("CanvasTexture_52htr"), SubResource("CanvasTexture_jir6e")])
 stage_texture_scale = 0.64
 produce = ExtResource("1_taudk")
 growth_time = 15.0

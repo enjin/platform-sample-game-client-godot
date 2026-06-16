@@ -65,6 +65,13 @@ func _texture(ref) -> Texture2D:
 	if tex == null:
 		push_warning("missing texture " + str(ref.texture))
 		return null
+	# pair with the Unity normal map so 2D lights shade the sprite
+	var normal_path: String = ref.get("normal", "")
+	if not normal_path.is_empty() and ResourceLoader.exists(normal_path):
+		var canvas := CanvasTexture.new()
+		canvas.diffuse_texture = tex
+		canvas.normal_texture = load(normal_path)
+		tex = canvas
 	var rect: Array = ref.rect
 	if int(rect[0]) == 0 and int(rect[1]) == 0 \
 			and int(rect[2]) == tex.get_width() and int(rect[3]) == tex.get_height():

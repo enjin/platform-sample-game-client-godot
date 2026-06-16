@@ -2,14 +2,19 @@
 
 [ext_resource type="Texture2D" path="res://art/crops/corn/sprites/sprite_corn_icon.png" id="1_fxi8j"]
 [ext_resource type="Script" path="res://scripts/game/items/product.gd" id="2_i2bs6"]
+[ext_resource type="Texture2D" path="res://art/crops/corn/sprites/sprite_corn_icon_normal.png" id="2_w2jfu"]
 [ext_resource type="AudioStream" path="res://audio/character/chewing_an_apple-001.wav" id="3_w2jfu"]
 [ext_resource type="AudioStream" path="res://audio/character/chewing_an_apple-002.wav" id="4_1kxbo"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1kxbo"]
+diffuse_texture = ExtResource("1_fxi8j")
+normal_texture = ExtResource("2_w2jfu")
 
 [resource]
 script = ExtResource("2_i2bs6")
 sell_price = 10
 unique_id = "corn_cob"
 display_name = "Corn Cob"
-item_sprite = ExtResource("1_fxi8j")
+item_sprite = SubResource("CanvasTexture_1kxbo")
 player_animator_trigger_use = "Eating"
 use_sound = Array[AudioStream]([ExtResource("3_w2jfu"), ExtResource("4_1kxbo")])

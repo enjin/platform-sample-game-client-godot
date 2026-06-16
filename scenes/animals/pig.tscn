@@ -1,14 +1,23 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://scripts/game/animal.gd" id="1_animal"]
 [ext_resource type="SpriteFrames" path="res://resources/pig_frames.tres" id="2_frames"]
 [ext_resource type="AudioStream" path="res://audio/animals/pig-001.wav" id="3_snd1"]
 [ext_resource type="AudioStream" path="res://audio/animals/pig-002.wav" id="4_snd2"]
 
+[ext_resource type="Script" path="res://scripts/game/effects/sun_shadow.gd" id="5_shadow"]
+[ext_resource type="Texture2D" path="res://art/vfx/shadow_circle.png" id="6_shadowtex"]
+
 [node name="Pig" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_animal")
 animal_sounds = Array[AudioStream]([ExtResource("3_snd1"), ExtResource("4_snd2")])
+
+[node name="Shadow" type="Sprite2D" parent="."]
+scale = Vector2(0.55, 0.22)
+texture = ExtResource("6_shadowtex")
+script = ExtResource("5_shadow")
+base_length = 0.8
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 offset = Vector2(6.13, -30.98)

@@ -40,6 +40,7 @@ SCENES = {
 }
 
 CROP_INITIALIZER_GUID = "dde04bdb5ee6fdf4c97d49bb04a61cfe"
+SHADOW_PREFAB_GUID = "3154484e43d90644b8e969b02ef3a297"
 PPU = 64  # spritePixelsToUnits everywhere in this project
 
 CLASS_GAMEOBJECT = 1
@@ -458,6 +459,17 @@ def prefab_root_sprite(prefab_index, guid, _depth=0):
         has_script = any(cid == CLASS_MONOBEHAVIOUR for cid, _d, _t in docs.values())
         renderers = []
         names, _comps, transforms, transform_of_go = build_maps(docs)
+        # the prefab ROOT's scale applies to instances unless overridden
+        # (its position does not - instances override that)
+        root_scale = [1.0, 1.0]
+        root_transform_id = 0
+        for _ta, tdoc in transforms.items():
+            if not tdoc.get("m_Father", {}).get("fileID", 0):
+                ls = tdoc.get("m_LocalScale") or {}
+                if ls:  # skip stripped/empty transform docs
+                    root_scale = [ls.get("x", 1), ls.get("y", 1)]
+                    root_transform_id = _ta
+                    break
         for anchor, (class_id, doc, _tag) in sorted(docs.items()):
             if class_id != CLASS_SPRITERENDERER:
                 continue
@@ -499,9 +511,116 @@ def prefab_root_sprite(prefab_index, guid, _depth=0):
                 "color": color_of(doc),
                 "flip_x": bool(doc.get("m_FlipX", 0)),
             })
+        # Nested prefab instances (sofa pillows, decorations) compose into the
+        # parent's renderer list with their position/color overrides applied.
+        # Only for composite prefabs (with own renderers); renderer-less
+        # wrappers are prefab VARIANTS handled in the else-branch below.
+        if renderers:
+            for _a, (cid2, doc2, tag2) in sorted(docs.items()):
+                if tag2 != "PrefabInstance":
+                    continue
+                nested_guid = (doc2.get("m_SourcePrefab") or {}).get("guid")
+                if not nested_guid or nested_guid == SHADOW_PREFAB_GUID:
+                    continue
+                nested = prefab_root_sprite(prefab_index, nested_guid, _depth + 1)
+                if not nested:
+                    continue
+                mod2 = doc2.get("m_Modification") or {}
+                mods2 = mod2.get("m_Modifications") or []
+                vals = {m.get("propertyPath"): m.get("value") for m in mods2}
+                nx = float(vals.get("m_LocalPosition.x", 0) or 0)
+                ny = float(vals.get("m_LocalPosition.y", 0) or 0)
+                # parent chain inside this prefab, excluding the prefab root
+                px = py = 0.0
+                t_anchor = (mod2.get("m_TransformParent") or {}).get("fileID", 0) or None
+                guard = 0
+                while t_anchor and guard < 64:
+                    t = transforms.get(t_anchor)
+                    if t is None:
+                        break
+                    father = t.get("m_Father", {}).get("fileID", 0)
+                    if not father:
+                        break
+                    lp = t.get("m_LocalPosition", {})
+                    px += lp.get("x", 0)
+                    py += lp.get("y", 0)
+                    t_anchor = father
+                    guard += 1
+                color_override = {}
+                for m in mods2:
+                    pp = str(m.get("propertyPath", ""))
+                    if pp.startswith("m_Color."):
+                        color_override[pp[-1]] = float(m.get("value", 1) or 0)
+                nrs_x, nrs_y = nested.get("root_scale", [1, 1])
+                # the nesting instance's own scale override replaces the
+                # nested prefab's root scale (Unity semantics)
+                if vals.get("m_LocalScale.x") is not None:
+                    nrs_x = float(vals["m_LocalScale.x"] or 1)
+                if vals.get("m_LocalScale.y") is not None:
+                    nrs_y = float(vals["m_LocalScale.y"] or 1)
+                for r in nested["renderers"]:
+                    nr = dict(r)
+                    nr["local_scale"] = [r.get("local_scale", [1, 1])[0] * nrs_x,
+                                         r.get("local_scale", [1, 1])[1] * nrs_y]
+                    nr["local_offset"] = [
+                        round(r["local_offset"][0] * nrs_x + (nx + px) * PPU, 2),
+                        round(r["local_offset"][1] * nrs_y - (ny + py) * PPU, 2)]
+                    if color_override:
+                        c = list(r.get("color", [1, 1, 1, 1]))
+                        for i, ch in enumerate("rgba"):
+                            if ch in color_override:
+                                c[i] = round(color_override[ch], 4)
+                        nr["color"] = c
+                    renderers.append(nr)
+            renderers.sort(key=lambda r: r.get("sorting_order", 0))
+
+        # solid (non-trigger) colliders on the prefab: tree trunks, barrels...
+        # offsets/sizes are unity units -> godot px (y-down)
+        colliders = []
+        for _a, (cid2, doc2, tag2) in docs.items():
+            if tag2 not in ("BoxCollider2D", "CircleCollider2D"):
+                continue
+            if doc2.get("m_IsTrigger", 0):
+                continue
+            off = doc2.get("m_Offset", {})
+            entry_c = {
+                "type": "box" if tag2 == "BoxCollider2D" else "circle",
+                "offset": [round(off.get("x", 0) * PPU, 2),
+                           round(-off.get("y", 0) * PPU, 2)],
+            }
+            if tag2 == "BoxCollider2D":
+                size = doc2.get("m_Size", {})
+                entry_c["size"] = [round(size.get("x", 1) * PPU, 2),
+                                   round(size.get("y", 1) * PPU, 2)]
+            else:
+                entry_c["radius"] = round(doc2.get("m_Radius", 0.5) * PPU, 2)
+            colliders.append(entry_c)
+
+        # nested Art/shadow.prefab instance = drop shadow rotated by the
+        # day cycle in Unity (ShadowInstance + DayCycleHandler.UpdateShadow)
+        shadow = None
+        for _a, (cid2, doc2, tag2) in docs.items():
+            if tag2 != "PrefabInstance":
+                continue
+            if (doc2.get("m_SourcePrefab") or {}).get("guid") != SHADOW_PREFAB_GUID:
+                continue
+            mods2 = (doc2.get("m_Modification") or {}).get("m_Modifications") or []
+            vals = {m.get("propertyPath"): m.get("value") for m in mods2}
+            shadow = {
+                "offset": [round(float(vals.get("m_LocalPosition.x", 0) or 0) * PPU, 2),
+                           round(-float(vals.get("m_LocalPosition.y", 0) or 0) * PPU, 2)],
+                "scale": [round(float(vals.get("m_LocalScale.x", 1) or 1), 3),
+                          round(float(vals.get("m_LocalScale.y", 1) or 1), 3)],
+                "base_length": round(float(vals.get("BaseLength", 1) or 1), 3),
+            }
+            break
         if renderers:
             result = {
                 "renderers": renderers,
+                "root_scale": root_scale,
+                "root_transform_id": root_transform_id,
+                "shadow": shadow,
+                "colliders": colliders,
                 "animated": has_animator,
                 "scripted": has_script,
                 "prefab_name": os.path.splitext(os.path.basename(path))[0],
@@ -560,6 +679,7 @@ def extract_prefab_instances(docs, tex_index, prefab_index, props_out):
         pos = {"x": 0.0, "y": 0.0}
         name = ""
         color_override = {}
+        scale_override_targets = {}
         for m in mod.get("m_Modifications") or []:
             prop = m.get("propertyPath", "")
             if prop == "m_LocalPosition.x":
@@ -570,12 +690,24 @@ def extract_prefab_instances(docs, tex_index, prefab_index, props_out):
                 name = m.get("value", "")
             elif prop.startswith("m_Color."):
                 color_override[prop[-1]] = float(m.get("value", 1) or 0)
+            elif prop == "m_LocalScale.x":
+                scale_override_targets.setdefault(
+                    (m.get("target") or {}).get("fileID", 0), [None, None])[0] = \
+                    float(m.get("value", 1) or 1)
+            elif prop == "m_LocalScale.y":
+                scale_override_targets.setdefault(
+                    (m.get("target") or {}).get("fileID", 0), [None, None])[1] = \
+                    float(m.get("value", 1) or 1)
         # the instance's local position is relative to its scene parent
         parent_t = (mod.get("m_TransformParent") or {}).get("fileID", 0)
         px, py, _psx, _psy = world_position_from_transform(transforms, parent_t or None)
         instance_pos = [round((pos["x"] + px) * PPU, 2),
                         round(-(pos["y"] + py) * PPU, 2)]
         info = prefab_root_sprite(prefab_index, guid)
+        scale_override = [None, None]
+        if info:
+            scale_override = scale_override_targets.get(
+                info.get("root_transform_id", 0), [None, None])
         # Animated prefabs (Animator = animals, VFX) and sprite-less prefabs
         # (managers, lights) go to the manual list; scripted-but-static ones
         # (bushes, trees, lamps) are still emitted as props, tagged "scripted"
@@ -598,6 +730,13 @@ def extract_prefab_instances(docs, tex_index, prefab_index, props_out):
             entry, rect, pivot, _physics = resolved
             ppu_scale = PPU / float(entry["parsed"]["ppu"] or PPU)
             lsx, lsy = r.get("local_scale", [1, 1])
+            rsx, rsy = info.get("root_scale", [1, 1])
+            if scale_override[0] is not None:
+                rsx = scale_override[0]
+            if scale_override[1] is not None:
+                rsy = scale_override[1]
+            lsx *= rsx
+            lsy *= rsy
             color = list(r.get("color", [1, 1, 1, 1]))
             for i, ch in enumerate("rgba"):
                 if ch in color_override:
@@ -606,9 +745,16 @@ def extract_prefab_instances(docs, tex_index, prefab_index, props_out):
                 "name": name or info["prefab_name"],
                 "prefab_name": info["prefab_name"],
                 "scripted": info["scripted"],
+                "shadow": info.get("shadow") if r is info["renderers"][0] else None,
+                "colliders": ([{**c,
+                    "offset": [c["offset"][0] * rsx, c["offset"][1] * rsy],
+                    "size": [c["size"][0] * rsx, c["size"][1] * rsy] if "size" in c else None,
+                    "radius": c.get("radius", 0) * rsx,
+                } for c in info.get("colliders", [])]
+                    if r is info["renderers"][0] else None),
                 "color": color,
-                "position": [instance_pos[0] + r["local_offset"][0],
-                             instance_pos[1] + r["local_offset"][1]],
+                "position": [instance_pos[0] + r["local_offset"][0] * rsx,
+                             instance_pos[1] + r["local_offset"][1] * rsy],
                 "scale": [round(lsx * ppu_scale, 4), round(lsy * ppu_scale, 4)],
                 "texture": entry["rel"],
                 "rect": rect,
@@ -661,8 +807,19 @@ def godot_art_path(unity_rel):
     return snake(rel)
 
 
+def find_normal_map(png_path):
+    """Sibling normal map (`foo_normal.png` / `foo_n.png`) for a diffuse png."""
+    base = png_path[:-len(".png")]
+    for suffix in ("_normal.png", "_n.png"):
+        candidate = base + suffix
+        if os.path.exists(candidate):
+            return candidate
+    return None
+
+
 def copy_textures(tex_index, used_guids):
     mapping = {}
+    normals = 0
     for guid in sorted(used_guids):
         entry = tex_index.get(guid)
         if entry is None:
@@ -675,7 +832,13 @@ def copy_textures(tex_index, used_guids):
             "godot_path": "res://" + dest_rel,
             "size": list(texture_entry(tex_index, guid)["size"]),
         }
-    print(f"copied {len(mapping)} textures -> art/")
+        normal = find_normal_map(entry["png"])
+        if normal:
+            normal_rel = dest_rel[:-len(".png")] + "_normal.png"
+            shutil.copy2(normal, os.path.join(GODOT_ROOT, normal_rel))
+            mapping[entry["rel"]]["normal"] = "res://" + normal_rel
+            normals += 1
+    print(f"copied {len(mapping)} textures ({normals} with normal maps) -> art/")
     return mapping
 
 

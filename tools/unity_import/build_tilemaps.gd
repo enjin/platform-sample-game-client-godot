@@ -52,6 +52,33 @@ func _tex_path(textures: Dictionary, key: String) -> String:
 	return textures.get(key, {}).get("godot_path", "")
 
 
+var _canvas_tex_cache := {}
+
+
+# Diffuse texture, paired with its Unity normal map (as a CanvasTexture) when
+# one was extracted - this is what makes 2D lights produce relief.
+func _load_lit_texture(textures: Dictionary, key: String) -> Texture2D:
+	var res_path := _tex_path(textures, key)
+	if res_path.is_empty():
+		return null
+	if _canvas_tex_cache.has(res_path):
+		return _canvas_tex_cache[res_path]
+	var diffuse: Texture2D = load(res_path)
+	var out: Texture2D = diffuse
+	var normal_path: String = textures.get(key, {}).get("normal", "")
+	if normal_path.is_empty() and key.begins_with("res://"):
+		var candidate := key.trim_suffix(".png") + "_normal.png"
+		if ResourceLoader.exists(candidate):
+			normal_path = candidate
+	if diffuse != null and not normal_path.is_empty():
+		var canvas := CanvasTexture.new()
+		canvas.diffuse_texture = diffuse
+		canvas.normal_texture = load(normal_path)
+		out = canvas
+	_canvas_tex_cache[res_path] = out
+	return out
+
+
 # --------------------------------------------------------------- tileset
 
 # source ids are stable per texture path; tile = atlas cell at rect/64
@@ -113,7 +140,7 @@ func _build_tileset(manifests: Dictionary, textures: Dictionary) -> TileSet:
 
 	var source_id := 0
 	for tex: String in per_tex:
-		var texture: Texture2D = load(tex)
+		var texture: Texture2D = _load_lit_texture(textures, unity_of.get(tex, tex))
 		if texture == null:
 			push_warning("missing texture " + tex)
 			continue
@@ -122,6 +149,7 @@ func _build_tileset(manifests: Dictionary, textures: Dictionary) -> TileSet:
 		src.texture_region_size = Vector2i(TILE, TILE)
 		src.resource_name = tex.get_file()
 		tileset.add_source(src, source_id)
+		_source_ids[tex] = source_id
 		var skipped := 0
 		for coords: Vector2i in per_tex[tex]:
 			var size: Vector2i = per_tex[tex][coords]
@@ -157,13 +185,17 @@ func _build_tileset(manifests: Dictionary, textures: Dictionary) -> TileSet:
 	return tileset
 
 
+# res texture path -> atlas source id, filled while building the tileset
+# (CanvasTexture wrappers have no resource_path to match against)
+var _source_ids := {}
+
+
 func _find_tile(tileset: TileSet, textures: Dictionary, tex: String, coords: Vector2i) -> int:
-	for i in tileset.get_source_count():
-		var sid := tileset.get_source_id(i)
-		var src := tileset.get_source(sid) as TileSetAtlasSource
-		if src and src.texture and src.texture.resource_path == _tex_path(textures, tex):
-			return sid if src.has_tile(coords) else -1
-	return -1
+	var sid: int = _source_ids.get(_tex_path(textures, tex), -1)
+	if sid < 0:
+		return -1
+	var src := tileset.get_source(sid) as TileSetAtlasSource
+	return sid if src and src.has_tile(coords) else -1
 
 
 # ----------------------------------------------------------------- scenes
@@ -177,17 +209,22 @@ func _build_scene(scene_name: String, layers: Variant, tileset: TileSet,
 	root.y_sort_enabled = true
 
 	var missing := 0
+	var ground_rank := 0
 	for layer: Dictionary in layers:
 		var tml := TileMapLayer.new()
 		tml.name = layer.layer_name
 		tml.tile_set = tileset
 		# Unity sorting layers map to z planes: Bottom/Default (<=0) are
-		# ground at z -1; Objects (1: house/warehouse walls, tree tops) share
-		# z 0 with props and the player; ObjectsFront (2: roof, chimney)
-		# keeps its explicit order above the player.
+		# ground below props; Objects (1: house/warehouse walls, tree tops)
+		# share z 0 with props and the player; ObjectsFront (2: roof,
+		# chimney) keeps its explicit order above the player.
+		# Ground layers get DISTINCT z values: equal z under a y-sorted
+		# parent ties on y=0 and Godot may draw them in arbitrary order
+		# (PinetreesBackground covered the cliff tiles).
 		var rank := int(layer.get("sorting_layer", 0))
 		if rank <= 0:
-			tml.z_index = -1
+			tml.z_index = -20 + ground_rank  # manifest is sorting_order-sorted
+			ground_rank += 1
 		elif rank == 1:
 			tml.z_index = 0
 		else:
@@ -232,11 +269,55 @@ func _add_props(root: Node2D, scene_name: String, textures: Dictionary) -> void:
 	root.add_child(parent)
 	parent.owner = root
 	var used_names := {}
+	var idx_shadow := 1
+	var shadow_script: Script = load("res://scripts/game/effects/sun_shadow.gd")
+	var shadow_tex: Texture2D = load("res://art/vfx/shadow_circle.png")
+	# solid prop colliders (tree trunks, barrels) collect on one StaticBody2D
+	var prop_body := StaticBody2D.new()
+	prop_body.name = "PropCollision"
+	prop_body.collision_layer = 1
+	root.add_child(prop_body)
+	prop_body.owner = root
+	var idx_col := 1
 	for p: Dictionary in props:
-		var res_path := _tex_path(textures, p.texture)
-		var texture: Texture2D = load(res_path) if res_path else null
+		var texture: Texture2D = _load_lit_texture(textures, p.texture)
 		if texture == null:
 			continue
+		var cols = p.get("colliders")
+		if cols is Array:
+			for c: Dictionary in cols:
+				var shape := CollisionShape2D.new()
+				if c.type == "circle":
+					var circle := CircleShape2D.new()
+					circle.radius = c.radius
+					shape.shape = circle
+				else:
+					var rect_shape := RectangleShape2D.new()
+					rect_shape.size = Vector2(absf(c.size[0]), absf(c.size[1]))
+					shape.shape = rect_shape
+				shape.name = "Prop_%d" % idx_col
+				idx_col += 1
+				shape.position = Vector2(p.position[0] + c.offset[0],
+					p.position[1] + c.offset[1])
+				prop_body.add_child(shape)
+				shape.owner = root
+		# drop shadow (nested Art/shadow.prefab in the Unity prefab)
+		var sh = p.get("shadow")
+		if sh is Dictionary:
+			var blob := Sprite2D.new()
+			blob.name = "%s_shadow_%d" % [str(p.name).validate_node_name(), idx_shadow]
+			idx_shadow += 1
+			blob.texture = shadow_tex
+			blob.position = Vector2(p.position[0] + sh.offset[0],
+				p.position[1] + sh.offset[1])
+			# Unity's UpdateShadow forces scale (1, BaseLength*curve): fixed
+			# width, only length varies; 0.4 = the prefab's ellipse squash
+			blob.scale = Vector2(0.45, 0.45 * 0.4)
+			blob.z_index = -1
+			blob.script = shadow_script
+			blob.set("base_length", sh.base_length)
+			parent.add_child(blob)
+			blob.owner = root
 		var spr := Sprite2D.new()
 		var base: String = str(p.name).validate_node_name()
 		var n := base

@@ -14,8 +14,8 @@ try:
 except ImportError:
     from yaml import SafeLoader
 
-from extract_unity_maps import (GODOT_ROOT, UNITY_ROOT, godot_art_path,
-                                index_prefabs, index_textures,
+from extract_unity_maps import (GODOT_ROOT, UNITY_ROOT, find_normal_map,
+                                godot_art_path, index_prefabs, index_textures,
                                 prefab_root_sprite, resolve_sprite)
 
 OUT = os.path.join(GODOT_ROOT, "tools/unity_import/out/items.json")
@@ -61,8 +61,17 @@ def main():
         if resolved is None:
             return None
         entry, rect, _pivot, _phys = resolved
-        return {"texture": "res://" + godot_art_path(entry["rel"]), "rect": rect,
-                "ppu": entry["parsed"]["ppu"]}
+        ref_out = {"texture": "res://" + godot_art_path(entry["rel"]), "rect": rect,
+                   "ppu": entry["parsed"]["ppu"]}
+        normal = find_normal_map(entry["png"])
+        if normal:
+            dest_rel = godot_art_path(entry["rel"])[:-len(".png")] + "_normal.png"
+            dest = os.path.join(GODOT_ROOT, dest_rel)
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            import shutil
+            shutil.copy2(normal, dest)
+            ref_out["normal"] = "res://" + dest_rel
+        return ref_out
 
     def audio_ref(ref):
         if not ref or not ref.get("guid") or ref["guid"] not in audio_index:

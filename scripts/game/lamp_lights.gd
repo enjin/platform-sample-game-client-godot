@@ -28,17 +28,22 @@ func _ready() -> void:
 	tex.gradient = grad
 
 	for child in props_root.get_children():
-		var lower := String(child.name).to_lower()
-		if not ("street_lamp" in lower or "streetlamp" in lower or "houselamp" in lower):
+		if not child is Sprite2D or child.texture == null:
+			continue
+		# attach the light to the lantern visual itself (the hanging lantern
+		# nested in the streetlamp prefab, or a wall-mounted house lamp)
+		var tex_path: String = child.texture.resource_path.to_lower()
+		if child.texture is CanvasTexture:
+			tex_path = (child.texture as CanvasTexture).diffuse_texture.resource_path.to_lower()
+		if not ("lantern" in tex_path.get_file() or "houselamp" in tex_path.get_file()):
 			continue
 		var light: PointLight2D = FLICKER.new()
 		light.texture = tex
 		light.color = light_color
-		light.energy = 1.1
+		light.energy = 1.0
 		light.blend_mode = Light2D.BLEND_MODE_ADD
 		light.texture_scale = light_radius / 128.0
-		# lamp pivots sit at the base; the bulb is near the top of the sprite
-		light.position = Vector2(0, -150)
+		light.position = Vector2(0, 6)  # lantern sprite anchors at its top
 		light.visible = false
 		child.add_child(light)
 		_lights.append(light)

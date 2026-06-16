@@ -152,6 +152,12 @@ Run order: extractor → `--headless --import` → builders.
 - **Particles:** Unity's VFX-graph effects are approximated with
   `CPUParticles2D`: chimney smoke, waterfall mist, fireplace flames/embers,
   tilling dust, harvest leaf bursts, walking step dust, and rain.
+- **Normal maps:** Unity's `_normal` textures are paired with their diffuse
+  sprites via `CanvasTexture` (tiles, props, and crops), so 2D lights shade
+  surfaces with relief. Interior window lights use Unity's cookie sprites.
+- **Sun shadows:** the ShadowInstance/DayCycleHandler shadow system is ported
+  — props, animals and the player cast soft blob shadows that sweep and
+  stretch with the sun (static resting pose indoors).
 - **Tilled/watered soil** uses the RuleTile's centre tile only (no edge
   matching) — tile visuals at bed borders are slightly simpler.
 - **Tool hand visuals** (animated hoe/watercan prefabs in the player's hand)

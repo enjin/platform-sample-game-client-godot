@@ -12,7 +12,8 @@
      72,
      81
     ],
-    "ppu": 100
+    "ppu": 100,
+    "normal": "res://art/crops/carrot/sprites/sprite_carrot_00_normal.png"
    },
    {
     "texture": "res://art/crops/carrot/sprites/sprite_carrot_01.png",
@@ -22,7 +23,8 @@
      72,
      81
     ],
-    "ppu": 100
+    "ppu": 100,
+    "normal": "res://art/crops/carrot/sprites/sprite_carrot_01_normal.png"
    },
    {
     "texture": "res://art/crops/carrot/sprites/sprite_carrot_02.png",
@@ -32,7 +34,8 @@
      72,
      81
     ],
-    "ppu": 100
+    "ppu": 100,
+    "normal": "res://art/crops/carrot/sprites/sprite_carrot_02_normal.png"
    },
    {
     "texture": "res://art/crops/carrot/sprites/sprite_carrot_03.png",
@@ -42,7 +45,8 @@
      72,
      81
     ],
-    "ppu": 100
+    "ppu": 100,
+    "normal": "res://art/crops/carrot/sprites/sprite_carrot_03_normal.png"
    }
   ],
   "stage_scale": 0.64,
@@ -68,7 +72,8 @@
      192,
      144
     ],
-    "ppu": 100
+    "ppu": 100,
+    "normal": "res://art/crops/corn/sprites/sprite_corn_01_normal.png"
    },
    {
     "texture": "res://art/crops/corn/sprites/sprite_corn_02.png",
@@ -78,7 +83,8 @@
      192,
      144
     ],
-    "ppu": 100
+    "ppu": 100,
+    "normal": "res://art/crops/corn/sprites/sprite_corn_02_normal.png"
    },
    {
     "texture": "res://art/crops/corn/sprites/sprite_corn_03.png",
@@ -88,7 +94,8 @@
      192,
      144
     ],
-    "ppu": 100
+    "ppu": 100,
+    "normal": "res://art/crops/corn/sprites/sprite_corn_03_normal.png"
    },
    {
     "texture": "res://art/crops/corn/sprites/sprite_corn_04.png",
@@ -98,7 +105,8 @@
      192,
      144
     ],
-    "ppu": 100
+    "ppu": 100,
+    "normal": "res://art/crops/corn/sprites/sprite_corn_04_normal.png"
    },
    {
     "texture": "res://art/crops/corn/sprites/sprite_corn_05.png",
@@ -108,7 +116,8 @@
      192,
      144
     ],
-    "ppu": 100
+    "ppu": 100,
+    "normal": "res://art/crops/corn/sprites/sprite_corn_05_normal.png"
    }
   ],
   "stage_scale": 0.64,
@@ -134,7 +143,8 @@
      168,
      121
     ],
-    "ppu": 100
+    "ppu": 100,
+    "normal": "res://art/crops/wheat/sprites/sprite_wheat_01_normal.png"
    },
    {
     "texture": "res://art/crops/wheat/sprites/sprite_wheat_02.png",
@@ -144,7 +154,8 @@
      168,
      121
     ],
-    "ppu": 100
+    "ppu": 100,
+    "normal": "res://art/crops/wheat/sprites/sprite_wheat_02_normal.png"
    },
    {
     "texture": "res://art/crops/wheat/sprites/sprite_wheat_03.png",
@@ -154,7 +165,8 @@
      168,
      121
     ],
-    "ppu": 100
+    "ppu": 100,
+    "normal": "res://art/crops/wheat/sprites/sprite_wheat_03_normal.png"
    },
    {
     "texture": "res://art/crops/wheat/sprites/sprite_wheat_04.png",
@@ -164,7 +176,8 @@
      168,
      121
     ],
-    "ppu": 100
+    "ppu": 100,
+    "normal": "res://art/crops/wheat/sprites/sprite_wheat_04_normal.png"
    },
    {
     "texture": "res://art/crops/wheat/sprites/sprite_wheat_05.png",
@@ -174,7 +187,8 @@
      168,
      121
     ],
-    "ppu": 100
+    "ppu": 100,
+    "normal": "res://art/crops/wheat/sprites/sprite_wheat_05_normal.png"
    }
   ],
   "stage_scale": 0.64,
@@ -376,7 +390,8 @@
     256,
     256
    ],
-   "ppu": 100
+   "ppu": 100,
+   "normal": "res://art/crops/corn/sprites/sprite_corn_icon_normal.png"
   },
   "max_stack_size": 10,
   "consumable": true,
@@ -402,7 +417,8 @@
     129,
     129
    ],
-   "ppu": 100
+   "ppu": 100,
+   "normal": "res://art/crops/wheat/sprites/sprite_wheat_icon_normal.png"
   },
   "max_stack_size": 10,
   "consumable": true,
