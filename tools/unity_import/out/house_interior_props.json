@@ -131,8 +131,8 @@
    229
   ],
   "pivot": [
-   0.5,
-   0.5
+   0.3530785,
+   0.044941295
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -167,8 +167,8 @@
    126
   ],
   "pivot": [
-   0.5,
-   0.5
+   0.5076493,
+   0.07655829
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -203,8 +203,8 @@
    229
   ],
   "pivot": [
-   0.5,
-   0.5
+   0.3530785,
+   0.044941295
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -262,8 +262,8 @@
    193
   ],
   "pivot": [
-   0.5,
-   0.5
+   0.47687075,
+   0.048884403
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -298,8 +298,8 @@
    229
   ],
   "pivot": [
-   0.5,
-   0.5
+   0.3530785,
+   0.044941295
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -358,7 +358,7 @@
   ],
   "pivot": [
    0.5,
-   0.5
+   0.045278247
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -417,7 +417,7 @@
   ],
   "pivot": [
    0.5,
-   0.5
+   0.045278247
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -476,66 +476,10 @@
   ],
   "pivot": [
    0.5,
-   0.5
+   0.045278247
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
-  "flip_x": false,
-  "flip_y": false
- },
- {
-  "name": "Character",
-  "prefab_name": "Character",
-  "scripted": true,
-  "shadow": {
-   "offset": [
-    -0.0,
-    -0.0
-   ],
-   "scale": [
-    1.575,
-    0.12
-   ],
-   "base_length": 1.0
-  },
-  "colliders": [
-   {
-    "type": "circle",
-    "offset": [
-     -1.1,
-     -16.89
-    ],
-    "radius": 19.28,
-    "size": null
-   }
-  ],
-  "color": [
-   1,
-   1,
-   1,
-   1
-  ],
-  "position": [
-   28.03,
-   -18.38
-  ],
-  "scale": [
-   0.64,
-   0.64
-  ],
-  "texture": "Assets/HappyHarvest/Art/UI/Sprite_Marker.png",
-  "rect": [
-   0,
-   0,
-   128,
-   128
-  ],
-  "pivot": [
-   0.5,
-   0.5
-  ],
-  "sorting_order": 50,
-  "sorting_layer": 3,
   "flip_x": false,
   "flip_y": false
  },
@@ -637,7 +581,7 @@
   ],
   "pivot": [
    0.5,
-   0.5
+   0.045278247
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -696,7 +640,7 @@
   ],
   "pivot": [
    0.5,
-   0.5
+   0.045278247
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -780,8 +724,8 @@
    126
   ],
   "pivot": [
-   0.5,
-   0.5
+   0.5076493,
+   0.07655829
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -816,67 +760,11 @@
    104
   ],
   "pivot": [
-   0.5,
-   0.5
+   0.47515804,
+   0.14092137
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
-  "flip_x": false,
-  "flip_y": false
- },
- {
-  "name": "Character",
-  "prefab_name": "Character",
-  "scripted": true,
-  "shadow": {
-   "offset": [
-    -0.0,
-    -0.0
-   ],
-   "scale": [
-    1.575,
-    0.12
-   ],
-   "base_length": 1.0
-  },
-  "colliders": [
-   {
-    "type": "circle",
-    "offset": [
-     -1.1,
-     -16.89
-    ],
-    "radius": 19.28,
-    "size": null
-   }
-  ],
-  "color": [
-   1,
-   1,
-   1,
-   1
-  ],
-  "position": [
-   28.03,
-   -18.38
-  ],
-  "scale": [
-   0.64,
-   0.64
-  ],
-  "texture": "Assets/HappyHarvest/Art/UI/Sprite_Marker.png",
-  "rect": [
-   0,
-   0,
-   128,
-   128
-  ],
-  "pivot": [
-   0.5,
-   0.5
-  ],
-  "sorting_order": 50,
-  "sorting_layer": 3,
   "flip_x": false,
   "flip_y": false
  },
@@ -931,8 +819,8 @@
    193
   ],
   "pivot": [
-   0.5,
-   0.5
+   0.47687075,
+   0.048884403
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -1073,7 +961,7 @@
   ],
   "pivot": [
    0.5,
-   0.5
+   0.045278247
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -1157,8 +1045,8 @@
    126
   ],
   "pivot": [
-   0.5,
-   0.5
+   0.5076493,
+   0.07655829
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -1193,8 +1081,8 @@
    104
   ],
   "pivot": [
-   0.5,
-   0.5
+   0.47515804,
+   0.14092137
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -1351,7 +1239,7 @@
   ],
   "pivot": [
    0.5,
-   0.5
+   0.1262421
   ],
   "sorting_order": 5,
   "sorting_layer": 0,
@@ -1481,8 +1369,8 @@
    193
   ],
   "pivot": [
-   0.5,
-   0.5
+   0.47687075,
+   0.048884403
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -1553,8 +1441,8 @@
    229
   ],
   "pivot": [
-   0.5,
-   0.5
+   0.3530785,
+   0.044941295
   ],
   "sorting_order": 0,
   "sorting_layer": 1,
@@ -1639,7 +1527,7 @@
   ],
   "pivot": [
    0.5,
-   0.5
+   0.027548244
   ],
   "sorting_order": 0,
   "sorting_layer": 1,

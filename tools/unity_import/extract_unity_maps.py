@@ -43,6 +43,17 @@ CROP_INITIALIZER_GUID = "dde04bdb5ee6fdf4c97d49bb04a61cfe"
 SHADOW_PREFAB_GUID = "3154484e43d90644b8e969b02ef3a297"
 PPU = 64  # spritePixelsToUnits everywhere in this project
 
+# Textures that must never bake as static props. The tile-target marker lives
+# on the Character prefab's TargetMarker child (runtime-driven by the player's
+# own TargetMarker node in Godot); since the Character body is PSD-rigged, that
+# marker is the only extractable renderer, so it would otherwise bake a stray
+# perpetual cursor sprite into each scene at the prefab's edit-time position.
+EXCLUDE_PROP_TEXTURE_SUFFIXES = ("Sprite_Marker.png",)
+
+
+def _is_excluded_prop_texture(rel):
+    return bool(rel) and rel.endswith(EXCLUDE_PROP_TEXTURE_SUFFIXES)
+
 CLASS_GAMEOBJECT = 1
 CLASS_TRANSFORM = 4
 CLASS_SPRITERENDERER = 212
@@ -102,10 +113,15 @@ def load_sprite_meta(meta_path):
     for name, file_id in table.items():
         if int(file_id) not in sprites and name in by_name:
             sprites[int(file_id)] = by_name[name]
+    # Single-sprite textures carry their pivot at the importer level (e.g. the
+    # hanging Chain uses y=0.96 so it pivots at its top and hangs down). Read it
+    # so single sprites aren't forced to a (0.5, 0.5) centre pivot.
+    sp = ti.get("spritePivot") or {}
     return {
         "ppu": ppu,
         "sprites": sprites,
         "single": ti.get("spriteMode") == 1,
+        "single_pivot": [sp.get("x", 0.5), sp.get("y", 0.5)],
     }
 
 
@@ -166,7 +182,8 @@ def resolve_sprite(tex_index, guid, file_id):
     if spr is None:
         # single-sprite textures (and 21300000 refs into them) = full rect
         if file_id == SINGLE_SPRITE_FILEID or entry["parsed"]["single"]:
-            return entry, [0, 0, tex_w, tex_h], [0.5, 0.5], []
+            pivot = entry["parsed"].get("single_pivot", [0.5, 0.5])
+            return entry, [0, 0, tex_w, tex_h], pivot, []
         return None
     x, y, w, h = spr["rect"]
     return (entry, [int(x), int(tex_h - y - h), int(w), int(h)], spr["pivot"],
@@ -1100,6 +1117,7 @@ def main():
 
         with open(os.path.join(OUT_DIR, f"{scene_name}.json"), "w") as f:
             json.dump(layers, f, indent=1)
+        props = [p for p in props if not _is_excluded_prop_texture(p.get("texture"))]
         with open(os.path.join(OUT_DIR, f"{scene_name}_props.json"), "w") as f:
             json.dump(props, f, indent=1)
         with open(os.path.join(OUT_DIR, f"{scene_name}_prefabs.json"), "w") as f:
