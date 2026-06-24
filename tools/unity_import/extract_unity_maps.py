@@ -369,6 +369,51 @@ def world_position(transforms, transform_of_go, docs, go_anchor):
     return world_position_from_transform(transforms, transform_of_go.get(go_anchor))
 
 
+def _prefab_instance_world(docs, transforms, inst_anchor):
+    """World position (unity units) of a PrefabInstance = its m_LocalPosition
+    override + its parent transform's world position."""
+    inst = docs.get(inst_anchor)
+    if not inst or inst[0] != CLASS_PREFAB_INSTANCE:
+        return 0.0, 0.0
+    mod = inst[1].get("m_Modification", {})
+    lx = ly = 0.0
+    for m in mod.get("m_Modifications") or []:
+        pp = m.get("propertyPath")
+        if pp == "m_LocalPosition.x":
+            lx = float(m.get("value", 0) or 0)
+        elif pp == "m_LocalPosition.y":
+            ly = float(m.get("value", 0) or 0)
+    parent_t = (mod.get("m_TransformParent") or {}).get("fileID", 0)
+    px, py = transform_world(docs, transforms, parent_t)
+    return lx + px, ly + py
+
+
+def transform_world(docs, transforms, t_anchor):
+    """Like world_position_from_transform but resolves STRIPPED transforms
+    (placeholders for a transform inside a nested prefab instance): when the
+    parent chain hits one, jump to its owning PrefabInstance's world position.
+    Without this, anything parented into a nested prefab (e.g. the sofa's
+    pillow) resolves to (0,0) and bakes at the world origin."""
+    x = y = 0.0
+    guard = 0
+    while t_anchor and guard < 64:
+        t = transforms.get(t_anchor)
+        if t is None:
+            break
+        # Stripped transforms carry m_PrefabInstance but no local transform.
+        if "m_LocalPosition" not in t and t.get("m_PrefabInstance"):
+            ix, iy = _prefab_instance_world(
+                docs, transforms, t["m_PrefabInstance"].get("fileID", 0))
+            return x + ix, y + iy
+        lp = t.get("m_LocalPosition", {})
+        ls = t.get("m_LocalScale", {"x": 1, "y": 1})
+        x = x * ls.get("x", 1) + lp.get("x", 0)
+        y = y * ls.get("y", 1) + lp.get("y", 0)
+        t_anchor = (t.get("m_Father") or {}).get("fileID", 0) or None
+        guard += 1
+    return x, y
+
+
 def extract_object_colliders(docs):
     """Solid BoxCollider2Ds that aren't on a tilemap GameObject -> building
     collision boxes in Godot px. These are static structures whose collider
@@ -619,12 +664,14 @@ def prefab_root_sprite(prefab_index, guid, _depth=0):
         # (its position does not - instances override that)
         root_scale = [1.0, 1.0]
         root_transform_id = 0
+        root_go_id = 0
         for _ta, tdoc in transforms.items():
             if not tdoc.get("m_Father", {}).get("fileID", 0):
                 ls = tdoc.get("m_LocalScale") or {}
                 if ls:  # skip stripped/empty transform docs
                     root_scale = [ls.get("x", 1), ls.get("y", 1)]
                     root_transform_id = _ta
+                    root_go_id = tdoc.get("m_GameObject", {}).get("fileID", 0)
                     break
         for anchor, (class_id, doc, _tag) in sorted(docs.items()):
             if class_id != CLASS_SPRITERENDERER:
@@ -775,6 +822,7 @@ def prefab_root_sprite(prefab_index, guid, _depth=0):
                 "renderers": renderers,
                 "root_scale": root_scale,
                 "root_transform_id": root_transform_id,
+                "root_go_id": root_go_id,
                 "shadow": shadow,
                 "colliders": colliders,
                 "animated": has_animator,
@@ -832,34 +880,58 @@ def extract_prefab_instances(docs, tex_index, prefab_index, props_out):
             continue
         mod = doc.get("m_Modification", {})
         guid = (doc.get("m_SourcePrefab") or {}).get("guid", "")
-        pos = {"x": 0.0, "y": 0.0}
         name = ""
         color_override = {}
         scale_override_targets = {}
+        pos_override_targets = {}
+        active_override_targets = {}
         for m in mod.get("m_Modifications") or []:
             prop = m.get("propertyPath", "")
+            target = (m.get("target") or {}).get("fileID", 0)
             if prop == "m_LocalPosition.x":
-                pos["x"] = float(m.get("value", 0) or 0)
+                pos_override_targets.setdefault(target, [None, None])[0] = \
+                    float(m.get("value", 0) or 0)
             elif prop == "m_LocalPosition.y":
-                pos["y"] = float(m.get("value", 0) or 0)
+                pos_override_targets.setdefault(target, [None, None])[1] = \
+                    float(m.get("value", 0) or 0)
             elif prop == "m_Name" and not name:
                 name = m.get("value", "")
             elif prop.startswith("m_Color."):
                 color_override[prop[-1]] = float(m.get("value", 1) or 0)
             elif prop == "m_LocalScale.x":
-                scale_override_targets.setdefault(
-                    (m.get("target") or {}).get("fileID", 0), [None, None])[0] = \
+                scale_override_targets.setdefault(target, [None, None])[0] = \
                     float(m.get("value", 1) or 1)
             elif prop == "m_LocalScale.y":
-                scale_override_targets.setdefault(
-                    (m.get("target") or {}).get("fileID", 0), [None, None])[1] = \
+                scale_override_targets.setdefault(target, [None, None])[1] = \
                     float(m.get("value", 1) or 1)
+            elif prop == "m_IsActive":
+                active_override_targets[target] = str(m.get("value", "1")).strip()
+        info = prefab_root_sprite(prefab_index, guid)
+        # An instance whose ROOT GameObject is disabled (m_IsActive 0) doesn't
+        # render in Unity; don't bake it (the unused Water Lily duplicates).
+        # Only the root counts -- a child m_IsActive 0 (e.g. a streetlamp's
+        # night light) must NOT cull the whole prop.
+        if info and active_override_targets.get(info.get("root_go_id", 0)) in ("0", "0.0"):
+            continue
+        # The instance can override m_LocalPosition for several transforms (root
+        # + children). Use the ROOT transform's override (matched by id, as with
+        # scale); a stray child override would otherwise misplace the prop (the
+        # lily pads landed at the world origin from a child's 0.4 offset).
+        root_tid = info.get("root_transform_id", 0) if info else 0
+        po = pos_override_targets.get(root_tid)
+        if po is None and pos_override_targets:
+            # No override matched the identified root transform; fall back to
+            # the last override (the historical behavior, correct for prefabs
+            # whose root_transform_id we don't pin down).
+            po = list(pos_override_targets.values())[-1]
+        pos = {"x": (po[0] if po and po[0] is not None else 0.0),
+               "y": (po[1] if po and po[1] is not None else 0.0)}
         # the instance's local position is relative to its scene parent
+        # (transform_world resolves nested-prefab stripped parents too).
         parent_t = (mod.get("m_TransformParent") or {}).get("fileID", 0)
-        px, py, _psx, _psy = world_position_from_transform(transforms, parent_t or None)
+        px, py = transform_world(docs, transforms, parent_t)
         instance_pos = [round((pos["x"] + px) * PPU, 2),
                         round(-(pos["y"] + py) * PPU, 2)]
-        info = prefab_root_sprite(prefab_index, guid)
         scale_override = [None, None]
         if info:
             scale_override = scale_override_targets.get(
