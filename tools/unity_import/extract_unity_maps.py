@@ -352,6 +352,37 @@ def world_position(transforms, transform_of_go, docs, go_anchor):
     return world_position_from_transform(transforms, transform_of_go.get(go_anchor))
 
 
+def extract_object_colliders(docs):
+    """Solid BoxCollider2Ds that aren't on a tilemap GameObject -> building
+    collision boxes in Godot px. These are static structures whose collider
+    hangs off a child object (e.g. the barn = Warehouse > 'Collider' with five
+    boxes), which the per-tilemap box scan in extract_tilemaps misses. Skips
+    trigger areas (animal pens, scene entrances) and the 'LevelBounds' camera
+    confiner. House walls stay with the per-tilemap scan (their boxes sit on
+    the House tilemap GO) so they're not double-counted here."""
+    go_name, _go_components, transforms, transform_of_go = build_maps(docs)
+    tilemap_gos = {doc.get("m_GameObject", {}).get("fileID", 0)
+                   for _a, (cid, doc, _t) in docs.items() if cid == CLASS_TILEMAP}
+    boxes = []
+    for _anchor, (cid, doc, _tag) in docs.items():
+        if cid != CLASS_BOX_COLLIDER:
+            continue
+        if int(doc.get("m_IsTrigger", 0)) != 0:
+            continue
+        go = doc.get("m_GameObject", {}).get("fileID", 0)
+        if go in tilemap_gos or go_name.get(go) == "LevelBounds":
+            continue
+        ox, oy, _sx, _sy = world_position(transforms, transform_of_go, docs, go)
+        off = doc.get("m_Offset", {"x": 0, "y": 0})
+        size = doc.get("m_Size", {"x": 1, "y": 1})
+        boxes.append({
+            "center": [round((ox + off["x"]) * PPU, 2),
+                       round(-(oy + off["y"]) * PPU, 2)],  # unity y-up -> godot
+            "size": [round(size["x"] * PPU, 2), round(size["y"] * PPU, 2)],
+        })
+    return boxes
+
+
 def extract_tilemaps(docs, tex_index, scene_name, prefab_index=None,
                      tile_objects_out=None, tile_physics=None,
                      collider_types=None):
@@ -857,7 +888,9 @@ def extract_prefab_instances(docs, tex_index, prefab_index, props_out):
                 "colliders": ([{**c,
                     "offset": [c["offset"][0] * rsx, c["offset"][1] * rsy],
                     "size": [c["size"][0] * rsx, c["size"][1] * rsy] if "size" in c else None,
-                    "radius": c.get("radius", 0) * rsx,
+                    # radius is a magnitude: a flipped (negative-scale) prefab
+                    # like the Chair must not yield a negative radius.
+                    "radius": c.get("radius", 0) * abs(rsx),
                 } for c in info.get("colliders", [])]
                     if r is info["renderers"][0] else None),
                 "color": color,
@@ -1010,6 +1043,12 @@ def main():
             print(f"  {len(tile_physics)} distinct tiles carry collision polygons")
             with open(os.path.join(OUT_DIR, f"{scene_name}_tile_physics.json"), "w") as f:
                 json.dump(tile_physics, f, indent=1)
+        object_colliders = extract_object_colliders(docs)
+        if object_colliders:
+            print(f"  {len(object_colliders)} object collider boxes "
+                  "(barn etc.) off-tilemap")
+            with open(os.path.join(OUT_DIR, f"{scene_name}_object_colliders.json"), "w") as f:
+                json.dump(object_colliders, f, indent=1)
         props = extract_props(docs, tex_index)
         prefabs = extract_prefab_instances(docs, tex_index, prefab_index, props)
         # Tile-placed prefabs (fences): emit as props at the cell center and

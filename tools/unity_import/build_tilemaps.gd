@@ -245,6 +245,7 @@ func _build_scene(scene_name: String, layers: Variant, tileset: TileSet,
 	_add_animals(root, scene_name)
 	_add_fence_collision(root, scene_name)
 	_add_building_collision(root, layers)
+	_add_object_collision(root, scene_name)
 
 	if missing > 0:
 		push_warning("%s: %d cells skipped (missing tiles)" % [scene_name, missing])
@@ -289,7 +290,7 @@ func _add_props(root: Node2D, scene_name: String, textures: Dictionary) -> void:
 				var shape := CollisionShape2D.new()
 				if c.type == "circle":
 					var circle := CircleShape2D.new()
-					circle.radius = c.radius
+					circle.radius = absf(c.radius)
 					shape.shape = circle
 				else:
 					var rect_shape := RectangleShape2D.new()
@@ -422,6 +423,30 @@ func _add_animals(root: Node2D, scene_name: String) -> void:
 		inst.area = Rect2(a.area[0], a.area[1], a.area[2], a.area[3])
 		parent.add_child(inst)
 		inst.owner = root
+## Static box colliders that hang off child objects rather than the tilemap
+## itself (e.g. the barn / Warehouse), emitted by extract_object_colliders.
+func _add_object_collision(root: Node2D, scene_name: String) -> void:
+	var boxes: Variant = _read_json("%s/%s_object_colliders.json" % [_manifest_dir, scene_name])
+	if not boxes is Array or (boxes as Array).is_empty():
+		return
+	var body := StaticBody2D.new()
+	body.name = "ObjectCollision"
+	body.collision_layer = 1
+	root.add_child(body)
+	body.owner = root
+	var idx := 1
+	for b: Dictionary in boxes:
+		var shape := CollisionShape2D.new()
+		var rect := RectangleShape2D.new()
+		rect.size = Vector2(b.size[0], b.size[1])
+		shape.shape = rect
+		shape.position = Vector2(b.center[0], b.center[1])
+		shape.name = "Obj_%d" % idx
+		idx += 1
+		body.add_child(shape)
+		shape.owner = root
+
+
 func _add_building_collision(root: Node2D, layers: Variant) -> void:
 	var boxes := []
 	for layer: Dictionary in layers:
