@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="Script" path="res://scripts/game/game_scene.gd" id="1_scene"]
 [ext_resource type="PackedScene" path="res://scenes/maps/house_interior_tilemaps.tscn" id="2_maps"]
@@ -17,15 +17,6 @@
 [sub_resource type="RectangleShape2D" id="shape_exit"]
 size = Vector2(96, 40)
 
-[sub_resource type="RectangleShape2D" id="shape_wall_top"]
-size = Vector2(1152, 64)
-
-[sub_resource type="RectangleShape2D" id="shape_wall_side"]
-size = Vector2(64, 768)
-
-[sub_resource type="RectangleShape2D" id="shape_wall_bottom"]
-size = Vector2(512, 64)
-
 [node name="HouseInterior" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_scene")
@@ -33,30 +24,6 @@ unique_scene_name = "House"
 camera_limits = Rect2i(-640, -360, 1280, 720)
 
 [node name="Maps" parent="." instance=ExtResource("2_maps")]
-
-[node name="WallCollision" type="StaticBody2D" parent="."]
-collision_layer = 1
-collision_mask = 0
-
-[node name="Top" type="CollisionShape2D" parent="WallCollision"]
-position = Vector2(0, -352)
-shape = SubResource("shape_wall_top")
-
-[node name="Left" type="CollisionShape2D" parent="WallCollision"]
-position = Vector2(-544, 0)
-shape = SubResource("shape_wall_side")
-
-[node name="Right" type="CollisionShape2D" parent="WallCollision"]
-position = Vector2(544, 0)
-shape = SubResource("shape_wall_side")
-
-[node name="BottomLeft" type="CollisionShape2D" parent="WallCollision"]
-position = Vector2(-320, 352)
-shape = SubResource("shape_wall_bottom")
-
-[node name="BottomRight" type="CollisionShape2D" parent="WallCollision"]
-position = Vector2(320, 352)
-shape = SubResource("shape_wall_bottom")
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 

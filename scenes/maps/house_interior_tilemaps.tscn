@@ -96,9 +96,13 @@ resource_name = "sprite_tiles_elevation.png"
 texture = SubResource("CanvasTexture_sc3v4")
 texture_region_size = Vector2i(64, 64)
 3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31, -32, -31, 27, 32, 27, 32, -32)
 2:8/0 = 0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 30, 32, 30, 32, -32)
 3:8/0 = 0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 30, 32, 30, 32, -32)
 4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 26, 32, 26, 32, -32)
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 1:3/0 = 0
@@ -370,6 +374,7 @@ texture = SubResource("CanvasTexture_301oc")
 texture_region_size = Vector2i(64, 64)
 5:9/0 = 0
 6:9/0 = 0
+6:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 22, 32, 22, 32, -32)
 10:9/0 = 0
 7:9/0 = 0
 8:9/0 = 0
@@ -456,28 +461,51 @@ texture_region_size = Vector2i(64, 64)
 19:4/0 = 0
 13:4/0 = 0
 13:3/0 = 0
+13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -32, -10, 32, 32, 32, 32, -32)
 14:3/0 = 0
+14:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 15:3/0 = 0
+15:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 16:3/0 = 0
+16:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 17:3/0 = 0
+17:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 18:3/0 = 0
+18:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 13:2/0 = 0
+13:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -32, -10, 32, 32, 32, 32, -32)
 14:2/0 = 0
+14:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 15:2/0 = 0
+15:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 16:2/0 = 0
+16:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 17:2/0 = 0
+17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 13:1/0 = 0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, -10, 32, 32, 32, 32, -10)
 14:1/0 = 0
+14:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -10, -32, 32, 32, 32, 32, -10)
 15:1/0 = 0
+15:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -10, -32, 32, 32, 32, 32, -10)
 16:1/0 = 0
+16:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -10, -32, 32, 32, 32, 32, -10)
 17:1/0 = 0
+17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -10, -32, 32, 32, 32, 32, -10)
 18:1/0 = 0
+18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -10, -32, 32, 32, 32, 32, -10)
 5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 0, 32, 0, -32)
 11:2/0 = 0
+11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1, -32, -1, 32, 32, 32, 32, -32)
 5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 0, 32, 0, -32)
 5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 0, 32, 0, 32, -32)
 11:1/0 = 0
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 
 [sub_resource type="TileSet" id="TileSet_2i1tx"]
 tile_size = Vector2i(64, 64)
@@ -603,242 +631,242 @@ size = Vector2(41.85, 28.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xruyh"]
 size = Vector2(177, 199.6)
 
-[node name="HouseInterior" type="Node2D" unique_id=967391187]
+[node name="HouseInterior" type="Node2D" unique_id=488456175]
 y_sort_enabled = true
 
-[node name="Tilemap" type="TileMapLayer" parent="." unique_id=1565003805]
+[node name="Tilemap" type="TileMapLayer" parent="." unique_id=637434297]
 z_index = -20
 tile_map_data = PackedByteArray("AAD//wUACQAQAAUAAAAAAAUACQAQAAUAAAD3/wQACQAOAAUAAAD4/wQACQAPAAUAAAD5/wQACQAQAAUAAAD6/wQACQARAAUAAAD7/wQACQASAAUAAAD8/wQACQATAAUAAAD9/wQACQANAAUAAAD+/wQACQAOAAUAAAD//wQACQAPAAUAAAAAAAQACQAQAAUAAAABAAQACQARAAUAAAACAAQACQASAAUAAAADAAQACQATAAUAAAAEAAQACQANAAUAAAAFAAQACQAOAAUAAAAGAAQACQAPAAUAAAAHAAQACQAQAAUAAAAIAAQACQARAAUAAAD3/wMACQAOAAQAAAD4/wMACQAPAAQAAAD5/wMACQAQAAQAAAD6/wMACQARAAQAAAD7/wMACQASAAQAAAD8/wMACQATAAQAAAD9/wMACQANAAQAAAD+/wMACQAOAAQAAAD//wMACQAPAAQAAAAAAAMACQAQAAQAAAABAAMACQARAAQAAAACAAMACQASAAQAAAADAAMACQATAAQAAAAEAAMACQANAAQAAAAFAAMACQAOAAQAAAAGAAMACQAPAAQAAAAHAAMACQAQAAQAAAAIAAMACQARAAQAAAD3/wIACQAOAAUAAAD4/wIACQAPAAUAAAD5/wIACQAQAAUAAAD6/wIACQARAAUAAAD7/wIACQASAAUAAAD8/wIACQATAAUAAAD9/wIACQANAAUAAAD+/wIACQAOAAUAAAD//wIACQAPAAUAAAAAAAIACQAQAAUAAAABAAIACQARAAUAAAACAAIACQASAAUAAAADAAIACQATAAUAAAAEAAIACQANAAUAAAAFAAIACQASAAUAAAAGAAIACQAPAAUAAAAHAAIACQAQAAUAAAAIAAIACQARAAUAAAD3/wEACQAOAAQAAAD4/wEACQAPAAQAAAD5/wEACQASAAUAAAD6/wEACQAPAAUAAAD7/wEACQASAAUAAAD8/wEACQAPAAUAAAD9/wEACQAPAAQAAAD+/wEACQAPAAQAAAD//wEACQAPAAQAAAAAAAEACQAQAAQAAAABAAEACQASAAUAAAACAAEACQAPAAUAAAADAAEACQAPAAUAAAAEAAEACQAPAAUAAAAFAAEACQASAAUAAAAGAAEACQAPAAQAAAAHAAEACQAQAAQAAAAIAAEACQARAAQAAAD3/wAACQAOAAUAAAD4/wAACQAPAAUAAAD5/wAACQAQAAUAAAD6/wAACQARAAUAAAD7/wAACQASAAUAAAD8/wAACQATAAUAAAD9/wAACQANAAUAAAD+/wAACQAOAAUAAAD//wAACQAPAAUAAAAAAAAACQAQAAUAAAABAAAACQARAAUAAAACAAAACQASAAUAAAADAAAACQATAAUAAAAEAAAACQAOAAQAAAAFAAAACQAOAAUAAAAGAAAACQAPAAUAAAAHAAAACQAQAAUAAAAIAAAACQARAAUAAAD3////CQAOAAQAAAD4////CQAPAAQAAAD5////CQAQAAQAAAD6////CQARAAQAAAD7////CQASAAQAAAD8////CQATAAQAAAD9////CQANAAQAAAD+////CQAOAAQAAAD/////CQAPAAQAAAAAAP//CQAQAAQAAAABAP//CQARAAQAAAACAP//CQASAAQAAAADAP//CQATAAQAAAAEAP//CQASAAQAAAAFAP//CQAOAAQAAAAGAP//CQAPAAQAAAAHAP//CQAQAAQAAAAIAP//CQARAAQAAAD3//7/CQANAAUAAAD4//7/CQAPAAUAAAD5//7/CQAPAAUAAAD6//7/CQAQAAUAAAD7//7/CQARAAUAAAD8//7/CQASAAUAAAD9//7/CQAPAAUAAAD+//7/CQAOAAQAAAD///7/CQAPAAUAAAAAAP7/CQAPAAUAAAABAP7/CQAPAAUAAAACAP7/CQAOAAQAAAADAP7/CQAPAAUAAAAEAP7/CQAOAAQAAAAFAP7/CQAPAAUAAAAGAP7/CQAPAAUAAAAHAP7/CQAQAAUAAAAIAP7/CQARAAUAAAD3//3/CQANAAQAAAD4//3/CQAOAAQAAAD5//3/CQAPAAQAAAD6//3/CQAQAAQAAAD7//3/CQARAAQAAAD8//3/CQASAAQAAAD9//3/CQAPAAQAAAD+//3/CQAPAAQAAAD///3/CQAOAAQAAAAAAP3/CQAPAAQAAAABAP3/CQAPAAQAAAACAP3/CQAPAAQAAAADAP3/CQAPAAQAAAAEAP3/CQAPAAQAAAAFAP3/CQAPAAQAAAAGAP3/CQAPAAQAAAAHAP3/CQAQAAQAAAAIAP3/CQARAAQAAAD3//z/CQANAAMAAAD4//z/CQAOAAMAAAD5//z/CQAPAAMAAAD6//z/CQAQAAMAAAD7//z/CQARAAMAAAD8//z/CQASAAMAAAD9//z/CQAPAAMAAAD+//z/CQAPAAMAAAD///z/CQAPAAMAAAAAAPz/CQAPAAMAAAABAPz/CQAPAAMAAAACAPz/CQAPAAMAAAADAPz/CQAPAAMAAAAEAPz/CQAPAAMAAAAFAPz/CQAPAAMAAAAGAPz/CQAPAAMAAAAHAPz/CQAQAAMAAAAIAPz/CQARAAMAAAD3//v/CQANAAIAAAD4//v/CQAOAAIAAAD5//v/CQAPAAIAAAD6//v/CQAQAAIAAAD7//v/CQARAAIAAAD8//v/CQAOAAIAAAD9//v/CQAPAAIAAAD+//v/CQAPAAIAAAD///v/CQAPAAIAAAAAAPv/CQAPAAIAAAABAPv/CQAPAAIAAAACAPv/CQAPAAIAAAADAPv/CQAPAAIAAAAEAPv/CQAPAAIAAAAFAPv/CQAPAAIAAAAGAPv/CQAPAAIAAAAHAPv/CQAOAAIAAAAIAPv/CQARAAIAAAD3//r/CQANAAEAAAD4//r/CQAOAAEAAAD5//r/CQAPAAEAAAD6//r/CQAQAAEAAAD7//r/CQARAAEAAAD8//r/CQASAAEAAAD9//r/CQAPAAEAAAD+//r/CQAPAAEAAAD///r/CQAPAAEAAAAAAPr/CQAPAAEAAAABAPr/CQAPAAEAAAACAPr/CQAPAAEAAAADAPr/CQAPAAEAAAAEAPr/CQAPAAEAAAAFAPr/CQAPAAEAAAAGAPr/CQAPAAEAAAAHAPr/CQAQAAEAAAAIAPr/CQARAAEAAAA=")
 tile_set = SubResource("TileSet_2i1tx")
 
-[node name="walls" type="TileMapLayer" parent="." unique_id=883539079]
+[node name="walls" type="TileMapLayer" parent="." unique_id=74998813]
 z_index = 1
 tile_map_data = PackedByteArray("AAD3/wUACQAGAAkAAAD4/wUACQAGAAkAAAD5/wUACQAGAAkAAAD6/wUACQAGAAkAAAD7/wUACQAGAAkAAAD8/wUACQAGAAkAAAD9/wUACQAGAAkAAAD+/wUACQAGAAkAAAABAAUACQAGAAkAAAACAAUACQAGAAkAAAADAAUACQAGAAkAAAAEAAUACQAGAAkAAAAFAAUACQAGAAkAAAAGAAUACQAGAAkAAAAHAAUACQAGAAkAAAAIAAUACQAGAAkAAAD3/wQACQAFAAQAAAAIAAQACQALAAIAAAD3/wMACQAFAAQAAAAIAAMACQALAAIAAAD3/wIACQAFAAMAAAAIAAIACQALAAIAAAD3/wEACQAFAAMAAAAIAAEACQALAAIAAAD3/wAACQAFAAMAAAAIAAAACQALAAIAAAD3////CQAFAAMAAAAIAP//CQALAAIAAAD3//7/CQAFAAMAAAAIAP7/CQALAAIAAAD3//3/CQAFAAMAAAAIAP3/CQALAAIAAAD3//z/CQAFAAMAAAAIAPz/CQALAAIAAAD3//v/CQAFAAMAAAAIAPv/CQALAAIAAAD3//r/CQAFAAEAAAD4//r/CQAGAAEAAAD5//r/CQAGAAEAAAD6//r/CQAGAAEAAAD7//r/CQAGAAEAAAD8//r/CQAGAAEAAAD9//r/CQAGAAEAAAD+//r/CQAGAAEAAAD///r/CQAGAAEAAAAAAPr/CQAGAAEAAAABAPr/CQAGAAEAAAACAPr/CQAGAAEAAAADAPr/CQAGAAEAAAAEAPr/CQAGAAEAAAAFAPr/CQAGAAEAAAAGAPr/CQAGAAEAAAAHAPr/CQAGAAEAAAAIAPr/CQALAAEAAAA=")
 tile_set = SubResource("TileSet_2i1tx")
 
-[node name="Props" type="Node2D" parent="." unique_id=1341018966]
+[node name="Props" type="Node2D" parent="." unique_id=1421757378]
 y_sort_enabled = true
 
-[node name="rug_02 (2)" type="Sprite2D" parent="Props" unique_id=274990545]
+[node name="rug_02 (2)" type="Sprite2D" parent="Props" unique_id=1395482335]
 position = Vector2(32, -42.88)
 scale = Vector2(1.5625, 1.5625)
 texture = SubResource("CanvasTexture_1epux")
 
-[node name="rug_01" type="Sprite2D" parent="Props" unique_id=1655428381]
+[node name="rug_01" type="Sprite2D" parent="Props" unique_id=603060788]
 position = Vector2(-485.12, 88.96)
 texture = SubResource("CanvasTexture_lf1ov")
 
-[node name="rug_02 (1)" type="Sprite2D" parent="Props" unique_id=1684659557]
+[node name="rug_02 (1)" type="Sprite2D" parent="Props" unique_id=543981623]
 position = Vector2(443.08, 166.17)
 scale = Vector2(1.5625, 1.5625)
 texture = SubResource("CanvasTexture_1epux")
 
-[node name="rug_01_2" type="Sprite2D" parent="Props" unique_id=701593453]
+[node name="rug_01_2" type="Sprite2D" parent="Props" unique_id=367975277]
 position = Vector2(7.68, 191.36)
 texture = SubResource("CanvasTexture_lf1ov")
 
-[node name="curtain (2)" type="Sprite2D" parent="Props" unique_id=974256159]
+[node name="curtain (2)" type="Sprite2D" parent="Props" unique_id=2144319710]
 position = Vector2(-158.72, -212.61)
 scale = Vector2(0.64, 0.64)
 texture = SubResource("CanvasTexture_f64oe")
 
-[node name="pillowA (1)" type="Sprite2D" parent="Props" unique_id=1329054454]
+[node name="pillowA (1)" type="Sprite2D" parent="Props" unique_id=198557339]
 modulate = Color(0.2866, 0.5353, 0.6509, 1)
 position = Vector2(56.51, 21.82)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("CanvasTexture_un1gy")
 
-[node name="curtain (3)" type="Sprite2D" parent="Props" unique_id=760418803]
+[node name="curtain (3)" type="Sprite2D" parent="Props" unique_id=78097792]
 position = Vector2(428.54, -212.61)
 scale = Vector2(0.64, 0.64)
 texture = SubResource("CanvasTexture_f64oe")
 
-[node name="plant (1)_shadow_1" type="Sprite2D" parent="Props" unique_id=1763649206]
+[node name="plant (1)_shadow_1" type="Sprite2D" parent="Props" unique_id=143553240]
 z_index = -1
 position = Vector2(491.14, 118.46)
 scale = Vector2(0.45, 0.18)
 texture = ExtResource("25_ruy0l")
 script = ExtResource("26_tmagk")
 
-[node name="plant (1)" type="Sprite2D" parent="Props" unique_id=848061230]
+[node name="plant (1)" type="Sprite2D" parent="Props" unique_id=174623982]
 position = Vector2(494.72, 120.32)
 scale = Vector2(0.64, 0.64)
 texture = SubResource("CanvasTexture_0vugh")
 
-[node name="curtain (4)" type="Sprite2D" parent="Props" unique_id=560620782]
+[node name="curtain (4)" type="Sprite2D" parent="Props" unique_id=205383140]
 position = Vector2(534.21, -212.61)
 scale = Vector2(0.64, 0.64)
 texture = SubResource("CanvasTexture_f64oe")
 
-[node name="barrel (3)_shadow_2" type="Sprite2D" parent="Props" unique_id=2028014810]
+[node name="barrel (3)_shadow_2" type="Sprite2D" parent="Props" unique_id=1645726215]
 z_index = -1
 position = Vector2(520.32, 282.88)
 scale = Vector2(0.45, 0.18)
 texture = ExtResource("25_ruy0l")
 script = ExtResource("26_tmagk")
 
-[node name="barrel (3)" type="Sprite2D" parent="Props" unique_id=248496532]
+[node name="barrel (3)" type="Sprite2D" parent="Props" unique_id=1237434225]
 position = Vector2(520.96, 291.2)
 scale = Vector2(0.3345, 0.3345)
 texture = SubResource("CanvasTexture_v46uk")
 
-[node name="barrel_shadow_3" type="Sprite2D" parent="Props" unique_id=109357278]
+[node name="barrel_shadow_3" type="Sprite2D" parent="Props" unique_id=1082696985]
 z_index = -1
 position = Vector2(519.04, 212.48)
 scale = Vector2(0.45, 0.18)
 texture = ExtResource("25_ruy0l")
 script = ExtResource("26_tmagk")
 
-[node name="barrel" type="Sprite2D" parent="Props" unique_id=1416817656]
+[node name="barrel" type="Sprite2D" parent="Props" unique_id=1308448252]
 position = Vector2(519.68, 220.8)
 scale = Vector2(0.3345, 0.3345)
 texture = SubResource("CanvasTexture_v46uk")
 
-[node name="barrel (4)_shadow_4" type="Sprite2D" parent="Props" unique_id=191341194]
+[node name="barrel (4)_shadow_4" type="Sprite2D" parent="Props" unique_id=853406565]
 z_index = -1
 position = Vector2(500.48, 319.36)
 scale = Vector2(0.45, 0.18)
 texture = ExtResource("25_ruy0l")
 script = ExtResource("26_tmagk")
 
-[node name="barrel (4)" type="Sprite2D" parent="Props" unique_id=789675373]
+[node name="barrel (4)" type="Sprite2D" parent="Props" unique_id=2020073243]
 position = Vector2(501.12, 327.68)
 scale = Vector2(0.3345, 0.3345)
 texture = SubResource("CanvasTexture_v46uk")
 
-[node name="Character_shadow_5" type="Sprite2D" parent="Props" unique_id=1093380451]
+[node name="Character_shadow_5" type="Sprite2D" parent="Props" unique_id=795128295]
 z_index = -1
 position = Vector2(28.03, -18.38)
 scale = Vector2(0.45, 0.18)
 texture = ExtResource("25_ruy0l")
 script = ExtResource("26_tmagk")
 
-[node name="Character" type="Sprite2D" parent="Props" unique_id=1406414001]
+[node name="Character" type="Sprite2D" parent="Props" unique_id=1276177660]
 z_index = 50
 position = Vector2(28.03, -18.38)
 scale = Vector2(0.64, 0.64)
 texture = ExtResource("31_gbctf")
 
-[node name="Chair" type="Sprite2D" parent="Props" unique_id=272836854]
+[node name="Chair" type="Sprite2D" parent="Props" unique_id=1600419552]
 modulate = Color(0.8019, 0.5208, 0.4211, 1)
 position = Vector2(158.08, -56.96)
 scale = Vector2(-0.5, 0.5)
 texture = SubResource("CanvasTexture_bs775")
 
-[node name="barrel (5)_shadow_6" type="Sprite2D" parent="Props" unique_id=542706630]
+[node name="barrel (5)_shadow_6" type="Sprite2D" parent="Props" unique_id=100114331]
 z_index = -1
 position = Vector2(-350.72, 346.24)
 scale = Vector2(0.45, 0.18)
 texture = ExtResource("25_ruy0l")
 script = ExtResource("26_tmagk")
 
-[node name="barrel (5)" type="Sprite2D" parent="Props" unique_id=91985850]
+[node name="barrel (5)" type="Sprite2D" parent="Props" unique_id=779891004]
 position = Vector2(-350.08, 354.56)
 scale = Vector2(0.3345, 0.3345)
 texture = SubResource("CanvasTexture_v46uk")
 
-[node name="barrel (1)_shadow_7" type="Sprite2D" parent="Props" unique_id=10508402]
+[node name="barrel (1)_shadow_7" type="Sprite2D" parent="Props" unique_id=1327754360]
 z_index = -1
 position = Vector2(-519.68, -172.8)
 scale = Vector2(0.45, 0.18)
 texture = ExtResource("25_ruy0l")
 script = ExtResource("26_tmagk")
 
-[node name="barrel (1)" type="Sprite2D" parent="Props" unique_id=2070085764]
+[node name="barrel (1)" type="Sprite2D" parent="Props" unique_id=1905579524]
 position = Vector2(-519.04, -164.48)
 scale = Vector2(0.3345, 0.3345)
 texture = SubResource("CanvasTexture_v46uk")
 
-[node name="Sofa" type="Sprite2D" parent="Props" unique_id=940389349]
+[node name="Sofa" type="Sprite2D" parent="Props" unique_id=1561356462]
 modulate = Color(0.3459, 0.5413, 1, 1)
 position = Vector2(-352.64, -195.65)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("CanvasTexture_ksetu")
 
-[node name="Sofa_2" type="Sprite2D" parent="Props" unique_id=1606561869]
+[node name="Sofa_2" type="Sprite2D" parent="Props" unique_id=348115723]
 modulate = Color(0.5352, 0.5615, 0.8774, 1)
 position = Vector2(-404.48, -168.77)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("CanvasTexture_un1gy")
 
-[node name="Sofa_3" type="Sprite2D" parent="Props" unique_id=767188110]
+[node name="Sofa_3" type="Sprite2D" parent="Props" unique_id=255188955]
 modulate = Color(0.5352, 0.5615, 0.8774, 1)
 position = Vector2(-302.08, -189.95)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("CanvasTexture_vgkpy")
 
-[node name="Character_shadow_8" type="Sprite2D" parent="Props" unique_id=1876538878]
+[node name="Character_shadow_8" type="Sprite2D" parent="Props" unique_id=1403344549]
 z_index = -1
 position = Vector2(28.03, -18.38)
 scale = Vector2(0.45, 0.18)
 texture = ExtResource("25_ruy0l")
 script = ExtResource("26_tmagk")
 
-[node name="Character_2" type="Sprite2D" parent="Props" unique_id=957935365]
+[node name="Character_2" type="Sprite2D" parent="Props" unique_id=437093423]
 z_index = 50
 position = Vector2(28.03, -18.38)
 scale = Vector2(0.64, 0.64)
 texture = ExtResource("31_gbctf")
 
-[node name="plant (2)_shadow_9" type="Sprite2D" parent="Props" unique_id=48454556]
+[node name="plant (2)_shadow_9" type="Sprite2D" parent="Props" unique_id=1818195694]
 z_index = -1
 position = Vector2(-162.81, -169.92)
 scale = Vector2(0.45, 0.18)
 texture = ExtResource("25_ruy0l")
 script = ExtResource("26_tmagk")
 
-[node name="plant (2)" type="Sprite2D" parent="Props" unique_id=685024648]
+[node name="plant (2)" type="Sprite2D" parent="Props" unique_id=1552316083]
 position = Vector2(-159.23, -168.06)
 scale = Vector2(0.64, 0.64)
 texture = SubResource("CanvasTexture_0vugh")
 
-[node name="rug_02" type="Sprite2D" parent="Props" unique_id=1937485982]
+[node name="rug_02" type="Sprite2D" parent="Props" unique_id=497102374]
 position = Vector2(32.68, -42.68)
 scale = Vector2(1.2236, 1.4569)
 texture = SubResource("CanvasTexture_1epux")
 
-[node name="Chair_2" type="Sprite2D" parent="Props" unique_id=1450415030]
+[node name="Chair_2" type="Sprite2D" parent="Props" unique_id=15734189]
 modulate = Color(0.8019, 0.5208, 0.4211, 1)
 position = Vector2(-95.36, -56.96)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("CanvasTexture_bs775")
 
-[node name="barrel (2)_shadow_10" type="Sprite2D" parent="Props" unique_id=36795085]
+[node name="barrel (2)_shadow_10" type="Sprite2D" parent="Props" unique_id=174342984]
 z_index = -1
 position = Vector2(471.04, 236.8)
 scale = Vector2(0.45, 0.18)
 texture = ExtResource("25_ruy0l")
 script = ExtResource("26_tmagk")
 
-[node name="barrel (2)" type="Sprite2D" parent="Props" unique_id=38571945]
+[node name="barrel (2)" type="Sprite2D" parent="Props" unique_id=1598482150]
 position = Vector2(471.68, 245.12)
 scale = Vector2(0.3345, 0.3345)
 texture = SubResource("CanvasTexture_v46uk")
 
-[node name="Sofa_4" type="Sprite2D" parent="Props" unique_id=1037194309]
+[node name="Sofa_4" type="Sprite2D" parent="Props" unique_id=1446618546]
 modulate = Color(0.374, 0.6226, 0.5786, 1)
 position = Vector2(250.24, -180.48)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("CanvasTexture_ksetu")
 
-[node name="Sofa_5" type="Sprite2D" parent="Props" unique_id=915369995]
+[node name="Sofa_5" type="Sprite2D" parent="Props" unique_id=1474246644]
 modulate = Color(0.374, 0.6226, 0.5786, 1)
 position = Vector2(198.4, -153.6)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("CanvasTexture_un1gy")
 
-[node name="Sofa_6" type="Sprite2D" parent="Props" unique_id=1556189256]
+[node name="Sofa_6" type="Sprite2D" parent="Props" unique_id=1285724301]
 modulate = Color(0.374, 0.6226, 0.5786, 1)
 position = Vector2(300.8, -174.78)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("CanvasTexture_vgkpy")
 
-[node name="VFX_Fire" type="Sprite2D" parent="Props" unique_id=554412814]
+[node name="VFX_Fire" type="Sprite2D" parent="Props" unique_id=432450535]
 position = Vector2(35.07, -147.01)
 scale = Vector2(0.64, 0.64)
 texture = SubResource("CanvasTexture_7mq66")
 
-[node name="paintings_1" type="Sprite2D" parent="Props" unique_id=976425844]
+[node name="paintings_1" type="Sprite2D" parent="Props" unique_id=227573627]
 position = Vector2(284.16, -300.16)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("CanvasTexture_1g1oo")
@@ -846,24 +874,24 @@ offset = Vector2(120.5, -65)
 region_enabled = true
 region_rect = Rect2(179, 159, 241, 130)
 
-[node name="Fireplace" type="Sprite2D" parent="Props" unique_id=1945943934]
+[node name="Fireplace" type="Sprite2D" parent="Props" unique_id=1284666090]
 modulate = Color(0.8585, 0.8585, 0.8585, 1)
 position = Vector2(35.84, -190.72)
 scale = Vector2(0.64, 0.64)
 texture = SubResource("CanvasTexture_3jt10")
 
-[node name="Fireplace_2" type="Sprite2D" parent="Props" unique_id=936572779]
+[node name="Fireplace_2" type="Sprite2D" parent="Props" unique_id=1705192883]
 modulate = Color(0.8585, 0.8585, 0.8585, 1)
 position = Vector2(35.84, -121.6)
 scale = Vector2(0.64, 0.64)
 texture = SubResource("CanvasTexture_pk705")
 
-[node name="rug_02_2" type="Sprite2D" parent="Props" unique_id=1459093123]
+[node name="rug_02_2" type="Sprite2D" parent="Props" unique_id=1221461451]
 position = Vector2(-337.28, -82.56)
 scale = Vector2(1.2236, 1.4569)
 texture = SubResource("CanvasTexture_1epux")
 
-[node name="paintings_4" type="Sprite2D" parent="Props" unique_id=1256932201]
+[node name="paintings_4" type="Sprite2D" parent="Props" unique_id=234290732]
 position = Vector2(-318.72, -315.52)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("CanvasTexture_1g1oo")
@@ -871,19 +899,19 @@ offset = Vector2(46.5, -42.5)
 region_enabled = true
 region_rect = Rect2(179, 39, 93, 85)
 
-[node name="plant_shadow_11" type="Sprite2D" parent="Props" unique_id=1664503569]
+[node name="plant_shadow_11" type="Sprite2D" parent="Props" unique_id=1812228249]
 z_index = -1
 position = Vector2(-482.3, 277.82)
 scale = Vector2(0.45, 0.18)
 texture = ExtResource("25_ruy0l")
 script = ExtResource("26_tmagk")
 
-[node name="plant" type="Sprite2D" parent="Props" unique_id=163435244]
+[node name="plant" type="Sprite2D" parent="Props" unique_id=1032676015]
 position = Vector2(-478.72, 279.68)
 scale = Vector2(0.64, 0.64)
 texture = SubResource("CanvasTexture_0vugh")
 
-[node name="paintings_2" type="Sprite2D" parent="Props" unique_id=142342611]
+[node name="paintings_2" type="Sprite2D" parent="Props" unique_id=345701463]
 position = Vector2(-386.56, -307.84)
 scale = Vector2(0.414, 0.414)
 texture = SubResource("CanvasTexture_1g1oo")
@@ -891,12 +919,12 @@ offset = Vector2(70.5, -65)
 region_enabled = true
 region_rect = Rect2(278, 16, 141, 130)
 
-[node name="curtain" type="Sprite2D" parent="Props" unique_id=1925019472]
+[node name="curtain" type="Sprite2D" parent="Props" unique_id=1388597230]
 position = Vector2(-531.84, -212.61)
 scale = Vector2(0.64, 0.64)
 texture = SubResource("CanvasTexture_f64oe")
 
-[node name="paintings_3" type="Sprite2D" parent="Props" unique_id=285757665]
+[node name="paintings_3" type="Sprite2D" parent="Props" unique_id=595795494]
 position = Vector2(-113.92, -279.68)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("CanvasTexture_1g1oo")
@@ -904,77 +932,77 @@ offset = Vector2(70, -102.5)
 region_enabled = true
 region_rect = Rect2(31, 82, 140, 205)
 
-[node name="Bed" type="Sprite2D" parent="Props" unique_id=1699647476]
+[node name="Bed" type="Sprite2D" parent="Props" unique_id=1418099300]
 position = Vector2(458.62, 0.13)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("CanvasTexture_s4uyo")
 
-[node name="PropCollision" type="StaticBody2D" parent="." unique_id=656843866]
+[node name="PropCollision" type="StaticBody2D" parent="." unique_id=1242572206]
 
-[node name="Prop_1" type="CollisionShape2D" parent="PropCollision" unique_id=954842146]
+[node name="Prop_1" type="CollisionShape2D" parent="PropCollision" unique_id=815826344]
 position = Vector2(493.95, 111.63)
 shape = SubResource("RectangleShape2D_ir1nk")
 
-[node name="Prop_2" type="CollisionShape2D" parent="PropCollision" unique_id=936806663]
+[node name="Prop_2" type="CollisionShape2D" parent="PropCollision" unique_id=98862271]
 position = Vector2(520.96, 285.51303)
 shape = SubResource("RectangleShape2D_8j77i")
 
-[node name="Prop_3" type="CollisionShape2D" parent="PropCollision" unique_id=1386530595]
+[node name="Prop_3" type="CollisionShape2D" parent="PropCollision" unique_id=1172433561]
 position = Vector2(519.68, 215.11302)
 shape = SubResource("RectangleShape2D_hfwog")
 
-[node name="Prop_4" type="CollisionShape2D" parent="PropCollision" unique_id=548313935]
+[node name="Prop_4" type="CollisionShape2D" parent="PropCollision" unique_id=978537956]
 position = Vector2(501.12, 321.993)
 shape = SubResource("RectangleShape2D_oa176")
 
-[node name="Prop_5" type="CollisionShape2D" parent="PropCollision" unique_id=932808227]
+[node name="Prop_5" type="CollisionShape2D" parent="PropCollision" unique_id=78236233]
 position = Vector2(26.93, -35.27)
 shape = SubResource("CircleShape2D_ktqw8")
 
-[node name="Prop_6" type="CollisionShape2D" parent="PropCollision" unique_id=159776500]
+[node name="Prop_6" type="CollisionShape2D" parent="PropCollision" unique_id=106664968]
 position = Vector2(154.29, -40.63)
 shape = SubResource("CircleShape2D_qywm3")
 
-[node name="Prop_7" type="CollisionShape2D" parent="PropCollision" unique_id=718431176]
+[node name="Prop_7" type="CollisionShape2D" parent="PropCollision" unique_id=1041537263]
 position = Vector2(-350.08, 348.87302)
 shape = SubResource("RectangleShape2D_13yvr")
 
-[node name="Prop_8" type="CollisionShape2D" parent="PropCollision" unique_id=2003343230]
+[node name="Prop_8" type="CollisionShape2D" parent="PropCollision" unique_id=582493392]
 position = Vector2(-519.04, -170.16698)
 shape = SubResource("RectangleShape2D_1vys5")
 
-[node name="Prop_9" type="CollisionShape2D" parent="PropCollision" unique_id=2105532040]
+[node name="Prop_9" type="CollisionShape2D" parent="PropCollision" unique_id=66775423]
 position = Vector2(-353, -167.17)
 shape = SubResource("RectangleShape2D_khq3c")
 
-[node name="Prop_10" type="CollisionShape2D" parent="PropCollision" unique_id=1597174929]
+[node name="Prop_10" type="CollisionShape2D" parent="PropCollision" unique_id=448757078]
 position = Vector2(26.93, -35.27)
 shape = SubResource("CircleShape2D_hllid")
 
-[node name="Prop_11" type="CollisionShape2D" parent="PropCollision" unique_id=2088827914]
+[node name="Prop_11" type="CollisionShape2D" parent="PropCollision" unique_id=1378210385]
 position = Vector2(-160, -176.75)
 shape = SubResource("RectangleShape2D_orsw2")
 
-[node name="Prop_12" type="CollisionShape2D" parent="PropCollision" unique_id=1550009641]
+[node name="Prop_12" type="CollisionShape2D" parent="PropCollision" unique_id=74115247]
 position = Vector2(-91.57, -40.63)
 shape = SubResource("CircleShape2D_h8db5")
 
-[node name="Prop_13" type="CollisionShape2D" parent="PropCollision" unique_id=22236111]
+[node name="Prop_13" type="CollisionShape2D" parent="PropCollision" unique_id=2086549889]
 position = Vector2(471.68, 239.43303)
 shape = SubResource("RectangleShape2D_n1hln")
 
-[node name="Prop_14" type="CollisionShape2D" parent="PropCollision" unique_id=1356175041]
+[node name="Prop_14" type="CollisionShape2D" parent="PropCollision" unique_id=521035048]
 position = Vector2(249.88, -152)
 shape = SubResource("RectangleShape2D_7tk11")
 
-[node name="Prop_15" type="CollisionShape2D" parent="PropCollision" unique_id=1586835640]
+[node name="Prop_15" type="CollisionShape2D" parent="PropCollision" unique_id=837474975]
 position = Vector2(35.61, -225.93)
 shape = SubResource("RectangleShape2D_dixky")
 
-[node name="Prop_16" type="CollisionShape2D" parent="PropCollision" unique_id=1337246280]
+[node name="Prop_16" type="CollisionShape2D" parent="PropCollision" unique_id=611340959]
 position = Vector2(-479.49, 270.99)
 shape = SubResource("RectangleShape2D_l20uf")
 
-[node name="Prop_17" type="CollisionShape2D" parent="PropCollision" unique_id=820739132]
+[node name="Prop_17" type="CollisionShape2D" parent="PropCollision" unique_id=1504489648]
 position = Vector2(453.79, -91.61)
 shape = SubResource("RectangleShape2D_xruyh")

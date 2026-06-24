@@ -555,6 +555,46 @@
    ]
   ]
  ],
+ "Assets/HappyHarvest/Art/Tiles/Elevation/Sprites/Sprite_Tiles_Elevation.png|256|256|64|64": [
+  [
+   [
+    -32.0,
+    -32.0
+   ],
+   [
+    -32.0,
+    26.0
+   ],
+   [
+    32.0,
+    26.0
+   ],
+   [
+    32.0,
+    -32.0
+   ]
+  ]
+ ],
+ "Assets/HappyHarvest/Art/Tiles/Elevation/Sprites/Sprite_Tiles_Elevation.png|128|512|64|64": [
+  [
+   [
+    -32.0,
+    -32.0
+   ],
+   [
+    -32.0,
+    30.0
+   ],
+   [
+    32.0,
+    30.0
+   ],
+   [
+    32.0,
+    -32.0
+   ]
+  ]
+ ],
  "Assets/HappyHarvest/Art/Tiles/Elevation/Sprites/Sprite_Tiles_Elevation.png|0|192|64|64": [
   [
    [
@@ -592,6 +632,46 @@
    [
     -4,
     -32
+   ]
+  ]
+ ],
+ "Assets/HappyHarvest/Art/Tiles/Elevation/Sprites/Sprite_Tiles_Elevation.png|192|256|64|64": [
+  [
+   [
+    -31.0,
+    -32.0
+   ],
+   [
+    -31.0,
+    27.0
+   ],
+   [
+    32.0,
+    27.0
+   ],
+   [
+    32.0,
+    -32.0
+   ]
+  ]
+ ],
+ "Assets/HappyHarvest/Art/Tiles/Elevation/Sprites/Sprite_Tiles_Elevation.png|192|512|64|64": [
+  [
+   [
+    -32.0,
+    -32.0
+   ],
+   [
+    -32.0,
+    30.0
+   ],
+   [
+    32.0,
+    30.0
+   ],
+   [
+    32.0,
+    -32.0
    ]
   ]
  ]

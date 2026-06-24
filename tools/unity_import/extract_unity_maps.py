@@ -173,6 +173,100 @@ def resolve_sprite(tex_index, guid, file_id):
             spr.get("physics") or [])
 
 
+# ------------------------------------------------------------- tile collision
+# Unity decides per-tile collision via each Tile/RuleTile asset's colliderType:
+# 0 = None (no collision), 1 = Sprite (follow the sprite's opaque shape),
+# 2 = Grid (full cell). A tile only collides if its TILEMAP also has a
+# TilemapCollider2D (see has_collider). The sprite sheets here carry no custom
+# physicsShape, so Sprite-type tiles (e.g. the house "walls" tilemap) produce
+# NO collision unless we reconstruct it from the sprite alpha. Without this the
+# player walks through walls.
+
+COLLIDER_NONE, COLLIDER_SPRITE, COLLIDER_GRID = 0, 1, 2
+
+
+def index_tile_collider_types():
+    """guid -> collider type int, scanning Tile/RuleTile .asset files. A
+    RuleTile mixes many per-rule types; collapse to 0 only when every type is
+    0 (e.g. walkable dirt/grass), else Grid if any Grid, else Sprite."""
+    result = {}
+    root = os.path.join(UNITY_ROOT, "Assets/HappyHarvest")
+    for dirpath, _dirnames, filenames in os.walk(root):
+        for fn in filenames:
+            if not fn.endswith(".asset"):
+                continue
+            apath = os.path.join(dirpath, fn)
+            mpath = apath + ".meta"
+            if not os.path.exists(mpath):
+                continue
+            with open(apath) as f:
+                # Only the per-rule/plain m_ColliderType counts. RuleTiles also
+                # carry m_DefaultColliderType (defaults to 1=Sprite, the
+                # unmatched fallback); counting it would wrongly mark walkable
+                # ground (dirt/grass, whose rules are all 0) as solid.
+                types = [int(t) for t in re.findall(
+                    r"(?<!Default)ColliderType:\s*(\d+)", f.read())]
+            if not types:
+                continue
+            with open(mpath) as f:
+                g = re.search(r"guid:\s*([0-9a-f]{32})", f.read(200))
+            if not g:
+                continue
+            if all(t == 0 for t in types):
+                ct = COLLIDER_NONE
+            elif COLLIDER_GRID in types:
+                ct = COLLIDER_GRID
+            else:
+                ct = COLLIDER_SPRITE
+            result[g.group(1)] = ct
+    return result
+
+
+_alpha_image_cache = {}
+
+
+def _full_cell_polygon(w, h):
+    return [[-w / 2.0, -h / 2.0], [-w / 2.0, h / 2.0],
+            [w / 2.0, h / 2.0], [w / 2.0, -h / 2.0]]
+
+
+def _opaque_bbox_polygon(png_path, rect):
+    """Tight bounding box of the sprite region's opaque (alpha>0) pixels, as a
+    rectangle polygon in Godot tile-local space (center origin, y-down). None
+    if Pillow is unavailable or the region is fully transparent."""
+    try:
+        from PIL import Image
+    except ImportError:
+        return None
+    img = _alpha_image_cache.get(png_path)
+    if img is None:
+        img = Image.open(png_path).convert("RGBA")
+        _alpha_image_cache[png_path] = img
+    x, y, w, h = (int(rect[0]), int(rect[1]), int(rect[2]), int(rect[3]))
+    alpha = img.crop((x, y, x + w, y + h)).getchannel("A")
+    bbox = alpha.getbbox()  # (left, upper, right, lower); right/lower exclusive
+    if bbox is None:
+        return None
+    l, u, r, lo = bbox
+    left, right = l - w / 2.0, r - w / 2.0
+    top, bottom = u - h / 2.0, lo - h / 2.0
+    return [[round(left, 2), round(top, 2)], [round(left, 2), round(bottom, 2)],
+            [round(right, 2), round(bottom, 2)], [round(right, 2), round(top, 2)]]
+
+
+def tile_collision_shape(collider_type, png_path, rect):
+    """Reconstruct a tile's collision (list of polygons) from its colliderType.
+    Grid -> full cell; Sprite -> opaque alpha bbox (full cell if alpha read
+    fails). Returns [] for None or an empty region."""
+    w, h = int(rect[2]), int(rect[3])
+    if collider_type == COLLIDER_GRID:
+        return [_full_cell_polygon(w, h)]
+    if collider_type == COLLIDER_SPRITE:
+        poly = _opaque_bbox_polygon(png_path, rect)
+        return [poly] if poly else [_full_cell_polygon(w, h)]
+    return []
+
+
 # ---------------------------------------------------------------- scene file
 
 def parse_scene(path):
@@ -259,7 +353,8 @@ def world_position(transforms, transform_of_go, docs, go_anchor):
 
 
 def extract_tilemaps(docs, tex_index, scene_name, prefab_index=None,
-                     tile_objects_out=None, tile_physics=None):
+                     tile_objects_out=None, tile_physics=None,
+                     collider_types=None):
     go_name, go_components, transforms, transform_of_go = build_maps(docs)
     layers = []
     if tile_physics is None:
@@ -289,6 +384,7 @@ def extract_tilemaps(docs, tex_index, scene_name, prefab_index=None,
             elif cid == CLASS_BOX_COLLIDER:
                 box_colliders.append(docs[comp_anchor][1])
         sprite_array = doc.get("m_TileSpriteArray") or []
+        tile_asset_array = doc.get("m_TileAssetArray") or []
         matrix_array = doc.get("m_TileMatrixArray") or []
         object_array = doc.get("m_TileObjectToInstantiateArray") or []
         if doc.get("m_AnimatedTiles"):
@@ -337,9 +433,21 @@ def extract_tilemaps(docs, tex_index, scene_name, prefab_index=None,
                 print(f"  WARN: unresolved sprite {file_id} guid {guid} in '{name}'")
                 continue
             entry, rect, _pivot, physics = resolved
-            if has_collider and physics:
-                key = f"{entry['rel']}|{rect[0]}|{rect[1]}|{rect[2]}|{rect[3]}"
-                tile_physics[key] = physics
+            # Tile collision: a custom physicsShape (e.g. elevation cliffs) is
+            # used verbatim; otherwise reconstruct from the tile's colliderType
+            # (Sprite -> alpha bbox, Grid -> full cell). Purely additive: tiles
+            # that emitted nothing before still emit nothing unless their
+            # colliderType is Sprite/Grid (e.g. the house "walls").
+            if has_collider:
+                ctype = COLLIDER_NONE
+                ti = td.get("m_TileIndex", 65535)
+                if collider_types is not None and ti < len(tile_asset_array):
+                    cg = (tile_asset_array[ti].get("m_Data") or {}).get("guid")
+                    ctype = collider_types.get(cg, COLLIDER_NONE)
+                shape = physics or tile_collision_shape(ctype, entry["png"], rect)
+                if shape:
+                    key = f"{entry['rel']}|{rect[0]}|{rect[1]}|{rect[2]}|{rect[3]}"
+                    tile_physics[key] = shape
             cells.append({
                 "x": ux0,
                 "y": -uy0 - 1,  # unity y-up -> godot y-down
@@ -886,6 +994,8 @@ def main():
     print(f"  {len(tex_index)} textures indexed")
     prefab_index = index_prefabs()
     print(f"  {len(prefab_index)} prefabs indexed")
+    collider_types = index_tile_collider_types()
+    print(f"  {len(collider_types)} tile assets indexed for collider type")
 
     used_guids = set()
     for scene_name, scene_rel in SCENES.items():
@@ -895,7 +1005,7 @@ def main():
         tile_objects = []
         tile_physics = {}
         layers = extract_tilemaps(docs, tex_index, scene_name, prefab_index,
-                                  tile_objects, tile_physics)
+                                  tile_objects, tile_physics, collider_types)
         if tile_physics:
             print(f"  {len(tile_physics)} distinct tiles carry collision polygons")
             with open(os.path.join(OUT_DIR, f"{scene_name}_tile_physics.json"), "w") as f:
