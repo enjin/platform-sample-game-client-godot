@@ -231,6 +231,16 @@ func _build_scene(scene_name: String, layers: Variant, tileset: TileSet,
 			tml.z_index = maxi(1, int(layer.sorting_order))
 		root.add_child(tml)
 		tml.owner = root
+		# The Pinetree background tilemap is scaled 2x in Unity (its 128-PPU
+		# tiles already bake as 128px 2x2-cell tiles here, matching the 2x
+		# size). The 2x scale ALSO spreads its cells 2x apart, which places the
+		# band higher (above the cliffs); reproduce that by multiplying cell
+		# coords by tile_scale. NB: do NOT also scale the layer node — that
+		# would shrink the tiles back to half size. tile_scale 1 is a no-op.
+		var tile_scale := float(layer.get("tile_scale", 1.0))
+		var coord_mul := 1
+		if tile_scale != 1.0 and tile_scale > 0.0:
+			coord_mul = int(round(tile_scale))
 		for cell: Dictionary in layer.cells:
 			var rect: Array = cell.rect
 			var coords := Vector2i(int(rect[0]) / TILE, int(rect[1]) / TILE)
@@ -238,7 +248,7 @@ func _build_scene(scene_name: String, layers: Variant, tileset: TileSet,
 			if sid < 0:
 				missing += 1
 				continue
-			tml.set_cell(Vector2i(int(cell.x), int(cell.y)), sid, coords)
+			tml.set_cell(Vector2i(int(cell.x) * coord_mul, int(cell.y) * coord_mul), sid, coords)
 
 	_add_props(root, scene_name, textures)
 	_add_baked_props(root, scene_name)

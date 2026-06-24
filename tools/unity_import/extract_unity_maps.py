@@ -493,6 +493,7 @@ def extract_tilemaps(docs, tex_index, scene_name, prefab_index=None,
             print(f"  NOTE: tilemap '{name}' shifted by cells ({cell_dx}, {cell_dy})")
         anchor_off = doc.get("m_TileAnchor", {"x": 0.5, "y": 0.5})
         cells = []
+        layer_ppu = PPU  # tile sprites' pixels-per-unit (64 base)
         for t in tiles:
             pos = t["first"]
             td = t["second"]
@@ -526,6 +527,9 @@ def extract_tilemaps(docs, tex_index, scene_name, prefab_index=None,
                 print(f"  WARN: unresolved sprite {file_id} guid {guid} in '{name}'")
                 continue
             entry, rect, _pivot, physics = resolved
+            sprite_ppu = entry["parsed"]["ppu"] or PPU
+            if sprite_ppu != PPU:
+                layer_ppu = sprite_ppu
             # Tile collision: a custom physicsShape (e.g. elevation cliffs) is
             # used verbatim; otherwise reconstruct from the tile's colliderType
             # (Sprite -> alpha bbox, Grid -> full cell). Purely additive: tiles
@@ -564,6 +568,11 @@ def extract_tilemaps(docs, tex_index, scene_name, prefab_index=None,
             "has_collider": has_collider,
             "box_colliders": boxes,
             "tile_anchor": [anchor_off.get("x", 0.5), anchor_off.get("y", 0.5)],
+            # Tiles whose sprites use a non-base PPU (the 128-PPU Pinetree
+            # background = 2) bake as oversized N-cell tiles; the builder draws
+            # this layer at 1/tile_scale and multiplies cell coords by it so the
+            # tiles render at their true 1-cell size and tile seamlessly.
+            "tile_scale": round(layer_ppu / float(PPU), 4),
             "cells": cells,
         })
     layers.sort(key=lambda l: (l["sorting_layer"], l["sorting_order"]))
