@@ -8,6 +8,7 @@ radius = 26.0
 [node name="EnjinToken" type="Area2D"]
 collision_layer = 4
 collision_mask = 2
+scale = Vector2(0.5227, 0.5227)
 script = ExtResource("1_token")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

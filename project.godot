@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Platform Sample Game Client (Godot)"
 config/description="Godot 4 port of the Enjin Platform sample farming game client. Talks to the C# game server in ../platform-sample-game-server over HTTP."
 run/main_scene="res://scenes/loader.tscn"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]

@@ -41,7 +41,7 @@ func fire_initial(ratio: float) -> void:
 			event_ended.emit(i)
 
 
-func tick_ranges(prev_ratio: float, ratio: float) -> void:
+func tick_ranges(_prev_ratio: float, ratio: float) -> void:
 	for i in events.size():
 		var now := is_in_range(i, ratio)
 		if now and not _active[i]:

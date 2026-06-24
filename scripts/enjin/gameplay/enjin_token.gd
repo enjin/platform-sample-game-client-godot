@@ -10,6 +10,11 @@ extends Area2D
 @export_range(0.0, 1.0) var rarity: float = 0.0
 
 var _collected := false
+# The left-click that revealed this token (via the Hoe's "interact" use) is
+# replayed onto us by the viewport's physics picking the instant we spawn under
+# the cursor, which would collect the coin on that same click. Require the
+# button to be released first so picking up needs a separate, fresh click.
+var _click_armed := false
 
 @onready var sprite: Sprite2D = $Sprite2D
 
@@ -28,7 +33,16 @@ func _ready() -> void:
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
 
+func _process(_delta: float) -> void:
+	# Arm once the revealing click has been released; stop processing afterward.
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		_click_armed = true
+		set_process(false)
+
+
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if not _click_armed:
+		return
 	if event is InputEventMouseButton and event.pressed \
 			and event.button_index == MOUSE_BUTTON_LEFT:
 		collect()

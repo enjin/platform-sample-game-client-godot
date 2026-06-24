@@ -3,6 +3,7 @@
 extends CanvasLayer
 
 const SLOT_SIZE := 76
+const GameManagerScript := preload("res://scripts/game/game_manager.gd")
 
 var _slots: Array[Button] = []
 var _icons: Array[TextureRect] = []
@@ -78,7 +79,7 @@ func _update_coins(amount: int) -> void:
 
 var _last_clock := ""
 func _update_clock(ratio: float) -> void:
-	var text := GameManager.get_time_as_string(ratio)
+	var text := GameManagerScript.get_time_as_string(ratio)
 	if text != _last_clock:
 		_last_clock = text
 		clock_label.text = text
