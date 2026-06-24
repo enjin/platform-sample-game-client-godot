@@ -1,64 +1,64 @@
-[gd_scene load_steps=24 format=3]
+[gd_scene format=3 uid="uid://gvx22axtfns6"]
 
-[ext_resource type="Script" path="res://scripts/game/game_scene.gd" id="1_scene"]
+[ext_resource type="Script" uid="uid://c4svteilwibm0" path="res://scripts/game/game_scene.gd" id="1_scene"]
 [ext_resource type="PackedScene" path="res://scenes/maps/farm_outdoor_tilemaps.tscn" id="2_maps"]
-[ext_resource type="Script" path="res://scripts/game/spawn_point.gd" id="3_spawn"]
-[ext_resource type="Script" path="res://scripts/game/scene_transition_area.gd" id="4_trans"]
+[ext_resource type="Script" uid="uid://cx4wghp028iyo" path="res://scripts/game/spawn_point.gd" id="3_spawn"]
+[ext_resource type="Script" uid="uid://c7wiyrpgvsoju" path="res://scripts/game/scene_transition_area.gd" id="4_trans"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="5_player"]
 [ext_resource type="PackedScene" path="res://ui/game_hud.tscn" id="6_hud"]
-[ext_resource type="Script" path="res://scripts/game/terrain_manager.gd" id="7_terrain"]
-[ext_resource type="Script" path="res://scripts/game/crop_initializer.gd" id="8_cropinit"]
+[ext_resource type="Script" uid="uid://yx11lkkb1dsk" path="res://scripts/game/terrain_manager.gd" id="7_terrain"]
+[ext_resource type="Script" uid="uid://bbgl1l8axd7qf" path="res://scripts/game/crop_initializer.gd" id="8_cropinit"]
 [ext_resource type="TileSet" path="res://resources/tilesets/world_tileset.tres" id="9_tileset"]
-[ext_resource type="Script" path="res://scripts/game/day_cycle_controller.gd" id="10_daycycle"]
+[ext_resource type="Script" uid="uid://cfyipcb1i0t8p" path="res://scripts/game/day_cycle_controller.gd" id="10_daycycle"]
 [ext_resource type="Gradient" path="res://resources/day_night/day_tint_gradient.tres" id="11_gradient"]
-[ext_resource type="Script" path="res://scripts/game/day_event_handler.gd" id="12_dayevents"]
-[ext_resource type="Script" path="res://scripts/game/weather_system.gd" id="13_weather"]
+[ext_resource type="Script" uid="uid://cadesuppvfidm" path="res://scripts/game/day_event_handler.gd" id="12_dayevents"]
+[ext_resource type="Script" uid="uid://bvstlw5oo1ves" path="res://scripts/game/weather_system.gd" id="13_weather"]
 [ext_resource type="PackedScene" path="res://scenes/world/weather_rain.tscn" id="14_rain"]
 [ext_resource type="PackedScene" path="res://scenes/world/weather_thunder.tscn" id="15_thunder"]
-[ext_resource type="Script" path="res://scripts/game/ambience_blender.gd" id="16_ambience"]
-[ext_resource type="AudioStream" path="res://audio/ambience/background_ambience_outside_-_day.wav" id="17_amb_day"]
-[ext_resource type="AudioStream" path="res://audio/ambience/background_ambience_outside_-_night.wav" id="18_amb_night"]
-[ext_resource type="Script" path="res://scripts/game/lamp_lights.gd" id="19_lamps"]
+[ext_resource type="Script" uid="uid://ovvbprsa2w37" path="res://scripts/game/ambience_blender.gd" id="16_ambience"]
+[ext_resource type="AudioStream" uid="uid://sm5dwjmwrmhv" path="res://audio/ambience/background_ambience_outside_-_day.wav" id="17_amb_day"]
+[ext_resource type="AudioStream" uid="uid://two354duo7rc" path="res://audio/ambience/background_ambience_outside_-_night.wav" id="18_amb_night"]
+[ext_resource type="Script" uid="uid://bh2k88pvxrewu" path="res://scripts/game/lamp_lights.gd" id="19_lamps"]
 [ext_resource type="PackedScene" path="res://scenes/world/chimney_smoke.tscn" id="20_smoke"]
 [ext_resource type="PackedScene" path="res://scenes/world/waterfall_mist.tscn" id="21_mist"]
-[ext_resource type="Script" path="res://scripts/game/effects/day_gated_light.gd" id="22_nightlight"]
+[ext_resource type="Script" uid="uid://5vg21g4kt5ty" path="res://scripts/game/effects/day_gated_light.gd" id="22_nightlight"]
 [ext_resource type="Texture2D" path="res://resources/day_night/radial_light.tres" id="23_lighttex"]
-[ext_resource type="Script" path="res://scripts/game/sun_shadow_driver.gd" id="24_sunshadow"]
+[ext_resource type="Script" uid="uid://dxsastxq14uuw" path="res://scripts/game/sun_shadow_driver.gd" id="24_sunshadow"]
 
 [sub_resource type="RectangleShape2D" id="shape_door"]
 size = Vector2(96, 40)
 
-[node name="FarmOutdoor" type="Node2D"]
+[node name="FarmOutdoor" type="Node2D" unique_id=609993272]
 y_sort_enabled = true
 script = ExtResource("1_scene")
 unique_scene_name = "Farm"
-camera_limits = Rect2i(-659, -1065, 3968, 1792)
+camera_limits = Rect2i(-1686, -1631, 5243, 3708)
 
-[node name="Maps" parent="." instance=ExtResource("2_maps")]
+[node name="Maps" parent="." unique_id=823550213 instance=ExtResource("2_maps")]
 
-[node name="WaterOverlay" type="TileMapLayer" parent="."]
+[node name="WaterOverlay" type="TileMapLayer" parent="." unique_id=643951425]
 z_index = -1
 tile_set = ExtResource("9_tileset")
 
-[node name="TerrainManager" type="Node2D" parent="." node_paths=PackedStringArray("ground_layer", "water_overlay")]
+[node name="TerrainManager" type="Node2D" parent="." unique_id=136413090 node_paths=PackedStringArray("ground_layer", "water_overlay")]
 y_sort_enabled = true
+position = Vector2(-216, 337)
 script = ExtResource("7_terrain")
 ground_layer = NodePath("../Maps/TilledTilemap")
 water_overlay = NodePath("../WaterOverlay")
 
-[node name="CropInitializer" type="Node" parent="."]
+[node name="CropInitializer" type="Node" parent="." unique_id=350292558]
 script = ExtResource("8_cropinit")
 
-[node name="SpawnPoints" type="Node2D" parent="."]
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=710706725]
 
-[node name="HouseSpawn" type="Marker2D" parent="SpawnPoints"]
+[node name="HouseSpawn" type="Marker2D" parent="SpawnPoints" unique_id=358253044]
 position = Vector2(671, 247)
 script = ExtResource("3_spawn")
-spawn_index = 0
 
-[node name="Transitions" type="Node2D" parent="."]
+[node name="Transitions" type="Node2D" parent="." unique_id=138238819]
 
-[node name="HouseEntrance" type="Area2D" parent="Transitions"]
+[node name="HouseEntrance" type="Area2D" parent="Transitions" unique_id=996213809]
 position = Vector2(673, 154)
 collision_layer = 0
 collision_mask = 2
@@ -66,59 +66,58 @@ script = ExtResource("4_trans")
 target_scene = "res://scenes/house_interior.tscn"
 target_spawn = 1
 
-[node name="Shape" type="CollisionShape2D" parent="Transitions/HouseEntrance"]
+[node name="Shape" type="CollisionShape2D" parent="Transitions/HouseEntrance" unique_id=1241944750]
 shape = SubResource("shape_door")
 
-[node name="Player" parent="." instance=ExtResource("5_player")]
+[node name="Player" parent="." unique_id=1197255560 instance=ExtResource("5_player")]
 position = Vector2(671, 247)
 
-[node name="HUD" parent="." instance=ExtResource("6_hud")]
+[node name="HUD" parent="." unique_id=53430291 instance=ExtResource("6_hud")]
 
-[node name="DayNight" type="CanvasModulate" parent="."]
+[node name="DayNight" type="CanvasModulate" parent="." unique_id=275500620]
 script = ExtResource("10_daycycle")
 tint_gradient = ExtResource("11_gradient")
 
-[node name="SunShadows" type="Node" parent="."]
+[node name="SunShadows" type="Node" parent="." unique_id=385994147]
 script = ExtResource("24_sunshadow")
 
-[node name="DayEvents" type="Node" parent="."]
+[node name="DayEvents" type="Node" parent="." unique_id=737724757]
 script = ExtResource("12_dayevents")
 events = Array[Vector2]([Vector2(0.25, 0.77)])
 
-[node name="Weather" type="Node" parent="."]
+[node name="Weather" type="Node" parent="." unique_id=853809619]
 script = ExtResource("13_weather")
-starting_weather = 1
 
-[node name="Rain" parent="." instance=ExtResource("14_rain")]
+[node name="Rain" parent="." unique_id=988108010 instance=ExtResource("14_rain")]
 
-[node name="Thunder" parent="." instance=ExtResource("15_thunder")]
+[node name="Thunder" parent="." unique_id=849078700 instance=ExtResource("15_thunder")]
 
-[node name="Ambience" type="Node" parent="." node_paths=PackedStringArray("day_handler")]
+[node name="Ambience" type="Node" parent="." unique_id=1294621923 node_paths=PackedStringArray("day_handler")]
 script = ExtResource("16_ambience")
 day_handler = NodePath("../DayEvents")
 
-[node name="Day" type="AudioStreamPlayer" parent="Ambience"]
+[node name="Day" type="AudioStreamPlayer" parent="Ambience" unique_id=249043659]
 stream = ExtResource("17_amb_day")
 volume_db = -80.0
 bus = &"Ambience"
 
-[node name="Night" type="AudioStreamPlayer" parent="Ambience"]
+[node name="Night" type="AudioStreamPlayer" parent="Ambience" unique_id=992755247]
 stream = ExtResource("18_amb_night")
 volume_db = -80.0
 bus = &"Ambience"
 
-[node name="LampLights" type="Node" parent="." node_paths=PackedStringArray("props_root", "day_handler")]
+[node name="LampLights" type="Node" parent="." unique_id=340425358 node_paths=PackedStringArray("props_root", "day_handler")]
 script = ExtResource("19_lamps")
 props_root = NodePath("../Maps/Props")
 day_handler = NodePath("../DayEvents")
 
-[node name="ChimneySmoke" parent="." instance=ExtResource("20_smoke")]
+[node name="ChimneySmoke" parent="." unique_id=1783917101 instance=ExtResource("20_smoke")]
 position = Vector2(805.76, -352.64)
 
-[node name="WaterfallMist" parent="." instance=ExtResource("21_mist")]
+[node name="WaterfallMist" parent="." unique_id=1180709986 instance=ExtResource("21_mist")]
 position = Vector2(3543.68, 1222.4)
 
-[node name="WarehouseWindowLight1" type="PointLight2D" parent="."]
+[node name="WarehouseWindowLight1" type="PointLight2D" parent="." unique_id=1391420785]
 position = Vector2(-545.09, -293.63)
 color = Color(1, 0.82, 0.55, 1)
 energy = 0.7
@@ -126,7 +125,7 @@ texture = ExtResource("23_lighttex")
 texture_scale = 1.3
 script = ExtResource("22_nightlight")
 
-[node name="WarehouseWindowLight2" type="PointLight2D" parent="."]
+[node name="WarehouseWindowLight2" type="PointLight2D" parent="." unique_id=2075209613]
 position = Vector2(640, 320)
 color = Color(1, 0.82, 0.55, 1)
 energy = 0.7
