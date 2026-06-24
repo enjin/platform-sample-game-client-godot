@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://two354duo7rc" path="res://audio/ambience/background_ambience_outside_-_night.wav" id="18_amb_night"]
 [ext_resource type="Script" uid="uid://bh2k88pvxrewu" path="res://scripts/game/lamp_lights.gd" id="19_lamps"]
 [ext_resource type="Script" path="res://scripts/game/lamp_sway.gd" id="25_sway"]
+[ext_resource type="Script" path="res://scripts/game/foliage_wind.gd" id="26_wind"]
 [ext_resource type="PackedScene" path="res://scenes/world/chimney_smoke.tscn" id="20_smoke"]
 [ext_resource type="PackedScene" path="res://scenes/world/waterfall_mist.tscn" id="21_mist"]
 [ext_resource type="Script" uid="uid://5vg21g4kt5ty" path="res://scripts/game/effects/day_gated_light.gd" id="22_nightlight"]
@@ -114,6 +115,10 @@ day_handler = NodePath("../DayEvents")
 
 [node name="LampSway" type="Node" parent="." node_paths=PackedStringArray("props_root")]
 script = ExtResource("25_sway")
+props_root = NodePath("../Maps/Props")
+
+[node name="FoliageWind" type="Node" parent="." node_paths=PackedStringArray("props_root")]
+script = ExtResource("26_wind")
 props_root = NodePath("../Maps/Props")
 
 [node name="ChimneySmoke" parent="." unique_id=1783917101 instance=ExtResource("20_smoke")]

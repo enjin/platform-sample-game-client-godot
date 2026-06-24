@@ -61,6 +61,11 @@ var _crop_data := {}    # Vector2i -> CropData
 var _crop_sprites := {} # Vector2i -> Sprite2D
 var _crops_root: Node2D
 
+# crops sway in the wind like the other foliage (Unity Material_Plants); shared
+# across all crop sprites, the shader phases each by world position
+const _WIND_SHADER := preload("res://shaders/foliage_wind.gdshader")
+var _wind_material: ShaderMaterial
+
 # (source_id, atlas_coords) per soil kind, found by scanning the tileset
 var _soil_tiles := {}
 
@@ -74,6 +79,8 @@ func _ready() -> void:
 	_crops_root.name = "Crops"
 	_crops_root.y_sort_enabled = true
 	add_child(_crops_root)
+	_wind_material = ShaderMaterial.new()
+	_wind_material.shader = _WIND_SHADER
 	_find_soil_tiles()
 
 
@@ -215,6 +222,7 @@ func _update_crop_visual(target: Vector2i) -> void:
 		spr = Sprite2D.new()
 		var pos := ground_layer.to_global(ground_layer.map_to_local(target))
 		spr.position = _crops_root.to_local(pos) + Vector2(0, 24)  # near cell bottom for y-sort
+		spr.material = _wind_material  # sway like the other foliage
 		_crops_root.add_child(spr)
 		_crop_sprites[target] = spr
 	var tex: Texture2D = data.growing_crop.growth_stage_textures[

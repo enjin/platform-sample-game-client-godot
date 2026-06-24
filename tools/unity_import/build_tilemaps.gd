@@ -241,6 +241,28 @@ func _build_scene(scene_name: String, layers: Variant, tileset: TileSet,
 		var coord_mul := 1
 		if tile_scale != 1.0 and tile_scale > 0.0:
 			coord_mul = int(round(tile_scale))
+		# Objects-rank buildings (house/warehouse) render in Unity as a single
+		# chunk that sorts as ONE unit by its FRONT (bottom) edge: things behind
+		# it (lower Y, e.g. the bush left of the house) are occluded, things in
+		# front (player, front props) draw over. A plain non-y-sorted layer
+		# sorts at its origin (Y=0) instead, so every prop below Y=0 drew over
+		# the whole building. Reproduce the chunk sort by shifting the layer's
+		# cells up and moving the node down to its front edge, so it sorts there
+		# while rendering in place. (Building collision is a separate StaticBody,
+		# unaffected.)
+		var row_shift := 0
+		if rank == 1 and not layer.cells.is_empty():
+			var max_y := -2147483648
+			for cell: Dictionary in layer.cells:
+				max_y = maxi(max_y, int(cell.y))
+			# Sort at the TOP of the front wall row (max_y), not below it
+			# (max_y+1). Below it sorts the building in front of where the player
+			# stands at the door, so he vanishes on approach; at the front wall
+			# row he stays in front until he steps up into the doorway, while
+			# props behind (the bush left of the house) stay occluded. Must be a
+			# whole row so the cell shift keeps the render in place.
+			row_shift = max_y
+			tml.position = Vector2(0, row_shift * TILE)
 		for cell: Dictionary in layer.cells:
 			var rect: Array = cell.rect
 			var coords := Vector2i(int(rect[0]) / TILE, int(rect[1]) / TILE)
@@ -248,7 +270,7 @@ func _build_scene(scene_name: String, layers: Variant, tileset: TileSet,
 			if sid < 0:
 				missing += 1
 				continue
-			tml.set_cell(Vector2i(int(cell.x) * coord_mul, int(cell.y) * coord_mul), sid, coords)
+			tml.set_cell(Vector2i(int(cell.x) * coord_mul, int(cell.y) * coord_mul - row_shift), sid, coords)
 
 	_add_props(root, scene_name, textures)
 	_add_baked_props(root, scene_name)
