@@ -44,6 +44,11 @@ func _ready() -> void:
 		light.blend_mode = Light2D.BLEND_MODE_ADD
 		light.texture_scale = light_radius / 128.0
 		light.position = Vector2(0, 6)  # lantern sprite anchors at its top
+		# Sit the light well "above" the ground for normal mapping. At the
+		# default height 0 it grazes the ground tiles' normal maps and the
+		# per-texel bumps light up harshly -> looks like texture glitches in the
+		# pool. A tall height lights the (up-facing) ground evenly and soft.
+		light.height = 120.0
 		light.visible = false
 		child.add_child(light)
 		_lights.append(light)
