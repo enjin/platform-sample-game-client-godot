@@ -384,12 +384,17 @@ func _add_props(root: Node2D, scene_name: String, textures: Dictionary) -> void:
 		spr.modulate = Color(c[0], c[1], c[2], c[3])
 		spr.flip_v = bool(p.flip_y)
 		spr.scale = Vector2(p.scale[0], p.scale[1])
-		# same z planes as the tile layers (see _build_scene)
+		# Unity sorting layers -> z planes (see _build_scene). Default (0) is
+		# flat ground decor (rugs, flowers) that Unity draws BENEATH the player;
+		# the player/Objects-layer props sit at z 0 and y-sort, so Default must
+		# be z -1 or the player can slip behind a rug. Objects (1) = z 0.
 		var rank := int(p.get("sorting_layer", 0))
-		if rank <= 0 and rank + int(p.sorting_order) < 0:
-			spr.z_index = -1
+		if rank < 0:
+			spr.z_index = -2  # Bottom layer (under Default)
+		elif rank == 0:
+			spr.z_index = -1  # Default: below the player
 		elif rank >= 2:
-			spr.z_index = maxi(1, int(p.sorting_order))
+			spr.z_index = maxi(1, int(p.sorting_order))  # ObjectsFront
 		parent.add_child(spr)
 		spr.owner = root
 

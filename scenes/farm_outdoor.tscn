@@ -81,9 +81,17 @@ position = Vector2(671, 247)
 
 [node name="HUD" parent="." unique_id=53430291 instance=ExtResource("6_hud")]
 
-[node name="DayNight" type="CanvasModulate" parent="." unique_id=275500620]
+[node name="DayNight" type="CanvasModulate" parent="." unique_id=275500620 node_paths=PackedStringArray("sun_light")]
 script = ExtResource("10_daycycle")
 tint_gradient = ExtResource("11_gradient")
+sun_light = NodePath("../SunLight")
+sun_max_energy = 0.55
+
+[node name="SunLight" type="DirectionalLight2D" parent="."]
+color = Color(1, 0.96, 0.84, 1)
+energy = 0.0
+height = 0.55
+rotation = 0.6
 
 [node name="SunShadows" type="Node" parent="." unique_id=385994147]
 script = ExtResource("24_sunshadow")
