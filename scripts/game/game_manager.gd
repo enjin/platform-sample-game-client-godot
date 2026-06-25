@@ -36,6 +36,18 @@ var inventory: InventorySystem = null  # created on first ensure_inventory()
 var item_database: ResourceDatabase
 var crop_database: ResourceDatabase
 
+# Warehouse storage and the market's buyable stock (port of GameManager.Storage
+# and GameManager.MarketEntries). The market sells seeds; products are only
+# sellable (resources/products), tools are neither.
+var storage: Storage = null
+var market_entries: Array[Item] = []
+const MARKET_ITEM_IDS := ["carrot_seed", "wheat_seed", "corn_seed"]
+
+# Registered by the active HUD so world objects (MarketStall/Warehouse) can
+# open the popups, mirroring Unity's static UIHandler.OpenMarket/OpenWarehouse.
+var market_ui: Control = null
+var warehouse_ui: Control = null
+
 # Starting loadout from Unity's Resources/Character.prefab.
 const STARTING_ITEMS := [
 	["hoe", 1], ["water_can", 1], ["basket", 1],
@@ -72,6 +84,11 @@ func _ready() -> void:
 	item_database = ResourceDatabase.new(
 		["res://resources/items", "res://resources/products"])
 	crop_database = ResourceDatabase.new(["res://resources/crops"])
+	storage = Storage.new()
+	for id in MARKET_ITEM_IDS:
+		var item: Item = item_database.get_from_id(id)
+		if item != null:
+			market_entries.append(item)
 	_setup_fade_overlay()
 
 
@@ -105,6 +122,18 @@ func resume() -> void:
 	if player and player.has_method("toggle_control"):
 		player.toggle_control(true)
 	paused_changed.emit(false)
+
+
+# --------------------------------------------------------------- popups
+
+func open_market() -> void:
+	if market_ui:
+		market_ui.open()
+
+
+func open_warehouse() -> void:
+	if warehouse_ui:
+		warehouse_ui.open()
 
 
 # ------------------------------------------------------------ time helpers
