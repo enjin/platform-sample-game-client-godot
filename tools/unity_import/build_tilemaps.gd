@@ -384,17 +384,25 @@ func _add_props(root: Node2D, scene_name: String, textures: Dictionary) -> void:
 		spr.modulate = Color(c[0], c[1], c[2], c[3])
 		spr.flip_v = bool(p.flip_y)
 		spr.scale = Vector2(p.scale[0], p.scale[1])
-		# Unity sorting layers -> z planes (see _build_scene). Default (0) is
-		# flat ground decor (rugs, flowers) that Unity draws BENEATH the player;
-		# the player/Objects-layer props sit at z 0 and y-sort, so Default must
-		# be z -1 or the player can slip behind a rug. Objects (1) = z 0.
+		# z planes from the Unity sorting layer (see _build_scene). Rugs/carpets
+		# are flat floor decals the player walks ON, so force them below the
+		# player (z -1). Everything else keeps its layer mapping: Default(0) and
+		# Objects(1) sit at z 0 and y-sort with the player (so a hanging lantern
+		# can pass in front of a tree/fence), ObjectsFront(>=2) above.
 		var rank := int(p.get("sorting_layer", 0))
-		if rank < 0:
-			spr.z_index = -2  # Bottom layer (under Default)
-		elif rank == 0:
-			spr.z_index = -1  # Default: below the player
+		var texname := (p.texture as String).get_file().to_lower()
+		if "rug" in texname:
+			spr.z_index = -1
+		elif "lantern" in texname or "chain" in texname:
+			# Hanging lamp parts sit high, so y-sort would put them behind nearby
+			# trees/fences; in Unity they're on a front layer. Draw them in front
+			# of the z 0 objects (the extractor mis-reads their sorting layer from
+			# m_SortingLayer index rather than m_SortingLayerID).
+			spr.z_index = 1
+		elif rank <= 0 and rank + int(p.sorting_order) < 0:
+			spr.z_index = -1
 		elif rank >= 2:
-			spr.z_index = maxi(1, int(p.sorting_order))  # ObjectsFront
+			spr.z_index = maxi(1, int(p.sorting_order))
 		parent.add_child(spr)
 		spr.owner = root
 
