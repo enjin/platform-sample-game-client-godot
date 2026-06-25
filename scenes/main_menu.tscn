@@ -1,23 +1,27 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene format=3 uid="uid://damj2k6ettqfy"]
 
-[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_menu"]
-[ext_resource type="Texture2D" path="res://art/ui/sprite_happyharvest_logo.png" id="2_logo"]
+[ext_resource type="Script" uid="uid://cssbgksge1ut0" path="res://scripts/ui/main_menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" uid="uid://b2oj6ho5cqmgv" path="res://art/ui/sprite_happyharvest_logo.png" id="2_logo"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1348954494]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_menu")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=1340268094]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.14902, 0.247059, 0.211765, 1)
 
-[node name="VBox" type="VBoxContainer" parent="."]
+[node name="VBox" type="VBoxContainer" parent="." unique_id=2049803456]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -33,55 +37,54 @@ grow_vertical = 2
 theme_override_constants/separation = 14
 alignment = 1
 
-[node name="Logo" type="TextureRect" parent="VBox"]
-layout_mode = 2
+[node name="Logo" type="TextureRect" parent="VBox" unique_id=462292175]
 custom_minimum_size = Vector2(640, 280)
+layout_mode = 2
 texture = ExtResource("2_logo")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="StartButton" type="Button" parent="VBox"]
+[node name="StartButton" type="Button" parent="VBox" unique_id=1301871114]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 56)
 layout_mode = 2
 size_flags_horizontal = 4
-custom_minimum_size = Vector2(280, 56)
 text = "Start"
 
-[node name="LoginSpacer" type="Control" parent="VBox"]
-layout_mode = 2
+[node name="LoginSpacer" type="Control" parent="VBox" unique_id=1812511011]
 custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
 
-[node name="EmailEdit" type="LineEdit" parent="VBox"]
+[node name="EmailEdit" type="LineEdit" parent="VBox" unique_id=2104403467]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 40)
 layout_mode = 2
 size_flags_horizontal = 4
-custom_minimum_size = Vector2(280, 40)
 placeholder_text = "Email"
 
-[node name="PasswordEdit" type="LineEdit" parent="VBox"]
+[node name="PasswordEdit" type="LineEdit" parent="VBox" unique_id=1601538135]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 40)
 layout_mode = 2
 size_flags_horizontal = 4
-custom_minimum_size = Vector2(280, 40)
 placeholder_text = "Password"
 secret = true
 
-[node name="LoginButton" type="Button" parent="VBox"]
+[node name="LoginButton" type="Button" parent="VBox" unique_id=1265542784]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 44)
 layout_mode = 2
 size_flags_horizontal = 4
-custom_minimum_size = Vector2(280, 44)
 text = "Register / Login"
 
-[node name="LoginStatus" type="Label" parent="VBox"]
+[node name="LoginStatus" type="Label" parent="VBox" unique_id=1311075923]
 unique_name_in_owner = true
 layout_mode = 2
 horizontal_alignment = 1
-text = ""
 
-[node name="QuitButton" type="Button" parent="VBox"]
+[node name="QuitButton" type="Button" parent="VBox" unique_id=1954821388]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 40)
 layout_mode = 2
 size_flags_horizontal = 4
-custom_minimum_size = Vector2(280, 40)
 text = "Quit"
