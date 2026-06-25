@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://bh2k88pvxrewu" path="res://scripts/game/lamp_lights.gd" id="19_lamps"]
 [ext_resource type="Script" path="res://scripts/game/lamp_sway.gd" id="25_sway"]
 [ext_resource type="Script" path="res://scripts/game/foliage_wind.gd" id="26_wind"]
+[ext_resource type="PackedScene" path="res://scenes/world/fireplace_fire.tscn" id="27_fire"]
 [ext_resource type="PackedScene" path="res://scenes/world/chimney_smoke.tscn" id="20_smoke"]
 [ext_resource type="PackedScene" path="res://scenes/world/waterfall_mist.tscn" id="21_mist"]
 [ext_resource type="Script" uid="uid://5vg21g4kt5ty" path="res://scripts/game/effects/day_gated_light.gd" id="22_nightlight"]
@@ -29,6 +30,9 @@
 
 [sub_resource type="RectangleShape2D" id="shape_door"]
 size = Vector2(96, 40)
+
+[sub_resource type="CanvasItemMaterial" id="campfire_mix"]
+blend_mode = 0
 
 [node name="FarmOutdoor" type="Node2D" unique_id=609993272]
 y_sort_enabled = true
@@ -120,6 +124,22 @@ props_root = NodePath("../Maps/Props")
 [node name="FoliageWind" type="Node" parent="." node_paths=PackedStringArray("props_root")]
 script = ExtResource("26_wind")
 props_root = NodePath("../Maps/Props")
+
+[node name="CampfireFire" parent="." instance=ExtResource("27_fire")]
+position = Vector2(1417, -688)
+
+[node name="Flames" parent="CampfireFire" index="0"]
+material = SubResource("campfire_mix")
+
+[node name="Core" parent="CampfireFire" index="1"]
+material = SubResource("campfire_mix")
+
+[node name="Light" parent="CampfireFire" index="4"]
+visible = false
+
+[node name="GlowCore" parent="CampfireFire" index="5"]
+energy = 0.22
+texture_scale = 0.45
 
 [node name="ChimneySmoke" parent="." unique_id=1783917101 instance=ExtResource("20_smoke")]
 position = Vector2(805.76, -352.64)

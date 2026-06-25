@@ -67,8 +67,22 @@ texture = ExtResource("11_lighttex")
 texture_scale = 5.5
 
 [node name="FireplaceFire" parent="." instance=ExtResource("9_fire")]
-position = Vector2(35.07, -112.0)
+position = Vector2(35.07, -148.0)
 z_index = 1
+
+[node name="Flames" parent="FireplaceFire" index="0"]
+amount = 12
+
+[node name="Core" parent="FireplaceFire" index="1"]
+amount = 3
+
+[node name="Light" parent="FireplaceFire" index="4"]
+energy = 0.5
+texture_scale = 2.2
+
+[node name="GlowCore" parent="FireplaceFire" index="5"]
+energy = 0.15
+texture_scale = 0.55
 
 [node name="WindowLight1" type="PointLight2D" parent="."]
 position = Vector2(-220.8, -246.4)
