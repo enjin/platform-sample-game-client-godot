@@ -1,29 +1,22 @@
 [gd_resource type="TileSet" format=3]
 
-[ext_resource type="Texture2D" path="res://art/tiles/dirt/sprites/sprite_tiles_dirt.png" id="1_yg4a0"]
-[ext_resource type="Texture2D" path="res://art/tiles/dirt/sprites/sprite_tiles_dirt_normal.png" id="2_rdlyp"]
-[ext_resource type="Texture2D" path="res://art/tiles/soil/sprites/sprite_tiles_soil.png" id="3_0c1m3"]
-[ext_resource type="Texture2D" path="res://art/tiles/soilwatered/sprite/sprite_tiles_soil_watered.png" id="4_8jnsj"]
-[ext_resource type="Texture2D" path="res://art/tiles/elevation/sprites/sprite_tiles_elevation.png" id="5_ubkrf"]
-[ext_resource type="Texture2D" path="res://art/tiles/elevation/sprites/sprite_tiles_elevation_normal.png" id="6_46hm5"]
-[ext_resource type="Texture2D" path="res://art/tiles/water/sprite_watericon.png" id="7_be8f5"]
-[ext_resource type="Texture2D" path="res://art/tiles/grass/sprites/sprite_tiles_grass_darker_tiles.png" id="8_jd7f4"]
-[ext_resource type="Texture2D" path="res://art/tiles/walkway/sprites/sprite_tiles_stone_walkway.png" id="9_j8bkr"]
-[ext_resource type="Texture2D" path="res://art/tiles/walkway/sprites/sprite_tiles_stone_walkway_normal.png" id="10_rb4l0"]
-[ext_resource type="Texture2D" path="res://art/tiles/warehouse/sprites/sprite_tiles_warehouse.png" id="11_j2lej"]
-[ext_resource type="Texture2D" path="res://art/tiles/warehouse/sprites/sprite_tiles_warehouse_normal.png" id="12_yv6kj"]
-[ext_resource type="Texture2D" path="res://art/tiles/pinetrees/sprites/sprite_tiles_pinetree_bg.png" id="13_dntko"]
-[ext_resource type="Texture2D" path="res://art/tiles/pinetrees/sprites/sprite_tiles_pinetree_bg_normal.png" id="14_pyske"]
-[ext_resource type="Texture2D" path="res://art/tiles/house/sprite_tiles_house.png" id="15_ujoij"]
-[ext_resource type="Texture2D" path="res://art/tiles/house/sprite_tiles_house_normal.png" id="16_xwdmg"]
+[ext_resource type="Texture2D" path="res://art/tiles/dirt/sprites/sprite_tiles_dirt.png" id="1_nixx1"]
+[ext_resource type="Texture2D" path="res://art/tiles/soil/sprites/sprite_tiles_soil.png" id="2_gt2jx"]
+[ext_resource type="Texture2D" path="res://art/tiles/soilwatered/sprite/sprite_tiles_soil_watered.png" id="3_24tco"]
+[ext_resource type="Texture2D" path="res://art/tiles/elevation/sprites/sprite_tiles_elevation.png" id="4_yg4a0"]
+[ext_resource type="Texture2D" path="res://art/tiles/water/sprite_watericon.png" id="5_rdlyp"]
+[ext_resource type="Texture2D" path="res://art/tiles/grass/sprites/sprite_tiles_grass_darker_tiles.png" id="6_0c1m3"]
+[ext_resource type="Texture2D" path="res://art/tiles/walkway/sprites/sprite_tiles_stone_walkway.png" id="7_8jnsj"]
+[ext_resource type="Texture2D" path="res://art/tiles/warehouse/sprites/sprite_tiles_warehouse.png" id="8_ubkrf"]
+[ext_resource type="Texture2D" path="res://art/tiles/warehouse/sprites/sprite_tiles_warehouse_normal.png" id="9_46hm5"]
+[ext_resource type="Texture2D" path="res://art/tiles/pinetrees/sprites/sprite_tiles_pinetree_bg.png" id="10_be8f5"]
+[ext_resource type="Texture2D" path="res://art/tiles/pinetrees/sprites/sprite_tiles_pinetree_bg_normal.png" id="11_jd7f4"]
+[ext_resource type="Texture2D" path="res://art/tiles/house/sprite_tiles_house.png" id="12_j8bkr"]
+[ext_resource type="Texture2D" path="res://art/tiles/house/sprite_tiles_house_normal.png" id="13_rb4l0"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_4132q"]
-diffuse_texture = ExtResource("1_yg4a0")
-normal_texture = ExtResource("2_rdlyp")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dj15a"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j2lej"]
 resource_name = "sprite_tiles_dirt.png"
-texture = SubResource("CanvasTexture_4132q")
+texture = ExtResource("1_nixx1")
 texture_region_size = Vector2i(64, 64)
 1:1/0 = 0
 1:1/0/custom_data_0 = true
@@ -42,27 +35,23 @@ texture_region_size = Vector2i(64, 64)
 2:5/0 = 0
 2:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mtg4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yv6kj"]
 resource_name = "sprite_tiles_soil.png"
-texture = ExtResource("3_0c1m3")
+texture = ExtResource("2_gt2jx")
 texture_region_size = Vector2i(64, 64)
 3:3/0 = 0
 3:3/0/custom_data_1 = "tilled"
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3x7b4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dntko"]
 resource_name = "sprite_tiles_soil_watered.png"
-texture = ExtResource("4_8jnsj")
+texture = ExtResource("3_24tco")
 texture_region_size = Vector2i(64, 64)
 3:3/0 = 0
 3:3/0/custom_data_1 = "watered"
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_sc3v4"]
-diffuse_texture = ExtResource("5_ubkrf")
-normal_texture = ExtResource("6_46hm5")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rtn5l"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pyske"]
 resource_name = "sprite_tiles_elevation.png"
-texture = SubResource("CanvasTexture_sc3v4")
+texture = ExtResource("4_yg4a0")
 texture_region_size = Vector2i(64, 64)
 3:4/0 = 0
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31, -32, -31, 27, 32, 27, 32, -32)
@@ -124,15 +113,15 @@ texture_region_size = Vector2i(64, 64)
 2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(30, -13, 32, -32, -32, -32, -32, 28, 7, 14)
 1:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a4v4q"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ujoij"]
 resource_name = "sprite_watericon.png"
-texture = ExtResource("7_be8f5")
+texture = ExtResource("5_rdlyp")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ypmna"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwdmg"]
 resource_name = "sprite_tiles_grass_darker_tiles.png"
-texture = ExtResource("8_jd7f4")
+texture = ExtResource("6_0c1m3")
 texture_region_size = Vector2i(64, 64)
 0:2/0 = 0
 1:2/0 = 0
@@ -176,13 +165,9 @@ texture_region_size = Vector2i(64, 64)
 7:1/0 = 0
 7:5/0 = 0
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_ivavv"]
-diffuse_texture = ExtResource("9_j8bkr")
-normal_texture = ExtResource("10_rb4l0")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4cqyr"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4132q"]
 resource_name = "sprite_tiles_stone_walkway.png"
-texture = SubResource("CanvasTexture_ivavv")
+texture = ExtResource("7_8jnsj")
 texture_region_size = Vector2i(64, 64)
 0:2/0 = 0
 2:2/0 = 0
@@ -217,13 +202,13 @@ texture_region_size = Vector2i(64, 64)
 4:3/0 = 0
 5:4/0 = 0
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_88og0"]
-diffuse_texture = ExtResource("11_j2lej")
-normal_texture = ExtResource("12_yv6kj")
+[sub_resource type="CanvasTexture" id="CanvasTexture_dj15a"]
+diffuse_texture = ExtResource("8_ubkrf")
+normal_texture = ExtResource("9_46hm5")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxpq4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mtg4"]
 resource_name = "sprite_tiles_warehouse.png"
-texture = SubResource("CanvasTexture_88og0")
+texture = SubResource("CanvasTexture_dj15a")
 texture_region_size = Vector2i(64, 64)
 5:11/0 = 0
 6:11/0 = 0
@@ -302,13 +287,13 @@ texture_region_size = Vector2i(64, 64)
 6:2/0 = 0
 7:2/0 = 0
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_kdmfa"]
-diffuse_texture = ExtResource("13_dntko")
-normal_texture = ExtResource("14_pyske")
+[sub_resource type="CanvasTexture" id="CanvasTexture_3x7b4"]
+diffuse_texture = ExtResource("10_be8f5")
+normal_texture = ExtResource("11_jd7f4")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hh76g"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sc3v4"]
 resource_name = "sprite_tiles_pinetree_bg.png"
-texture = SubResource("CanvasTexture_kdmfa")
+texture = SubResource("CanvasTexture_3x7b4")
 texture_region_size = Vector2i(64, 64)
 0:4/size_in_atlas = Vector2i(2, 2)
 0:4/0 = 0
@@ -333,13 +318,13 @@ texture_region_size = Vector2i(64, 64)
 4:0/size_in_atlas = Vector2i(2, 2)
 4:0/0 = 0
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_301oc"]
-diffuse_texture = ExtResource("15_ujoij")
-normal_texture = ExtResource("16_xwdmg")
+[sub_resource type="CanvasTexture" id="CanvasTexture_rtn5l"]
+diffuse_texture = ExtResource("12_j8bkr")
+normal_texture = ExtResource("13_rb4l0")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x7r7d"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a4v4q"]
 resource_name = "sprite_tiles_house.png"
-texture = SubResource("CanvasTexture_301oc")
+texture = SubResource("CanvasTexture_rtn5l")
 texture_region_size = Vector2i(64, 64)
 5:9/0 = 0
 6:9/0 = 0
@@ -483,13 +468,13 @@ custom_data_layer_0/name = "tillable"
 custom_data_layer_0/type = 1
 custom_data_layer_1/name = "soil"
 custom_data_layer_1/type = 4
-sources/0 = SubResource("TileSetAtlasSource_dj15a")
-sources/1 = SubResource("TileSetAtlasSource_0mtg4")
-sources/2 = SubResource("TileSetAtlasSource_3x7b4")
-sources/3 = SubResource("TileSetAtlasSource_rtn5l")
-sources/4 = SubResource("TileSetAtlasSource_a4v4q")
-sources/5 = SubResource("TileSetAtlasSource_ypmna")
-sources/6 = SubResource("TileSetAtlasSource_4cqyr")
-sources/7 = SubResource("TileSetAtlasSource_nxpq4")
-sources/8 = SubResource("TileSetAtlasSource_hh76g")
-sources/9 = SubResource("TileSetAtlasSource_x7r7d")
+sources/0 = SubResource("TileSetAtlasSource_j2lej")
+sources/1 = SubResource("TileSetAtlasSource_yv6kj")
+sources/2 = SubResource("TileSetAtlasSource_dntko")
+sources/3 = SubResource("TileSetAtlasSource_pyske")
+sources/4 = SubResource("TileSetAtlasSource_ujoij")
+sources/5 = SubResource("TileSetAtlasSource_xwdmg")
+sources/6 = SubResource("TileSetAtlasSource_4132q")
+sources/7 = SubResource("TileSetAtlasSource_0mtg4")
+sources/8 = SubResource("TileSetAtlasSource_sc3v4")
+sources/9 = SubResource("TileSetAtlasSource_a4v4q")

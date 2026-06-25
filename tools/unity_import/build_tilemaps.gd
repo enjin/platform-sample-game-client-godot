@@ -57,6 +57,28 @@ func _tex_path(textures: Dictionary, key: String) -> String:
 var _canvas_tex_cache := {}
 
 
+# Flat-ground tile atlases that must NOT take a normal map. Grass shows up in
+# FOUR atlases, all sharing the exact same base green (128,166,61):
+#   sprite_tiles_dirt              - bright grass + dirt + transitions (has normal)
+#   sprite_tiles_grass_darker_tiles- darker patches under bushes (no normal)
+#   sprite_tiles_stone_walkway     - stones painted on a grass border (has normal)
+#   sprite_tiles_elevation         - grass plateaus on top of rock walls / pond shore (has normal)
+# Under the directional sun a relief-lit grass source next to a flat one shades
+# differently and the identical greens STOP blending - a hard rectangle around
+# the darker patches, a seam tracing every stone path, and a seam around the
+# pond shore (worst at night). Unity lights its ground gently so the mismatch
+# never shows; our stronger sun makes it glaring. Fix: drop the normal on every
+# grass-bearing ground atlas so the whole field lights uniformly. The
+# stones/dirt/rock-walls keep their baked-in diffuse shading, so they lose
+# little. Net rule: ALL ground/terrain atlases light flat; only buildings, the
+# pinetree band, and props (house/warehouse/pinetree_bg + Props sprites) keep
+# their normals, where the relief actually reads.
+const FLAT_GROUND_TILE_PREFIXES := [
+	"sprite_tiles_dirt", "sprite_tiles_grass", "sprite_tiles_stone_walkway",
+	"sprite_tiles_elevation",
+]
+
+
 # Diffuse texture, paired with its Unity normal map (as a CanvasTexture) when
 # one was extracted - this is what makes 2D lights produce relief.
 func _load_lit_texture(textures: Dictionary, key: String) -> Texture2D:
@@ -67,12 +89,18 @@ func _load_lit_texture(textures: Dictionary, key: String) -> Texture2D:
 		return _canvas_tex_cache[res_path]
 	var diffuse: Texture2D = load(res_path)
 	var out: Texture2D = diffuse
+	var basename := res_path.get_file()
+	var flat_ground := false
+	for prefix in FLAT_GROUND_TILE_PREFIXES:
+		if basename.begins_with(prefix):
+			flat_ground = true
+			break
 	var normal_path: String = textures.get(key, {}).get("normal", "")
 	if normal_path.is_empty() and key.begins_with("res://"):
 		var candidate := key.trim_suffix(".png") + "_normal.png"
 		if ResourceLoader.exists(candidate):
 			normal_path = candidate
-	if diffuse != null and not normal_path.is_empty():
+	if diffuse != null and not flat_ground and not normal_path.is_empty():
 		var canvas := CanvasTexture.new()
 		canvas.diffuse_texture = diffuse
 		canvas.normal_texture = load(normal_path)
