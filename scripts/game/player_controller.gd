@@ -3,8 +3,8 @@
 # every inventory touch point is guarded so the shell runs without it.
 extends CharacterBody2D
 
-# 4.0 units/s in Unity at 64 px/unit.
-const SPEED := 256.0
+# 6.0 units/s in Unity (Character prefab's Speed override) at 64 px/unit.
+const SPEED := 384.0
 # collision layer 3 = interactive objects (market, warehouse, tokens)
 const INTERACTIVE_MASK := 1 << 2
 
