@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://bh2k88pvxrewu" path="res://scripts/game/lamp_lights.gd" id="19_lamps"]
 [ext_resource type="Script" path="res://scripts/game/lamp_sway.gd" id="25_sway"]
 [ext_resource type="Script" path="res://scripts/game/foliage_wind.gd" id="26_wind"]
+[ext_resource type="Script" path="res://scripts/game/bush_shake.gd" id="28_bushshake"]
 [ext_resource type="PackedScene" path="res://scenes/world/fireplace_fire.tscn" id="27_fire"]
 [ext_resource type="PackedScene" path="res://scenes/world/chimney_smoke.tscn" id="20_smoke"]
 [ext_resource type="PackedScene" path="res://scenes/world/waterfall_mist.tscn" id="21_mist"]
@@ -123,6 +124,10 @@ props_root = NodePath("../Maps/Props")
 
 [node name="FoliageWind" type="Node" parent="." node_paths=PackedStringArray("props_root")]
 script = ExtResource("26_wind")
+props_root = NodePath("../Maps/Props")
+
+[node name="BushShake" type="Node" parent="." node_paths=PackedStringArray("props_root")]
+script = ExtResource("28_bushshake")
 props_root = NodePath("../Maps/Props")
 
 [node name="CampfireFire" parent="." instance=ExtResource("27_fire")]
