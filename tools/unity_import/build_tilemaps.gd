@@ -7,6 +7,8 @@ extends SceneTree
 
 const TILE := 64
 const OUT_TILESET := "res://resources/tilesets/world_tileset.tres"
+# animated water surface (replaces the flat tiled water sprite)
+const WATER_SHADER := preload("res://shaders/water.gdshader")
 const SCENES := {
 	"farm_outdoor": "res://scenes/maps/farm_outdoor_tilemaps.tscn",
 	"house_interior": "res://scenes/maps/house_interior_tilemaps.tscn",
@@ -231,6 +233,11 @@ func _build_scene(scene_name: String, layers: Variant, tileset: TileSet,
 			tml.z_index = maxi(1, int(layer.sorting_order))
 		root.add_child(tml)
 		tml.owner = root
+		# Animated water surface instead of the flat tiled sprite.
+		if layer.layer_name == "Water":
+			var wmat := ShaderMaterial.new()
+			wmat.shader = WATER_SHADER
+			tml.material = wmat
 		# The Pinetree background tilemap is scaled 2x in Unity (its 128-PPU
 		# tiles already bake as 128px 2x2-cell tiles here, matching the 2x
 		# size). The 2x scale ALSO spreads its cells 2x apart, which places the
