@@ -52,15 +52,33 @@ godot4 --editor .
 
 (Or "Import" the folder from Godot's Project Manager.)
 
-### 3. Stamp your collection id onto the token assets
+### 3. Point the token assets at your collection
 
-The three collectible definitions (`resources/items/gem_green.tres`,
-`gold_coin.tres`, `gold_coin_blue.tres`) need your server's collection id before
-your wallet's tokens will match them in the backpack. With the server running:
+The three collectible definitions — `resources/items/gem_green.tres`,
+`gold_coin.tres`, and `gold_coin_blue.tres` — ship with a placeholder
+collection id (`-1`). Each needs *your* server's collection id before your
+wallet's tokens line up in the backpack. Set it one of two ways:
+
+**Automatic (recommended).** With the server running:
 
 1. **Project → Tools → Stamp Collection ID onto EnjinItem Assets**.
 2. Confirm the server URL (default `http://localhost:3000`).
-3. The tool writes the id onto each token `.tres`.
+3. The tool reads `GET /api/setup/collection-id` and writes it onto all three
+   token assets.
+
+**Manual.** Select each of the three `.tres` files in the FileSystem dock and
+set the fields in the **Inspector**:
+
+- **Collection Id** — your server's collection id (from
+  `GET /api/setup/collection-id`, or the server's `state.json`). Use the same
+  value on all three.
+- **Token Id** — the token's id *within* that collection. The demo uses
+  `1` = Gold Coin, `2` = Gold Coin (Blue), `3` = Green Gem. Leave these unless
+  your collection uses different ids; whatever you set here is the id the game
+  mints / melts / transfers for that collectible.
+
+You can also edit the `collection_id = "…"` and `token_id = "…"` lines in the
+`.tres` files directly — they're plain text.
 
 ### 4. Play
 

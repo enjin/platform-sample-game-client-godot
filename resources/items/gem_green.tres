@@ -10,6 +10,6 @@ unique_id = "gem_green"
 display_name = "Green Gem"
 item_sprite = ExtResource("2")
 visual_prefab = ExtResource("3")
-collection_id = "124570"
+collection_id = "-1"
 token_id = "3"
 rarity = 0.9
