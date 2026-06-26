@@ -1,29 +1,50 @@
-# Platform Sample Game Client (Godot)
+# Enjin Platform Sample Game (Godot)
 
-Godot 4 port of the [Enjin Platform sample game client](https://github.com/enjin/platform-sample-game-client-unity)
-(Unity's HappyHarvest farming demo + Enjin blockchain integration).
-Talks to the same C# game server (`platform-sample-game-server`) over plain HTTP.
+A small top-down farming game that shows how **Enjin blockchain features fit
+into a real game loop**. You log into a managed wallet, earn on-chain tokens by
+playing, see them in an in-game backpack, and burn or send them to another
+wallet — all driven by ordinary gameplay rather than a separate "wallet app".
 
-> **Status:** All roadmap phases complete. The full farming loop, day/night
-> cycle, weather, audio, blockchain backpack, and smoke test are ported.
+It's built in Godot 4 and talks to the
+[Enjin Platform sample game server](https://github.com/enjin/platform-sample-game-server)
+over plain HTTP. The server owns a managed daemon wallet and submits the
+on-chain transactions, so the game itself only makes simple REST calls.
+
+## What it demonstrates
+
+- **Managed-wallet login** — register/login with an email + password; the
+  server returns a session token tied to a wallet the player never has to
+  manage directly.
+- **Minting from gameplay** — tilling soil occasionally turns up a collectible
+  (a gold coin or a gem). Picking it up mints that token to your wallet
+  on-chain, so a normal game action produces a real blockchain asset.
+- **Reading the wallet** — the backpack lists the tokens your wallet actually
+  holds, fetched live from the chain.
+- **Melting & transferring** — burn a token, or send it to any other wallet
+  address, straight from the backpack.
+- **A collection of token types** — the game's collectibles (`gem_green`,
+  `gold_coin`, `gold_coin_blue`) belong to one on-chain collection; you stamp
+  your server's collection id onto them once so the wallet view lines up.
+
+Everything blockchain-related is optional: with no server running, the game is
+fully playable and the wallet features simply no-op.
 
 ## Prerequisites
 
-- Godot **4.4+** (standard build; no .NET / Mono required). Developed on 4.6.
-- The C# game server from
-  [`enjin/platform-sample-game-server`](https://github.com/enjin/platform-sample-game-server)
-  running on `http://localhost:3000` (default). The game runs fine without it —
-  blockchain features (login, token drops minting, backpack) simply no-op.
+- **Godot 4.4+** (standard build; no .NET / Mono required).
+- The **Enjin Platform sample game server**
+  ([`enjin/platform-sample-game-server`](https://github.com/enjin/platform-sample-game-server))
+  running on `http://localhost:3000` (its default).
 
 ## Quick start
 
 ### 1. Start the game server
 
-Follow the setup instructions in the game server repository. On first run it
-creates a managed daemon wallet and a Collection on-chain, persisted to
-`state.json` and exposed at `GET /api/setup/collection-id`.
+Follow the setup instructions in the server repository. On first run it creates
+a managed daemon wallet and a Collection on-chain, persists them, and exposes
+the collection id at `GET /api/setup/collection-id`.
 
-### 2. Open the Godot project
+### 2. Open the project in Godot
 
 ```bash
 godot4 --editor .
@@ -31,169 +52,106 @@ godot4 --editor .
 
 (Or "Import" the folder from Godot's Project Manager.)
 
-### 3. Stamp the Collection ID onto the EnjinItem assets
+### 3. Stamp your collection id onto the token assets
 
-The three item resources (`resources/items/gem_green.tres`, `gold_coin.tres`,
-`gold_coin_blue.tres`) must carry your server's collection id before wallet
-tokens match. With the server running:
+The three collectible definitions (`resources/items/gem_green.tres`,
+`gold_coin.tres`, `gold_coin_blue.tres`) need your server's collection id before
+your wallet's tokens will match them in the backpack. With the server running:
 
 1. **Project → Tools → Stamp Collection ID onto EnjinItem Assets**.
 2. Confirm the server URL (default `http://localhost:3000`).
-3. The plugin writes the id onto every `EnjinItem` `.tres` file.
+3. The tool writes the id onto each token `.tres`.
 
-### 4. Play the game
+### 4. Play
 
-Run the project (F5). Flow: loader → main menu (optional register/login)
-→ farm.
+Run the project (**F5**). The flow is: loader → main menu (register/login) →
+farm.
 
 | Input | Action |
 |-------|--------|
 | WASD / arrows | Move |
-| Mouse + left click | Use equipped item on the targeted cell / interact |
-| Q / E or mouse wheel | Cycle equipped item |
-| Click a HUD slot | Equip that slot |
-| B (or HUD button) | Open the blockchain backpack |
+| Mouse + left click | Use the equipped item on the targeted tile / interact |
+| Q / E or mouse wheel | Cycle the equipped item |
+| Click a hotbar slot | Equip that slot |
+| B (or the backpack icon, top-right) | Open the blockchain backpack |
+| Click the market stall / warehouse | Open the market / warehouse panel |
+| Menu button (top-right) | Settings (resolution, fullscreen, volume, login, quit) |
+| Weather icons (under the clock) | Toggle sun / rain / thunder |
 | F5 / F9 | Save / load (`user://save.sav`) |
-| Esc | (reserved) menu |
+| Esc | Close the open panel |
 
-**The loop:** till soil with the hoe (tilling occasionally reveals a token —
-click or walk over it to mint it to your wallet), water with the can, plant
-seeds, wait for growth (crops only grow while watered), harvest with the
-basket. Walk into the house door to go inside.
+## The blockchain features, in play
 
-### 5. Verify the integration (optional)
+1. **Log in.** Use the register/login form on the main menu (or the **Menu →
+   Settings** panel in-game). The server registers-or-logs-in and hands back a
+   session token; the game stores it and fetches your wallet.
+2. **Earn a token.** Equip the hoe and till soil. Tilling has a chance to reveal
+   a coin or gem in the world — click it (or walk over it) to pick it up, which
+   mints that token to your managed wallet.
+3. **Check your wallet.** Press **B** (or the backpack icon, top-right). The
+   backpack reads your wallet's token balances from the chain and lists them.
+4. **Melt or transfer.** From the backpack, burn a token (melt) or paste a
+   recipient wallet address and send it (transfer).
 
-- `scenes/debug_enjin.tscn` — button harness for every REST endpoint.
-- `smoke/game_server/game_server_smoke.tscn` — scripted end-to-end REST flow
-  (health → login → mint → melt → transfer, with wallet dumps). Copy
+On-chain mint/melt/transfer wait for finalization server-side and can take
+**10–20+ seconds**; the backpack's status line tells you while it refreshes.
+
+The rest of the loop is ordinary farming: water planted crops with the can
+(crops only grow while watered), harvest with the basket, then **sell produce
+and buy seeds at the market stall** or **stash/retrieve items at the
+warehouse**. Walk into the house door to go inside.
+
+## How the integration is wired (for developers)
+
+If you're here to see how a game calls Enjin, these are the files to read:
+
+| File | Role |
+|------|------|
+| `scripts/enjin/api/enjin_api_service.gd` | Thin REST client — one method per server endpoint |
+| `scripts/enjin/core/enjin_manager.gd` | Session/auth state, wallet cache, mint/melt/transfer, the till-time token reveal |
+| `scripts/enjin/data/` | Plain data models for wallet/token responses |
+| `scenes/ui/backpack_ui.tscn` + `scripts/enjin/ui/` | The backpack: wallet token list with melt/transfer controls |
+| `scenes/enjin/enjin_token.tscn` | The world pickup that triggers a mint |
+| `resources/items/{gem_green,gold_coin,gold_coin_blue}.tres` | The token definitions (collection id stamped by the editor tool) |
+| `addons/enjin_editor/` | The "Stamp Collection ID" editor tool |
+
+### Server API the game uses
+
+| Method | Path                        | Auth   | Purpose |
+|--------|-----------------------------|--------|---------|
+| GET    | `/api/auth/health-check`    | none   | Liveness ping |
+| POST   | `/api/auth/register`        | none   | Register-or-login; returns `{ token, email, wallet }` |
+| POST   | `/api/token/mint`           | bearer | `{ tokenId, amount }` |
+| POST   | `/api/token/melt`           | bearer | `{ tokenId, amount }` |
+| POST   | `/api/token/transfer`       | bearer | `{ tokenId, amount, recipient }` |
+| GET    | `/api/wallet/get-tokens`    | bearer | `{ account, tokenAccounts[] }` |
+| GET    | `/api/setup/collection-id`  | none   | Used by the editor tool |
+
+## Verify the integration end-to-end
+
+Two harnesses exercise the server without playing the game:
+
+- `scenes/debug_enjin.tscn` — a button per REST endpoint.
+- `smoke/game_server/game_server_smoke.tscn` — a scripted run through
+  health → login → mint → melt → transfer with wallet dumps. Copy
   `smoke_config.example.tres` → `smoke_config.tres` (gitignored) and fill in
-  credentials, or use env vars. Headless/CI:
+  credentials, or pass env vars. Headless / CI:
 
 ```bash
 SMOKE_EMAIL=player@example.com SMOKE_PASSWORD=secret \
 godot4 --headless --path . smoke/game_server/game_server_smoke.tscn -- --quit-after-smoke
-echo $?   # 0 = all 9 steps passed
+echo $?   # 0 = all steps passed
 ```
-
-## Project layout
-
-```
-project.godot                 Project config, autoloads, InputMap
-addons/enjin_editor/          Editor plugin (Stamp Collection ID tool)
-art/, audio/, fonts/          Assets imported from the Unity project
-scenes/
-  loader.tscn                 Boot scene -> main menu
-  main_menu.tscn              Logo, Start, register/login form
-  farm_outdoor.tscn           Main gameplay scene
-  house_interior.tscn         Interior scene
-  maps/                       GENERATED tilemap scenes (see tools/)
-  player/player.tscn          CharacterBody2D + animations + camera
-  enjin/enjin_token.tscn      World token pickup (click/walk to mint)
-  world/                      Rain + thunder weather elements
-  ui/backpack_ui.tscn         Wallet token list with melt/transfer
-  debug_enjin.tscn            Phase 1 endpoint harness
-scripts/
-  enjin/                      API service, EnjinManager, models, token UI
-  game/                       GameManager, player, terrain, items, save,
-                              day cycle, weather, sound
-  ui/                         Main menu + HUD
-resources/
-  items|products|crops/       Item/crop .tres (generated from Unity data)
-  tilesets/world_tileset.tres GENERATED TileSet
-  player_frames.tres          GENERATED SpriteFrames (Unity rig bake)
-  day_night/                  Day tint gradients
-smoke/game_server/            Standalone REST smoke test scene
-ui/game_hud.tscn              Inventory slots, coins, clock, backpack button
-tools/unity_import/           One-off Unity -> Godot conversion pipeline
-```
-
-## Server contract reference
-
-| Method | Path                          | Auth   | Purpose |
-|--------|-------------------------------|--------|---------|
-| GET    | `/api/auth/health-check`      | none   | Liveness ping |
-| POST   | `/api/auth/register`          | none   | Register-or-login; returns `{ token, email, wallet }` |
-| POST   | `/api/token/mint`             | bearer | `{tokenId, amount}` |
-| POST   | `/api/token/melt`             | bearer | `{tokenId, amount}` |
-| POST   | `/api/token/transfer`         | bearer | `{tokenId, amount, recipient}` |
-| GET    | `/api/wallet/get-tokens`      | bearer | `{ account, tokenAccounts[] }` |
-| GET    | `/api/setup/collection-id`    | none   | Used by the editor plugin |
-
-Mint/melt/transfer wait for on-chain finalization server-side and can take
-10–20+ seconds; the backpack status line says so while it refreshes.
-
-## Asset pipeline (tools/unity_import)
-
-The world was converted from the Unity project mechanically; the scripts are
-kept so the conversion can be re-run if the Unity content changes:
-
-1. `extract_unity_maps.py` — parses Unity scenes + sprite metas; copies
-   art/audio; emits tilemap/prop/physics manifests under `out/`.
-2. `dump_items.py` — dumps item/product/crop ScriptableObjects to JSON.
-3. `build_tilemaps.gd` — builds `world_tileset.tres` (incl. collision from
-   Unity physics shapes + soil custom data) and the `scenes/maps/*.tscn`.
-4. `build_items.gd` — builds the item/crop `.tres` resources.
-5. `build_sprite_frames.gd` — assembles `player_frames.tres` from frames baked
-   in Unity (`Assets/Editor/BakeCharacterFrames.cs` in the Unity project).
-6. `verify_*.gd` — headless test harnesses per subsystem (shell, player,
-   items, farming, save, world, enjin UI). Run e.g.
-   `godot4 --headless --path . -s tools/unity_import/verify_farming.gd`.
-
-Run order: extractor → `--headless --import` → builders.
-
-## Known divergences from the Unity client
-
-- **Lighting:** Unity blends five additive URP Light2D gradients; here a
-  single `CanvasModulate` samples one gradient. No rim lights or rotating
-  building shadows (`LightInterpolator` not ported). Street/house lamps get
-  procedural `PointLight2D`s with flicker at night; warehouse windows light
-  up at night, interior windows cast warm light during the day, and the
-  fireplace burns with a flickering glow.
-- **Particles:** Unity's VFX-graph effects are approximated with
-  `CPUParticles2D`: chimney smoke, waterfall mist, fireplace flames/embers,
-  tilling dust, harvest leaf bursts, walking step dust, and rain.
-- **Normal maps:** Unity's `_normal` textures are paired with their diffuse
-  sprites via `CanvasTexture` (tiles, props, and crops), so 2D lights shade
-  surfaces with relief. Interior window lights use Unity's cookie sprites.
-- **Sun shadows:** the ShadowInstance/DayCycleHandler shadow system is ported
-  — props, animals and the player cast soft blob shadows that sweep and
-  stretch with the sun (static resting pose indoors).
-- **Tilled/watered soil** uses the RuleTile's centre tile only (no edge
-  matching) — tile visuals at bed borders are slightly simpler.
-- **Tool hand visuals** (animated hoe/watercan prefabs in the player's hand)
-  are not ported; the character's own use animations still play.
-- **Chickens and pigs** roam their pens with baked idle/walk animations
-  (frames sampled from the Unity rigs by `BakeAnimalFrames.cs`); the market
-  and scarecrows are static baked sprites, and market/warehouse UIs are not
-  ported (the Unity build shipped them disabled too).
-- Water tiles are static (Unity's animated water tile is baked to one frame).
 
 ## Exporting
 
 `export_presets.cfg` ships macOS / Windows / Linux presets (GL Compatibility
-renderer, safe everywhere). Install export templates once via
-**Editor → Manage Export Templates**, then:
+renderer, safe everywhere). Install export templates once via **Editor → Manage
+Export Templates**, then e.g.:
 
 ```bash
 godot4 --headless --path . --export-release "Linux" build/linux/platform-sample-game.x86_64
 ```
 
-`build/` and `export_credentials.cfg` are gitignored; the populated smoke
+`build/` and `export_credentials.cfg` are gitignored, and the populated smoke
 config is excluded from exports.
-
-## Roadmap
-
-- [x] **Phase 0** — Project bootstrap
-- [x] **Phase 1** — Enjin integration core (models, API service, EnjinManager, debug harness)
-- [x] **Phase 2** — Editor plugin (Stamp Collection ID)
-- [x] **Phase 3** — Game shell (Loader, MainMenu, scene transitions)
-- [x] **Phase 4** — Tilemaps, player, farming gameplay
-- [x] **Phase 5** — Day/night cycle, weather, audio, effects
-- [x] **Phase 6** — Backpack UI + till-time token reveal
-- [x] **Phase 7** — GameServerSmoke standalone test scene
-- [x] **Phase 8** — Export presets + README
-
-> Note: the Unity sample reveals tokens on **tilling** (`Hoe.cs`), not on
-> harvest; this port matches the source behavior.
-
-See `../platform-sample-game-client-unity/README.md` for the original client.

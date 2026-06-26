@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://scripts/game/player_controller.gd" id="1_player"]
 [ext_resource type="SpriteFrames" path="res://resources/player_frames.tres" id="2_frames"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/game/audio/step_sound_handler.gd" id="4_steps"]
 [ext_resource type="Script" path="res://scripts/game/effects/sun_shadow.gd" id="5_shadow"]
 [ext_resource type="Texture2D" path="res://art/vfx/shadow_circle.png" id="6_shadowtex"]
+[ext_resource type="Script" path="res://scripts/game/follow_camera.gd" id="7_camera"]
 
 [sub_resource type="CapsuleShape2D" id="shape_feet"]
 radius = 14.0
@@ -48,6 +49,8 @@ visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
+offset = Vector2(0, -48)
+script = ExtResource("7_camera")
 
 [node name="StepSounds" type="Node" parent="."]
 script = ExtResource("4_steps")
